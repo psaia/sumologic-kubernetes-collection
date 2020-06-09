@@ -11,3 +11,16 @@ resource "sumologic_http_source" "sources" {
   category            = var.name
   collector_id        = sumologic_collector.collector.id
 }
+
+resource "sumologic_role" "role" {
+  name        = var.name
+  description = "${var.name} role (Managed by Terraform)"
+
+  filter_predicate = join(" OR ", concat([for src in sumologic_http_source.sources : "_source=${src.name}"], ["_sourceCategory=${var.name}"]))
+
+  lifecycle {
+    ignore_changes = [
+      capabilities,
+    ]
+  }
+}
