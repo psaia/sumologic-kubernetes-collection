@@ -7,17 +7,17 @@ variable "webhook" {
 }
 
 variable "headers" {
-  type = map(string)
+  type    = map(string)
   default = {}
 }
 
 variable "custom_headers" {
-  type = map(string)
+  type    = map(string)
   default = {}
 }
 
 variable "default_payload" {
-  type = string
+  type    = string
   default = <<JSON
 {
   "client" : "Sumo Logic",
