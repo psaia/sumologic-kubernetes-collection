@@ -8,7 +8,7 @@
       - name: format
         image: hashicorp/terraform:0.12.26
         commands:
-            - cd aws/terraform/
+            - cd collectors
             - terraform fmt -write=false -list -diff -check
         when:
             event: [push, pull_request]
