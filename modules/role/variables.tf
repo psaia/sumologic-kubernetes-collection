@@ -14,6 +14,6 @@ variable "capabilities" {
 
 variable "owners" {
   # unimplemented at the moment, needs more exploration
-  type = list(string)
+  type    = list(string)
   default = []
 }
