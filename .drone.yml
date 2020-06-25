@@ -49,4 +49,4 @@ steps:
         from_secret: GOOGLE_CREDENTIALS
     when:
       event: [push]
-      branch: [master]
+      branch: [main]
