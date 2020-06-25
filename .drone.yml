@@ -8,6 +8,19 @@
       - name: format
         image: hashicorp/terraform:0.12.26
         commands:
-            - terraform fmt -write=false -list -diff -check -recursive
+          - terraform fmt -write=false -list -diff -check -recursive
         when:
-            event: [push, pull_request]
+          event: [push, pull_request]
+
+      - name: plan
+        image: jmccann/drone-terraform:6.3-0.12.20
+        tf_version: 0.12.20
+        plan: true
+        root_dir: terraform
+        actions:
+          - validate
+          - plan
+        init_options:
+          lock-timeout: 5m
+        when:
+          event: [push]
