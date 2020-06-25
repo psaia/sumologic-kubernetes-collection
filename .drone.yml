@@ -1,34 +1,52 @@
 ---
-    kind: pipeline
-    type: docker
-    name: default
-    
-    
-    steps:
-      - name: format
-        image: hashicorp/terraform:0.12.26
-        commands:
-          - terraform fmt -write=false -list -diff -check -recursive terraform
-        when:
-          event: [push, pull_request]
+kind: pipeline
+type: docker
+name: default
 
-      - name: plan
-        image: jmccann/drone-terraform:6.3-0.12.20
-        settings:
-          tf_version: 0.12.20
-          plan: true
-          root_dir: terraform
-          actions:
-            - validate
-            - plan
-          init_options:
-            lock-timeout: 5m
-        environment:
-          SUMOLOGIC_ACCESSID:
-            from_secret: access_id
-          SUMOLOGIC_ACCESSKEY:
-            from_secret: access_key
-          GOOGLE_CREDENTIALS:
-            from_secret: GOOGLE_CREDENTIALS
-        when:
-          event: [push]
+steps:
+  - name: format
+    image: hashicorp/terraform:0.12.26
+    commands:
+      - terraform fmt -write=false -list -diff -check -recursive terraform
+    when:
+      event: [push, pull_request]
+
+  - name: plan
+    image: jmccann/drone-terraform:6.3-0.12.20
+    settings:
+      tf_version: 0.12.20
+      root_dir: terraform
+      actions:
+        - validate
+        - plan
+      init_options:
+        lock-timeout: 5m
+    environment:
+      SUMOLOGIC_ACCESSID:
+        from_secret: access_id
+      SUMOLOGIC_ACCESSKEY:
+        from_secret: access_key
+      GOOGLE_CREDENTIALS:
+        from_secret: GOOGLE_CREDENTIALS
+    when:
+      event: [push]
+
+  - name: apply
+    image: jmccann/drone-terraform:6.3-0.12.20
+    settings:
+      tf_version: 0.12.20
+      root_dir: terraform
+      actions:
+        - apply
+      init_options:
+        lock-timeout: 5m
+    environment:
+      SUMOLOGIC_ACCESSID:
+        from_secret: access_id
+      SUMOLOGIC_ACCESSKEY:
+        from_secret: access_key
+      GOOGLE_CREDENTIALS:
+        from_secret: GOOGLE_CREDENTIALS
+    when:
+      event: [push]
+      branch: [master]
