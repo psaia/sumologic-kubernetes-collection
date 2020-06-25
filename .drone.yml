@@ -14,14 +14,15 @@
 
       - name: plan
         image: jmccann/drone-terraform:6.3-0.12.20
-        tf_version: 0.12.20
-        plan: true
-        root_dir: terraform
-        actions:
-          - validate
-          - plan
-        init_options:
-          lock-timeout: 5m
+        settings:
+          tf_version: 0.12.20
+          plan: true
+          root_dir: terraform
+          actions:
+            - validate
+            - plan
+          init_options:
+            lock-timeout: 5m
         environment:
           SUMOLOGIC_ACCESSID:
             from_secret: access_id
