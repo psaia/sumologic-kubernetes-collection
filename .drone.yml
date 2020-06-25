@@ -38,7 +38,6 @@ steps:
       root_dir: terraform
       actions:
         - apply
-        - output
       init_options:
         lock-timeout: 5m
     environment:
