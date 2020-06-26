@@ -15,3 +15,9 @@ module "nytimes-search-omnibus" {
 
   name = "nytimes/search-omnibus"
 }
+
+module "nytimes-spg-productservice" {
+  source = "../modules/collector"
+
+  name = "nytimes/spg-productservice"
+}
