@@ -9,3 +9,9 @@ module "nytimes-spg-petstore" {
 
   name = "nytimes/spg-petstore"
 }
+
+module "nytimes-search-omnibus" {
+  source = "../modules/collector"
+
+  name = "nytimes/search-omnibus"
+}
