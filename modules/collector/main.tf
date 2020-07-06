@@ -1,5 +1,9 @@
+locals {
+  name = replace(var.name, "/", "-")
+}
+
 resource "sumologic_collector" "collector" {
-  name        = var.name
+  name        = local.name
   description = "${var.name} collector (Managed by Terraform)"
 }
 
@@ -7,9 +11,9 @@ resource "sumologic_collector" "collector" {
 resource "sumologic_http_source" "sources" {
   for_each = var.sources
 
-  name         = "${var.name}-${each.value}"
-  description  = "${var.name}-${each.value} source (Managed by Terraform)"
-  category     = var.name
+  name         = "${local.name}-${each.value}"
+  description  = "${local.name}-${each.value} source (Managed by Terraform)"
+  category     = local.name
   collector_id = sumologic_collector.collector.id
 }
 
@@ -18,5 +22,5 @@ module "collector_role" {
   source = "../role"
 
   name          = var.name
-  search_filter = join(" OR ", concat([for src in sumologic_http_source.sources : "_source=${src.name}"], ["_sourceCategory=${var.name}"]))
+  search_filter = join(" OR ", concat([for src in sumologic_http_source.sources : "_source=${src.name}"], ["_sourceCategory=${local.name}"]))
 }
