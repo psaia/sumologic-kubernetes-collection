@@ -13,7 +13,7 @@ resource "sumologic_http_source" "sources" {
 
   name         = "${local.name}-${each.value}"
   description  = "${local.name}-${each.value} source (Managed by Terraform)"
-  category     = local.name
+  category     = "${local.name}-${each.value}"
   collector_id = sumologic_collector.collector.id
 }
 
@@ -22,5 +22,5 @@ module "collector_role" {
   source = "../role"
 
   name          = var.name
-  search_filter = join(" OR ", concat([for src in sumologic_http_source.sources : "_source=${src.name}"], ["_sourceCategory=${local.name}"]))
+  search_filter = join(" OR ", concat([for src in sumologic_http_source.sources : "_source=${src.name}"], ["_sourceCategory=${src.category}"]))
 }
