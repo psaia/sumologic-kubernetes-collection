@@ -25,7 +25,7 @@ We will be following a scheme used by other processes managed by DV (vault and g
 
 Each application shipping logs to Sumo Logic will get a collector and role created for it.
 
-Collectors and roles names will match 1:1.
+Collector and role names will match 1:1.
 
 ### Collectors
 
