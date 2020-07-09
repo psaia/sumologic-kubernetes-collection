@@ -10,10 +10,10 @@ module "nytimes-spg-petstore" {
   name = "nytimes/spg-petstore"
 }
 
-module "nytimes-search-omnibus" {
+module "nytimes-search-omnibus-log2es" {
   source = "../modules/collector"
 
-  name = "nytimes/search-omnibus"
+  name = "nytimes/search-omnibus/log2es"
 }
 
 module "nytimes-spg-productservice" {
