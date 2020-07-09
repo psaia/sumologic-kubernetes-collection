@@ -1,4 +1,4 @@
-# 6. Naming sumologic collectors and roles
+# 6. Naming Sumo Logic collectors and roles
 
 Date: 2020-07-07
 
@@ -8,7 +8,7 @@ Proposed
 
 ## Context
 
-Currently collectors and roles are created manually in Sumologic, do not follow any naming convention, and the names are created ad-hoc by the operator.
+Currently collectors and roles are created manually in Sumo Logic, do not follow any naming convention, and the names are created ad-hoc by the operator.
 
 Collectors can span multiple applications. Roles can span multiple teams and multiple collectors and it can be difficult to identify who should be of which role. There is lack of consistency in how roles are managed.
 
@@ -19,11 +19,11 @@ We need to come up with a strategy for
 
 ## Decision
 
-Currently, there is no limit to how many collectors, endpoints, roles, or source categories that can be configured in Sumologic. We want to take advantage of this and manage logs ingestion and access to those logs at the individual application level.
+Currently, there is no limit to how many collectors, endpoints, roles, or source categories that can be configured in Sumo Logic. We want to take advantage of this and manage logs ingestion and access to those logs at the individual application level.
 
 We will be following a scheme used by other processes managed by DV (vault and github integration), where resource names match Github repository names of applications related to those resources.
 
-Each application shipping logs to Sumologic will get a collector and role created for it.
+Each application shipping logs to Sumo Logic will get a collector and role created for it.
 
 Collectors and roles names will match 1:1.
 
@@ -92,7 +92,7 @@ there will be corresponding source categories created for each individual endpoi
 
 ### Roles
 
-Sumologic roles created with this process will have a 1:1 relationship with collectors and will follow the same naming convention as collectors. Each collector will have a role created and assigned to it.
+Sumo Logic roles created with this process will have a 1:1 relationship with collectors and will follow the same naming convention as collectors. Each collector will have a role created and assigned to it.
 
 E.g. for a collector `nytimes-dv-sumologic`, where will be a corresponding `nytimes-dv-sumologic` role created.
 
