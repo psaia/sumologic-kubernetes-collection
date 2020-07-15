@@ -21,3 +21,15 @@ module "nytimes-spg-productservice" {
 
   name = "nytimes/spg-productservice"
 }
+
+module "nytm-pubsys-output-scripts" {
+  source = "../modules/collector"
+
+  name = "nytm/pubsys-output-scripts"
+}
+
+module "nytm-pubsys-newsgate-ConfigBase1" {
+  source = "../modules/collector"
+
+  name = "nytm/pubsys-newsgate-ConfigBase1"
+}
