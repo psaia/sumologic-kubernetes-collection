@@ -9,10 +9,10 @@ module "nytimes-spg-petstore" {
 
   name = "nytimes/spg-petstore"
 }
-  
+
 module "nytimes-search-add-es" {
   source = "../modules/collector"
-  
+
   name = "nytimes/search-add-es"
 }
 
