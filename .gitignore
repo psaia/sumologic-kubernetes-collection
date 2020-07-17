@@ -1,3 +1,4 @@
 .terraform
 .vscode
-**/existingCollectors.tf
+existing-resources.tf
+valid-resources.txt
