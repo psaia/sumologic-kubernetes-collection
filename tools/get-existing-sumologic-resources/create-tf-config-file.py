@@ -65,12 +65,12 @@ def get_sumo_resources(api: str) -> dict:
                    params={'filter': os.getenv('SEARCH_FILTER')},
                    auth=HTTPBasicAuth(os.getenv('SUMOLOGIC_ACCESSID'), os.getenv('SUMOLOGIC_ACCESSKEY'))).json()
 
-def replace_invalid_chars(resource_name: str) -> str:
+def replace_invalid_chars(resource_name: str):
     """
     Function formats resource names from Sumo Logic as valid resource names for Terraform by placing a underscore
     before a string starting with a digit and replacing all periods with underscores.
     :param resource_name: Resource in Sumo Logic
-    :return: valid Terraform resource name
+    :return: None, prints valid resource names to stdout
     """
     if resource_name[0].isdigit():
         resource_name = f'_{resource_name}'
@@ -87,12 +87,11 @@ def generate_tf_config(resource_type: str, resource_mapping: dict) -> list:
         return None
 
     collectors = data[resource_mapping['data_key']]
-    tf_resources = []
 
     with open('existing-resources.tf', 'w') as tf:
         for collector in collectors:
             valid_resource_name = replace_invalid_chars(collector['name'])
-            tf_resources.append(valid_resource_name)
+            print (f'{valid_resource_name}')
             tf.write(f'resource "{resource_mapping["tf_name"]}" "{valid_resource_name}" {{\n')
             for arg in resource_mapping['tf_supported']:
                 key, val = '', ''
@@ -104,7 +103,6 @@ def generate_tf_config(resource_type: str, resource_mapping: dict) -> list:
                 if key:
                     tf.write(f"""    {key} = "{val}"\n""")
             tf.write(f'}}\n\n')
-    return tf_resources
 
 if __name__ == "__main__":
     if len(sys.argv[1:]) != 1:
