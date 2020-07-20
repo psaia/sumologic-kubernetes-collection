@@ -30,8 +30,8 @@ def create_resource_type_mappings():
     # sources url requires having the collector_id
     sources_mapping = {
         'tf_name': 'sumologic_http_source',
-        'api_to_tf': {'id': 'collector_id'},
-        'tf_supported': ['name', 'description', 'category', 'collector_id'],
+        'api_to_tf': {},
+        'tf_supported': ['name', 'description', 'category', 'id'],
         'data_key': 'sources',
         'source_type': 'HTTP'
     }
@@ -60,22 +60,34 @@ def get_sources(versioned_endpoint: str, source_type: str, resource_mapping: dic
     :return: dict of sources of type source_type
     """
 
-    sources = []
+    result = []
 
+    access_id = os.getenv('SUMOLOGIC_ACCESSID')
+    access_key = os.getenv('SUMOLOGIC_ACCESSKEY')
+
+    # defined in config file but don't want to pass around entire resource_mappings dictionary
     collectors_url = '/collectors/'
     collectors = req.get(f'{versioned_endpoint}{collectors_url}',
-                            auth=HTTPBasicAuth(access_id, access_key)).json()
-    if collectors:
-        collectors = collectors['collectors']
-        for collector in collectors:
-            collector_id = collector['id']
-            if collector_id:
-                sources = req.get(f'{versioned_endpoint}/{collector_id}/sources',
-                                    auth=HTTPBasicAuth(access_id, access_key)).json()
-                if sources:
-                    sources.append(sources[data_key])
+                            auth=HTTPBasicAuth(access_id, access_key))
+
+    if collectors.status_code != 200:
+        print ("Could not get a list of sources")
+        return None
+
+    collectors = collectors.json()['collectors']
+    for collector in collectors:
+        if collector.get('id'):
+            sources = req.get(f'{versioned_endpoint}{collectors_url}{collector["id"]}/sources',
+                                auth=HTTPBasicAuth(access_id, access_key))
+            if sources.status_code != 200:
+                print (f'Could not retrieve source with collector id {collector["id"]}')
+                continue
+            for source in sources.json()[resource_mapping['data_key']]:
+                if source['sourceType'] == source_type:
+                    result.append(source)
+
     # Hacky solution to deal with generate_tf_config function expecting a data_key to access api response
-    return {'sources': sources}
+    return {'sources': result}
 
 def get_sumo_resources(resource_type: str, resource_mapping: dict) -> list:
     """
@@ -87,7 +99,7 @@ def get_sumo_resources(resource_type: str, resource_mapping: dict) -> list:
     valid_resource_types = ["collectors", "sources", "roles"]
 
     if resource_type not in valid_resource_types:
-        print ("Not a valid resource_type endpoint. Options: collectors, sources, roles")
+        print ("Not a valid resource type. Options: collectors, sources, roles")
         return None
 
     access_id = os.getenv('SUMOLOGIC_ACCESSID')
@@ -98,9 +110,13 @@ def get_sumo_resources(resource_type: str, resource_mapping: dict) -> list:
     versioned_endpoint = sumo_logic.get_versioned_endpoint(sumo_logic.DEFAULT_VERSION)
 
     if resource_mapping.get('url'):
-        return req.get(f'{versioned_endpoint}{resource_mapping["url"]}',
+        response = req.get(f'{versioned_endpoint}{resource_mapping["url"]}',
                         params={'filter': os.getenv('SEARCH_FILTER')},
-                        auth=HTTPBasicAuth(access_id, access_key)).json()
+                        auth=HTTPBasicAuth(access_id, access_key))
+        if response.status_code != 200:
+            print ("Status code not equal to 200. Check that your Sumo Logic credentials are set")
+            return None
+        return response.json()
 
     # There is no url field, so need to get sources
     else:
