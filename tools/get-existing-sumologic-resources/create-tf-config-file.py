@@ -1,9 +1,8 @@
 import os
+import re
 import requests as req
-import json
-import sumologic as sl
+from requests.auth import HTTPBasicAuth
 import sys
-#import textwrap as tw
 
 """
     Refer to Terraform Sumo Logic documentation for a list of supported arguments
@@ -11,13 +10,17 @@ import sys
     Sumo Logic API documentation: https://help.sumologic.com/APIs
 """
 def create_resource_type_mappings():
+    """
+    Creates a dictionary that includes information specific to Terraform and the Sumo Logic api 
+    :return: None
+    """
     resource_mappings = {}
 
     # https://help.sumologic.com/APIs/01Collector-Management-API/Collector-API-Methods-and-Examples#response-fields
     collectors_mapping = {
         'tf_name': 'sumologic_collector',
         'api_to_tf': {'timeZone': 'timezone'},
-        'tf_supported_response_vals': ['name', 'description', 'category', 'timeZone', 'fields'],
+        'tf_supported': ['name', 'description', 'category', 'timeZone', 'fields'],
         'url': 'TODO',
         'data_key': 'collectors'
     }
@@ -26,7 +29,7 @@ def create_resource_type_mappings():
     sources_mapping = {
         'tf_name': 'sumologic_http_source',
         'api_to_tf': {'id': 'collector_id'},
-        'tf_supported_response_vals': ['name', 'description', 'category', 'collector_id'],
+        'tf_supported': ['name', 'description', 'category', 'collector_id'],
         'url': 'TODO',
         'data_key': 'TODO'
     }
@@ -35,7 +38,7 @@ def create_resource_type_mappings():
     roles_mapping = {
         'tf_name': 'sumologic_role',
         'api_to_tf': {'filterPredicate': 'filter_predicate'},
-        'tf_supported_response_vals': ['name', 'description', 'capabilities', 'filterPredicate'],
+        'tf_supported': ['name', 'description', 'capabilities', 'filterPredicate'],
         'url': 'TODO',
         'data_key': 'TODO'
     }
@@ -46,61 +49,62 @@ def create_resource_type_mappings():
 
     return resource_mappings
 
-def get_resource_list(resource_type):
-    valid_resource_types = ["collectors", "sources", "roles"]
+def get_sumo_resources(api: str) -> dict:
+    """
+    Makes request for resource from Sumo Logic API
+    :param api: Sumo Logic API endpoint
+    :return: list of dict
+    """
+    valid_apis = ["collectors", "sources", "roles"]
 
-    if resource_type not in valid_resource_types:
-        print ("Not a valid resource type. Options: collectors, sources, roles")
-        return -1
+    if api not in valid_apis:
+        print ("Not a valid api endpoint. Options: collectors, sources, roles")
+        return None
 
-    # Get credentials from environment variables
-    SUMOLOGIC_ACCESSID=os.getenv('SUMOLOGIC_ACCESSID')
-    SUMOLOGIC_ACCESSKEY=os.getenv('SUMOLOGIC_ACCESSKEY')
-    SEARCH_FILTER=os.getenv('SEARCH_FILTER')
+    return req.get(f'https://api.sumologic.com/api/v1/{api}/',
+                   params={'filter': os.getenv('SEARCH_FILTER')},
+                   auth=HTTPBasicAuth(os.getenv('SUMOLOGIC_ACCESSID'), os.getenv('SUMOLOGIC_ACCESSKEY'))).json()
 
-    payload = {'filter': SEARCH_FILTER}
+def replace_invalid_chars(resource_name: str) -> str:
+    """
+    Function formats resource names from Sumo Logic as valid resource names for Terraform by placing a underscore
+    before a string starting with a digit and replacing all periods with underscores.
+    :param resource_name: Resource in Sumo Logic
+    :return: valid Terraform resource name
+    """
+    if resource_name[0].isdigit():
+        resource_name = f'_{resource_name}'
+    return re.sub("[^-A-Za-z0-9_]", '_', resource_name)
 
-    # TODO: add error message if not 200 ok
-    # TODO: fix url for different resources
-    r = req.get(('https://api.sumologic.com/api/v1/%s/' % resource_type), params=payload, auth=(SUMOLOGIC_ACCESSID, SUMOLOGIC_ACCESSKEY))
-
-    return r.json()
-
-def replace_invalid_chars(resource_name):
-    valid_resource_name = ""
-    # must start with letter or underscore
-    first_char = resource_name[0]
-    if not first_char.isalpha() and not first_char == "_":
-        resource_name = "_" + resource_name
-
-    # may only contain letters, numbers, underscores, or dashes
-    for char in resource_name:
-        if not char.isalnum() and not char == "_" and not char == "-":
-            char = "-"
-        valid_resource_name += char
-    return valid_resource_name
-
-def generate_config_and_resources_files(resource_type, resource_mapping):
-    data = get_resource_list(resource_type)
-    if data == -1:
-        return
+def generate_tf_config(resource_type: str, resource_mapping: dict) -> list:
+    """
+    Function takes in keyword arguments and generates a Terraform config file.
+    :param resource_type: string of resource_type
+    :return: list of valid resource names
+    """
+    data = get_sumo_resources(resource_type)
+    if not data:
+        return None
 
     collectors = data[resource_mapping['data_key']]
+    tf_resources = []
 
-    with open('existing-resources.tf', 'w') as ec, open('valid-resources.txt', 'w') as vr:
-        #wrapper = tw.TextWrapper()
+    with open('existing-resources.tf', 'w') as tf:
         for collector in collectors:
-            #print ("before: ", collector['name'])
             valid_resource_name = replace_invalid_chars(collector['name'])
-            vr.write('%s\n' % valid_resource_name)
-            #print ("after: ", collector['name'])
-            ec.write('resource \"%s\" \"%s\" {' % (resource_mapping['tf_name'], valid_resource_name))
-            for key, value in collector.items():
-                if key in resource_mapping['tf_supported_response_vals']:
-                    if key in resource_mapping['api_to_tf']:
-                        key = resource_mapping['api_to_tf'][key]
-                    ec.write('\n    %s = \"%s\"' % (key, value))
-            ec.write('\n}\n\n')
+            tf_resources.append(valid_resource_name)
+            tf.write(f'resource "{resource_mapping["tf_name"]}" "{valid_resource_name}" {{\n')
+            for arg in resource_mapping['tf_supported']:
+                key, val = '', ''
+                if arg in collector:
+                    key, val = arg, collector[arg]
+                # convert from api naming to Terraform naming
+                if arg in resource_mapping['api_to_tf']:
+                    key = resource_mapping['api_to_tf'][arg]
+                if key:
+                    tf.write(f"""    {key} = "{val}"\n""")
+            tf.write(f'}}\n\n')
+    return tf_resources
 
 if __name__ == "__main__":
     if len(sys.argv[1:]) != 1:
@@ -108,4 +112,4 @@ if __name__ == "__main__":
     else:
         resource_type = sys.argv[1]
         resource_mappings = create_resource_type_mappings()
-        generate_config_and_resources_files(resource_type, resource_mappings[resource_type])
+        generate_tf_config(resource_type, resource_mappings[resource_type])

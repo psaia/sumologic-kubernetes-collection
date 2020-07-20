@@ -1,4 +1,3 @@
 .terraform
 .vscode
 existing-resources.tf
-valid-resources.txt
