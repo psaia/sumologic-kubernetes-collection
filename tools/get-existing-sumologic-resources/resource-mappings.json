@@ -1,0 +1,23 @@
+{
+    "collectors": {
+        "tf_name": "sumologic_collector",
+        "api_to_tf": {"timeZone": "timezone"},
+        "tf_supported": ["name", "description", "category", "timeZone", "fields"],
+        "url": "/collectors/",
+        "data_key": "collectors"
+    },
+    "sources": {
+        "tf_name": "sumologic_http_source",
+        "api_to_tf": {},
+        "tf_supported": ["name", "description", "category", "id"],
+        "data_key": "sources",
+        "source_type": "HTTP"
+    },
+    "roles": {
+        "tf_name": "sumologic_role",
+        "api_to_tf": {"filterPredicate": "filter_predicate"},
+        "tf_supported": ["name", "description", "capabilities", "filterPredicate"],
+        "url": "/roles/",
+        "data_key": "data"
+    }
+}

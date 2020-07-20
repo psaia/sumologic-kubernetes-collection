@@ -1,3 +1,4 @@
+import json
 import os
 import re
 import requests as req
@@ -10,44 +11,15 @@ import sys
     https://www.terraform.io/docs/providers/sumologic
     Sumo Logic API documentation: https://help.sumologic.com/APIs
 """
-def create_resource_type_mappings():
+def create_resource_type_mappings() -> dict:
     """
     Creates a dictionary that includes information specific to Terraform and the Sumo Logic api 
-    :return: None
+    :return: Dictionary of dictionaries that contains resource mappings for each supported resource
     """
     resource_mappings = {}
 
-    # https://help.sumologic.com/APIs/01Collector-Management-API/Collector-API-Methods-and-Examples#response-fields
-    collectors_mapping = {
-        'tf_name': 'sumologic_collector',
-        'api_to_tf': {'timeZone': 'timezone'},
-        'tf_supported': ['name', 'description', 'category', 'timeZone', 'fields'],
-        'url': '/collectors/',
-        'data_key': 'collectors'
-    }
-
-    # https://help.sumologic.com/APIs/01Collector-Management-API/Source-API
-    # sources url requires having the collector_id
-    sources_mapping = {
-        'tf_name': 'sumologic_http_source',
-        'api_to_tf': {},
-        'tf_supported': ['name', 'description', 'category', 'id'],
-        'data_key': 'sources',
-        'source_type': 'HTTP'
-    }
-
-    # https://help.sumologic.com/APIs/Role-Management-API
-    roles_mapping = {
-        'tf_name': 'sumologic_role',
-        'api_to_tf': {'filterPredicate': 'filter_predicate'},
-        'tf_supported': ['name', 'description', 'capabilities', 'filterPredicate'],
-        'url': '/roles/',
-        'data_key': 'data'
-    }
-
-    resource_mappings['collectors'] = collectors_mapping
-    resource_mappings['sources'] = sources_mapping
-    resource_mappings['roles'] = roles_mapping
+    with open('resource-mappings.json') as r:
+        resource_mappings = json.load(r)
 
     return resource_mappings
 
@@ -57,7 +29,7 @@ def get_sources(versioned_endpoint: str, source_type: str, resource_mapping: dic
     :param versioned_endpoint: Versioned endpoint to use for api calls
     :source_type: filter for sources, e.g. HTTP
     :param resource_mapping: dictionary containing relevant Terraform and Sumo Logic information for sources
-    :return: dict of sources of type source_type
+    :return: dictionary of sources of type source_type
     """
 
     result = []
