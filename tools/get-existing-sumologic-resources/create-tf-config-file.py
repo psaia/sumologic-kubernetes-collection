@@ -81,10 +81,10 @@ def get_sumo_resources(resource_type: str, resource_mapping: dict, credentials: 
     :param resource_mapping: dictionary containing relevant Terraform and Sumo Logic information
     :return: list of Sumo Logic resources data
     """
-    valid_resource_types = ["collectors", "sources", "roles"]
+    valid_resource_types = ["collectors", "sources", "roles", "users"]
 
     if resource_type not in valid_resource_types:
-        print ("Not a valid resource type. Options: collectors, sources, roles")
+        print ("Not a valid resource type. Options: collectors, sources, roles, users")
         return None
 
     access_id = credentials[0]
@@ -134,7 +134,11 @@ def generate_tf_config(resource_type: str, resource_mapping: dict, credentials: 
 
     with open('existing-resources.tf', 'w') as tf:
         for resource in resources:
-            valid_resource_name = replace_invalid_chars(resource['name'])
+            name = resource.get('name')
+            # users does not have a name field
+            if resource_type == "users":
+                name = f'{resource["firstName"]}_{resource["lastName"]}'
+            valid_resource_name = replace_invalid_chars(name)
             print (f'{valid_resource_name}')
             tf.write(f'resource "{resource_mapping["tf_name"]}" "{valid_resource_name}" {{\n')
             for arg in resource_mapping['tf_supported']:
