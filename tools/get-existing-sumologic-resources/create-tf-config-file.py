@@ -96,7 +96,7 @@ def get_sumo_resources(resource_type: str, resource_mapping: dict, credentials: 
 
     if resource_mapping.get('url'):
         response = req.get(f'{versioned_endpoint}{resource_mapping["url"]}',
-                        params={'filter': os.getenv('SEARCH_FILTER')},
+                        params={'filter': resource_mapping.get("filter")},
                         auth=HTTPBasicAuth(access_id, access_key))
         if response.status_code != 200:
             print ("Status code not equal to 200. Check that your Sumo Logic credentials are set")
