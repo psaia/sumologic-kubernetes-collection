@@ -23,7 +23,20 @@ def create_resource_type_mappings() -> dict:
 
     return resource_mappings
 
-def get_sources(versioned_endpoint: str, source_type: str, resource_mapping: dict) -> dict:
+def sumo_login() -> tuple:
+    """
+    Uses SUMOLOGIC_ACCESSID and SUMOLOGIC_ACCESSKEY environment variables to get Sumo Logic credentials
+    :return: A tuple with the Sumo Logic access ID and key
+    """
+    try:
+        access_id = os.environ['SUMOLOGIC_ACCESSID']
+        access_key = os.environ['SUMOLOGIC_ACCESSKEY']
+        return access_id, access_key
+    except KeyError:
+        print('Credentials for Sumo not set in environment.')
+        sys.exit(1)
+
+def get_sources(versioned_endpoint: str, source_type: str, resource_mapping: dict, credentials: tuple) -> dict:
     """
     Gets a list of all the sources of a given source type
     :param versioned_endpoint: Versioned endpoint to use for api calls
@@ -34,8 +47,8 @@ def get_sources(versioned_endpoint: str, source_type: str, resource_mapping: dic
 
     result = []
 
-    access_id = os.getenv('SUMOLOGIC_ACCESSID')
-    access_key = os.getenv('SUMOLOGIC_ACCESSKEY')
+    access_id = credentials[0]
+    access_key = credentials[1]
 
     # defined in config file but don't want to pass around entire resource_mappings dictionary
     collectors_url = '/collectors/'
@@ -61,7 +74,7 @@ def get_sources(versioned_endpoint: str, source_type: str, resource_mapping: dic
     # Hacky solution to deal with generate_tf_config function expecting a data_key to access api response
     return {'sources': result}
 
-def get_sumo_resources(resource_type: str, resource_mapping: dict) -> list:
+def get_sumo_resources(resource_type: str, resource_mapping: dict, credentials: tuple) -> list:
     """
     Makes request for resources from Sumo Logic API
     :param resource_type: Sumo Logic resource type
@@ -74,8 +87,8 @@ def get_sumo_resources(resource_type: str, resource_mapping: dict) -> list:
         print ("Not a valid resource type. Options: collectors, sources, roles")
         return None
 
-    access_id = os.getenv('SUMOLOGIC_ACCESSID')
-    access_key = os.getenv('SUMOLOGIC_ACCESSKEY')
+    access_id = credentials[0]
+    access_key = credentials[1]
 
     sumo_logic = SumoLogic(access_id, access_key)
 
@@ -92,7 +105,7 @@ def get_sumo_resources(resource_type: str, resource_mapping: dict) -> list:
 
     # There is no url field, so need to get sources
     else:
-        return get_sources(versioned_endpoint, resource_mapping['source_type'], resource_mapping)
+        return get_sources(versioned_endpoint, resource_mapping['source_type'], resource_mapping, credentials)
 
 def replace_invalid_chars(resource_name: str) -> str:
     """
@@ -105,7 +118,7 @@ def replace_invalid_chars(resource_name: str) -> str:
         resource_name = f'_{resource_name}'
     return re.sub("[^-A-Za-z0-9_]", '_', resource_name)
 
-def generate_tf_config(resource_type: str, resource_mapping: dict) -> list:
+def generate_tf_config(resource_type: str, resource_mapping: dict, credentials: tuple) -> list:
     """
     Function takes in a resource type and its corresponding resource type mappings dictionary
     and generates a Terraform config file.
@@ -113,7 +126,7 @@ def generate_tf_config(resource_type: str, resource_mapping: dict) -> list:
     :param resource_mapping: dictionary containing relevant Terraform and Sumo Logic information
     :return: list of valid resource names
     """
-    data = get_sumo_resources(resource_type, resource_mapping)
+    data = get_sumo_resources(resource_type, resource_mapping, credentials)
     if not data:
         return None
 
@@ -140,5 +153,6 @@ if __name__ == "__main__":
         print ("Incorrect number of arguments. \nUsage:\n python create-tf-config-file.py [resource type]")
     else:
         resource_type = sys.argv[1]
+        credentials = sumo_login()
         resource_mappings = create_resource_type_mappings()
-        generate_tf_config(resource_type, resource_mappings[resource_type])
+        generate_tf_config(resource_type, resource_mappings[resource_type], credentials)
