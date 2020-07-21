@@ -4,7 +4,8 @@
         "api_to_tf": {"timeZone": "timezone"},
         "tf_supported": ["name", "description", "category", "timeZone", "id"],
         "url": "/collectors/",
-        "data_key": "collectors"
+        "data_key": "collectors",
+        "filter": "hosted"
     },
     "sources": {
         "tf_name": "sumologic_http_source",

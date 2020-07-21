@@ -53,6 +53,7 @@ def get_sources(versioned_endpoint: str, source_type: str, resource_mapping: dic
     # defined in config file but don't want to pass around entire resource_mappings dictionary
     collectors_url = '/collectors/'
     collectors = req.get(f'{versioned_endpoint}{collectors_url}',
+                            params={'filter': 'hosted'},
                             auth=HTTPBasicAuth(access_id, access_key))
 
     if collectors.status_code != 200:
