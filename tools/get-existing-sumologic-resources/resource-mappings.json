@@ -2,7 +2,7 @@
     "collectors": {
         "tf_name": "sumologic_collector",
         "api_to_tf": {"timeZone": "timezone"},
-        "tf_supported": ["name", "description", "category", "timeZone"],
+        "tf_supported": ["name", "description", "category", "timeZone", "fields"],
         "url": "/collectors/",
         "data_key": "collectors",
         "filter": "hosted"
