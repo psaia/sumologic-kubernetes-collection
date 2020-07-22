@@ -9,8 +9,8 @@
     },
     "sources": {
         "tf_name": "sumologic_http_source",
-        "api_to_tf": {},
-        "tf_supported": ["name", "description", "category"],
+        "api_to_tf": {"contentType": "content_type", "hostName": "host_name", "timeZone": "timezone", "multilineProcessingEnabled": "multiline_processing_enabled", "useAutolineMatching": "use_autoline_matching", "automaticDateParsing": "automatic_date_parsing", "messagePerRequest": "message_per_request", "forceTimeZone": "force_timezone", "defaultDateFormats": "default_date_formats"},
+        "tf_supported": ["name", "description", "category", "collector_id", "contentType", "multilineProcessingEnabled", "timeZone", "hostName", "useAutolineMatching", "automaticDateParsing", "messagePerRequest", "fields", "forceTimeZone", "defaultDateFormats"],
         "data_key": "sources",
         "source_type": "HTTP"
     },
