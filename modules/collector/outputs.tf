@@ -7,5 +7,5 @@ output "search_filter" {
 }
 
 output "source_category" {
-	value = [ for src in sumologic_http_source.sources : src.category ]
+  value = [ for src in sumologic_http_source.sources : src.category ]
 }
