@@ -2,7 +2,7 @@
     "collectors": {
         "tf_name": "sumologic_collector",
         "api_to_tf": {"timeZone": "timezone"},
-        "tf_supported": ["name", "description", "category", "timeZone", "id"],
+        "tf_supported": ["name", "description", "category", "timeZone"],
         "url": "/collectors/",
         "data_key": "collectors",
         "filter": "hosted"
@@ -10,21 +10,21 @@
     "sources": {
         "tf_name": "sumologic_http_source",
         "api_to_tf": {},
-        "tf_supported": ["name", "description", "category", "id"],
+        "tf_supported": ["name", "description", "category"],
         "data_key": "sources",
         "source_type": "HTTP"
     },
     "roles": {
         "tf_name": "sumologic_role",
         "api_to_tf": {},
-        "tf_supported": ["name", "description", "capabilities", "id"],
+        "tf_supported": ["name", "description", "capabilities"],
         "url": "/roles/",
         "data_key": "data"
     },
     "users": {
         "tf_name": "sumologic_user",
         "api_to_tf": {"firstName": "first_name", "lastName": "last_name", "isActive": "active", "roleIds": "role_ids"},
-        "tf_supported": ["firstName", "lastName", "email", "isActive", "roleIds", "id"],
+        "tf_supported": ["firstName", "lastName", "email", "isActive", "roleIds"],
         "url": "/users/",
         "data_key": "data"
     }
