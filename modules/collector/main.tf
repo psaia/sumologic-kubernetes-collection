@@ -5,6 +5,7 @@ locals {
 resource "sumologic_collector" "collector" {
   name        = local.name
   description = "${var.name} collector (Managed by Terraform)"
+  timezone    = var.timezone
 }
 
 # Provision sources [defaulting to dev, stg, prd] for this collector
@@ -15,6 +16,7 @@ resource "sumologic_http_source" "sources" {
   description  = "${local.name}-${each.value} source (Managed by Terraform)"
   category     = "${local.name}-${each.value}"
   collector_id = sumologic_collector.collector.id
+  timezone     = var.timezone
 }
 
 # Role for this specific collector

@@ -10,3 +10,8 @@ variable "sources" {
     "prd"
   ]
 }
+
+variable "timezone" {
+  type    = string
+  default = "Etc/UTC"
+}

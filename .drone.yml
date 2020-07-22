@@ -14,7 +14,7 @@ steps:
   - name: plan
     image: jmccann/drone-terraform:6.3-0.12.20
     settings:
-      tf_version: 0.12.20
+      tf_version: 0.12.26
       root_dir: terraform
       actions:
         - validate
@@ -34,7 +34,7 @@ steps:
   - name: apply
     image: jmccann/drone-terraform:6.3-0.12.20
     settings:
-      tf_version: 0.12.20
+      tf_version: 0.12.26
       root_dir: terraform
       actions:
         - apply

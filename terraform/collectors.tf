@@ -31,11 +31,13 @@ module "nytimes-spg-productservice" {
 module "nytm-pubsys-output-scripts" {
   source = "../modules/collector"
 
-  name = "nytm/pubsys-output-scripts"
+  name     = "nytm/pubsys-output-scripts"
+  timezone = "America/New_York"
 }
 
 module "nytm-pubsys-newsgate-ConfigBase1" {
   source = "../modules/collector"
 
-  name = "nytm/pubsys-newsgate-ConfigBase1"
+  name     = "nytm/pubsys-newsgate-ConfigBase1"
+  timezone = "America/New_York"
 }
