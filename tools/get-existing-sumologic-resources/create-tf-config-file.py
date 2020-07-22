@@ -70,6 +70,8 @@ def get_sources(versioned_endpoint: str, source_type: str, resource_mapping: dic
                 continue
             for source in sources.json()[resource_mapping['data_key']]:
                 if source['sourceType'] == source_type:
+                    source['collector_name'] = replace_invalid_chars(collector['name'])
+                    source['collector_id'] = collector['id']
                     result.append(source)
 
     # Hacky solution to deal with generate_tf_config function expecting a data_key to access api response
@@ -136,11 +138,22 @@ def generate_tf_config(resource_type: str, resource_mapping: dict, credentials: 
     with open('existing-resources.tf', 'w') as tf:
         for resource in resources:
             name = resource.get('name')
+
             # users does not have a name field
             if resource_type == "users":
                 name = f'{resource["firstName"]}_{resource["lastName"]}'
             valid_resource_name = replace_invalid_chars(name)
+            id_or_collector_over_source = resource.get("id")
+
+            # sources do not have unique names, sources need collector_id/source_id for terraform import
+            if resource_type == "sources":
+                collector_name = resource["collector_name"]
+                valid_resource_name = f'{collector_name}_{valid_resource_name}'
+                id_or_collector_over_source = f'{resource["collector_id"]}/{resource["id"]}'
+
+            # id and name are needed for Terraform import
             print (f'{valid_resource_name}')
+            print (f'{id_or_collector_over_source}')
             tf.write(f'resource "{resource_mapping["tf_name"]}" "{valid_resource_name}" {{\n')
             for arg in resource_mapping['tf_supported']:
                 key, val = '', ''
@@ -150,7 +163,10 @@ def generate_tf_config(resource_type: str, resource_mapping: dict, credentials: 
                 if arg in resource_mapping['api_to_tf']:
                     key = resource_mapping['api_to_tf'][arg]
                 if key:
-                    tf.write(f"""    {key} = "{val}"\n""")
+                    if val == True or val == False:
+                        val = str(val).lower()
+                    if type(val) == int or len(val) != 0:
+                        tf.write(f"""    {key} = "{val}"\n""")
             tf.write(f'}}\n\n')
 
 if __name__ == "__main__":
