@@ -428,11 +428,6 @@ resource "sumologic_collector" "uploadswebandmobile-www-old_Collector_1474576292
   timezone = "UTC"
 }
 
-resource "sumologic_collector" "uploadswebandmobile-www-old_Collector_1474576441004" {
-  name     = "uploadswebandmobile-www-old_Collector_1474576441004"
-  timezone = "UTC"
-}
-
 resource "sumologic_collector" "uploadswebandmobile-www-old_Collector_1474576495067" {
   name     = "uploadswebandmobile-www-old_Collector_1474576495067"
   timezone = "UTC"
@@ -530,11 +525,6 @@ resource "sumologic_collector" "uploadswebandmobile-www-old_Collector_1474600177
 
 resource "sumologic_collector" "uploadswebandmobile-www-old_Collector_1474600222117" {
   name     = "uploadswebandmobile-www-old_Collector_1474600222117"
-  timezone = "UTC"
-}
-
-resource "sumologic_collector" "uploadswebandmobile-www-old_Collector_1474600276448" {
-  name     = "uploadswebandmobile-www-old_Collector_1474600276448"
   timezone = "UTC"
 }
 
