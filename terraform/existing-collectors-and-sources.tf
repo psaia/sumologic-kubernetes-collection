@@ -1278,6 +1278,7 @@ resource "sumologic_http_source" "atlassian-jira-events_atlassian-jira-events" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "Etc/UTC"
 }
 
 resource "sumologic_http_source" "ATT__At_The_Times__att-prd" {
@@ -1315,6 +1316,7 @@ resource "sumologic_http_source" "AWSMA_AWSMA_CT-DEV_CloudWatch_Logs" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "Etc/UTC"
 }
 
 resource "sumologic_http_source" "AWSMA_AWSMA_CT-PRD_CloudWatch_Logs" {
@@ -1326,6 +1328,7 @@ resource "sumologic_http_source" "AWSMA_AWSMA_CT-PRD_CloudWatch_Logs" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "Etc/UTC"
 }
 
 resource "sumologic_http_source" "AWSMA_AWSMA_CT-STG_CloudWatch_Logs" {
@@ -1337,6 +1340,7 @@ resource "sumologic_http_source" "AWSMA_AWSMA_CT-STG_CloudWatch_Logs" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "Etc/UTC"
 }
 
 resource "sumologic_http_source" "AzureADLogs_AzureAD" {
@@ -1373,6 +1377,8 @@ resource "sumologic_http_source" "Business-PPI_business-ppi-dev" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
+
 }
 
 resource "sumologic_http_source" "Business-PPI_business-ppi-prd" {
@@ -1385,6 +1391,7 @@ resource "sumologic_http_source" "Business-PPI_business-ppi-prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "Business-PPI_business-ppi-stg" {
@@ -1397,6 +1404,7 @@ resource "sumologic_http_source" "Business-PPI_business-ppi-stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "Care_Connect_care-connect-dev" {
@@ -1525,6 +1533,7 @@ resource "sumologic_http_source" "CMS_cms-fallback-dev" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "Etc/UTC"
 }
 
 resource "sumologic_http_source" "CMS_cms-fallback-prd" {
@@ -1536,6 +1545,7 @@ resource "sumologic_http_source" "CMS_cms-fallback-prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "Etc/UTC"
 }
 
 resource "sumologic_http_source" "CMS_cms-fallback-stg" {
@@ -1547,6 +1557,7 @@ resource "sumologic_http_source" "CMS_cms-fallback-stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "Etc/UTC"
 }
 
 resource "sumologic_http_source" "DV_SSM_API_ssm-api-dev" {
@@ -1558,6 +1569,7 @@ resource "sumologic_http_source" "DV_SSM_API_ssm-api-dev" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "DV_SSM_API_ssm-api-prd" {
@@ -1569,6 +1581,7 @@ resource "sumologic_http_source" "DV_SSM_API_ssm-api-prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "DV_SSM_API_ssm-api-stg" {
@@ -1580,6 +1593,7 @@ resource "sumologic_http_source" "DV_SSM_API_ssm-api-stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "dv-jenkins_dv-jenkins-dev" {
@@ -1656,6 +1670,7 @@ resource "sumologic_http_source" "Ecomm-Payflow_ecommerce-ecmcore-http" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "Ecomm-Payflow_ecommerce-payflow-api-stg" {
@@ -1668,6 +1683,7 @@ resource "sumologic_http_source" "Ecomm-Payflow_ecommerce-payflow-api-stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "Ecomm-Payflow_ecommerce-payflow-http" {
@@ -1680,6 +1696,7 @@ resource "sumologic_http_source" "Ecomm-Payflow_ecommerce-payflow-http" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "ECR_ecr-dev" {
@@ -1692,6 +1709,7 @@ resource "sumologic_http_source" "ECR_ecr-dev" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "ECR_ecr-prd" {
@@ -1833,6 +1851,7 @@ resource "sumologic_http_source" "GKE_Samizdat_Dev" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "Etc/UTC"
 }
 
 resource "sumologic_http_source" "GKE_Samizdat_Prd" {
@@ -1845,6 +1864,7 @@ resource "sumologic_http_source" "GKE_Samizdat_Prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "Etc/UTC"
 }
 
 resource "sumologic_http_source" "google_apps_gsuite_alerts_Google_Apps_Gsuite_Alerts" {
@@ -1860,6 +1880,7 @@ resource "sumologic_http_source" "google_apps_gsuite_alerts_Google_Apps_Gsuite_A
     format  = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
     locator = "\\\"createTime\\\":(.*),"
   }
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "google_apps_gsuite_audit_G_Suite_Apps_Audit_Admin" {
@@ -1872,6 +1893,7 @@ resource "sumologic_http_source" "google_apps_gsuite_audit_G_Suite_Apps_Audit_Ad
   automatic_date_parsing       = "true"
   message_per_request          = "true"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "google_apps_gsuite_audit_G_Suite_Apps_Audit_Calendar" {
@@ -1884,6 +1906,7 @@ resource "sumologic_http_source" "google_apps_gsuite_audit_G_Suite_Apps_Audit_Ca
   automatic_date_parsing       = "true"
   message_per_request          = "true"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "google_apps_gsuite_audit_G_Suite_Apps_Audit_Drive" {
@@ -1896,6 +1919,7 @@ resource "sumologic_http_source" "google_apps_gsuite_audit_G_Suite_Apps_Audit_Dr
   automatic_date_parsing       = "true"
   message_per_request          = "true"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "google_apps_gsuite_audit_G_Suite_Apps_Audit_Google_" {
@@ -1908,6 +1932,7 @@ resource "sumologic_http_source" "google_apps_gsuite_audit_G_Suite_Apps_Audit_Go
   automatic_date_parsing       = "true"
   message_per_request          = "true"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "google_apps_gsuite_audit_G_Suite_Apps_Audit_Groups" {
@@ -1920,6 +1945,7 @@ resource "sumologic_http_source" "google_apps_gsuite_audit_G_Suite_Apps_Audit_Gr
   automatic_date_parsing       = "true"
   message_per_request          = "true"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "google_apps_gsuite_audit_G_Suite_Apps_Audit_Login" {
@@ -1932,6 +1958,7 @@ resource "sumologic_http_source" "google_apps_gsuite_audit_G_Suite_Apps_Audit_Lo
   automatic_date_parsing       = "true"
   message_per_request          = "true"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "google_apps_gsuite_audit_GSuite_Audit_Mobile" {
@@ -1944,6 +1971,7 @@ resource "sumologic_http_source" "google_apps_gsuite_audit_GSuite_Audit_Mobile" 
   automatic_date_parsing       = "true"
   message_per_request          = "true"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "google_apps_gsuite_audit_GSuite_Audit_Rules" {
@@ -1956,6 +1984,7 @@ resource "sumologic_http_source" "google_apps_gsuite_audit_GSuite_Audit_Rules" {
   automatic_date_parsing       = "true"
   message_per_request          = "true"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "HTTP_Attribute_Production" {
@@ -1970,6 +1999,7 @@ resource "sumologic_http_source" "HTTP_Attribute_Production" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_Attribute_Staging" {
@@ -1984,6 +2014,7 @@ resource "sumologic_http_source" "HTTP_Attribute_Staging" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_Custom_App" {
@@ -2036,6 +2067,7 @@ resource "sumologic_http_source" "HTTP_elections_logs" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-advertising-waf_prd" {
@@ -2048,6 +2080,7 @@ resource "sumologic_http_source" "HTTP_fastly-advertising-waf_prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-advertising-waf_stg" {
@@ -2060,6 +2093,7 @@ resource "sumologic_http_source" "HTTP_fastly-advertising-waf_stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-advertising_prd" {
@@ -2072,6 +2106,7 @@ resource "sumologic_http_source" "HTTP_fastly-advertising_prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-advertising_stg" {
@@ -2084,6 +2119,7 @@ resource "sumologic_http_source" "HTTP_fastly-advertising_stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-co-prd" {
@@ -2096,6 +2132,7 @@ resource "sumologic_http_source" "HTTP_fastly-co-prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-co-stg" {
@@ -2108,6 +2145,7 @@ resource "sumologic_http_source" "HTTP_fastly-co-stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-cooking-prd" {
@@ -2120,6 +2158,7 @@ resource "sumologic_http_source" "HTTP_fastly-cooking-prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-cooking-stg" {
@@ -2132,6 +2171,7 @@ resource "sumologic_http_source" "HTTP_fastly-cooking-stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-g1-prd" {
@@ -2170,6 +2210,7 @@ resource "sumologic_http_source" "HTTP_fastly-gcs-assets_prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-gcs-assets_stg" {
@@ -2182,6 +2223,7 @@ resource "sumologic_http_source" "HTTP_fastly-gcs-assets_stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-int_prd" {
@@ -2194,6 +2236,7 @@ resource "sumologic_http_source" "HTTP_fastly-int_prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-int_stg" {
@@ -2206,6 +2249,7 @@ resource "sumologic_http_source" "HTTP_fastly-int_stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-mktg-purge_prd" {
@@ -2218,6 +2262,7 @@ resource "sumologic_http_source" "HTTP_fastly-mktg-purge_prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-mktg-purge_stg" {
@@ -2230,6 +2275,7 @@ resource "sumologic_http_source" "HTTP_fastly-mktg-purge_stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-mktg_prd" {
@@ -2242,6 +2288,7 @@ resource "sumologic_http_source" "HTTP_fastly-mktg_prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-mktg_stg" {
@@ -2254,6 +2301,7 @@ resource "sumologic_http_source" "HTTP_fastly-mktg_stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-mwcm_prd" {
@@ -2266,6 +2314,7 @@ resource "sumologic_http_source" "HTTP_fastly-mwcm_prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-mwcm_stg" {
@@ -2278,6 +2327,7 @@ resource "sumologic_http_source" "HTTP_fastly-mwcm_stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-nytco_prd" {
@@ -2290,6 +2340,7 @@ resource "sumologic_http_source" "HTTP_fastly-nytco_prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-nytco_stg" {
@@ -2302,6 +2353,7 @@ resource "sumologic_http_source" "HTTP_fastly-nytco_stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-rss_prd" {
@@ -2314,6 +2366,7 @@ resource "sumologic_http_source" "HTTP_fastly-rss_prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-rss_stg" {
@@ -2326,6 +2379,7 @@ resource "sumologic_http_source" "HTTP_fastly-rss_stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-static-prd" {
@@ -2338,6 +2392,7 @@ resource "sumologic_http_source" "HTTP_fastly-static-prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-static-stg" {
@@ -2350,6 +2405,7 @@ resource "sumologic_http_source" "HTTP_fastly-static-stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-static_prd" {
@@ -2362,6 +2418,7 @@ resource "sumologic_http_source" "HTTP_fastly-static_prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-static_stg" {
@@ -2374,6 +2431,7 @@ resource "sumologic_http_source" "HTTP_fastly-static_stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-waf-apps_prd" {
@@ -2386,6 +2444,7 @@ resource "sumologic_http_source" "HTTP_fastly-waf-apps_prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-waf-apps_stg" {
@@ -2398,6 +2457,7 @@ resource "sumologic_http_source" "HTTP_fastly-waf-apps_stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-www-purge_prd" {
@@ -2410,6 +2470,7 @@ resource "sumologic_http_source" "HTTP_fastly-www-purge_prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-www-purge_stg" {
@@ -2422,6 +2483,7 @@ resource "sumologic_http_source" "HTTP_fastly-www-purge_stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-www_prd" {
@@ -2434,6 +2496,7 @@ resource "sumologic_http_source" "HTTP_fastly-www_prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_fastly-www_stg" {
@@ -2446,6 +2509,7 @@ resource "sumologic_http_source" "HTTP_fastly-www_stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_homedelivery-prd" {
@@ -2458,6 +2522,7 @@ resource "sumologic_http_source" "HTTP_homedelivery-prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_homedelivery-stg" {
@@ -2470,6 +2535,7 @@ resource "sumologic_http_source" "HTTP_homedelivery-stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_int_nyt_com" {
@@ -2481,17 +2547,7 @@ resource "sumologic_http_source" "HTTP_int_nyt_com" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
-}
-
-resource "sumologic_http_source" "HTTP_int_stg_nyt_com" {
-  name                         = "int.stg.nyt.com"
-  category                     = "int.stg.nyt.com"
-  collector_id                 = "124391341"
-  multiline_processing_enabled = "true"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_intf-w_nyt_com" {
@@ -2530,6 +2586,7 @@ resource "sumologic_http_source" "HTTP_lastpass" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_Lire" {
@@ -2602,6 +2659,7 @@ resource "sumologic_http_source" "HTTP_mwcm-dev" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_mwcm-prd" {
@@ -2614,6 +2672,7 @@ resource "sumologic_http_source" "HTTP_mwcm-prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_mwcm-stg" {
@@ -2638,6 +2697,7 @@ resource "sumologic_http_source" "HTTP_myaccount-prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_myaccount-stg" {
@@ -2662,6 +2722,7 @@ resource "sumologic_http_source" "HTTP_platforms_nytimes_com-prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_prd_fastly-query" {
@@ -2673,6 +2734,7 @@ resource "sumologic_http_source" "HTTP_prd_fastly-query" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_project-vi-alpha-dev" {
@@ -2684,6 +2746,7 @@ resource "sumologic_http_source" "HTTP_project-vi-alpha-dev" {
   automatic_date_parsing       = "false"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_project-vi-alpha-prd" {
@@ -2695,6 +2758,7 @@ resource "sumologic_http_source" "HTTP_project-vi-alpha-prd" {
   automatic_date_parsing       = "false"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_samizdat-fluentd" {
@@ -2707,6 +2771,7 @@ resource "sumologic_http_source" "HTTP_samizdat-fluentd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_stg-ecommerce-payflow" {
@@ -2719,6 +2784,7 @@ resource "sumologic_http_source" "HTTP_stg-ecommerce-payflow" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_stg_fastly-query" {
@@ -2730,6 +2796,7 @@ resource "sumologic_http_source" "HTTP_stg_fastly-query" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_tipjar-prd" {
@@ -2742,6 +2809,7 @@ resource "sumologic_http_source" "HTTP_tipjar-prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_tipjar-stg" {
@@ -2754,6 +2822,7 @@ resource "sumologic_http_source" "HTTP_tipjar-stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_tokenization-app-dev" {
@@ -2765,6 +2834,7 @@ resource "sumologic_http_source" "HTTP_tokenization-app-dev" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_tokenization-app-prd" {
@@ -2777,6 +2847,7 @@ resource "sumologic_http_source" "HTTP_tokenization-app-prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_tokenization-app-stg" {
@@ -2788,6 +2859,7 @@ resource "sumologic_http_source" "HTTP_tokenization-app-stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_vault-prd" {
@@ -2800,6 +2872,7 @@ resource "sumologic_http_source" "HTTP_vault-prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_vault-stg" {
@@ -2812,6 +2885,7 @@ resource "sumologic_http_source" "HTTP_vault-stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_video-service" {
@@ -2824,6 +2898,7 @@ resource "sumologic_http_source" "HTTP_video-service" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_video-service-stg" {
@@ -2836,6 +2911,7 @@ resource "sumologic_http_source" "HTTP_video-service-stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "HTTP_webandmobile-samizdat-prd" {
@@ -2901,6 +2977,7 @@ resource "sumologic_http_source" "https-collector_dev_ecommerce-ecmcore-core" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "https-collector_dev_infra-test" {
@@ -2926,6 +3003,7 @@ resource "sumologic_http_source" "https-collector_dev_linux-syslog" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "https-collector_dev_proof-of-concept" {
@@ -2939,6 +3017,7 @@ resource "sumologic_http_source" "https-collector_dev_proof-of-concept" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "https-collector_dev_windows-dc" {
@@ -2950,6 +3029,7 @@ resource "sumologic_http_source" "https-collector_dev_windows-dc" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "https-collector_prd_axonius-prd" {
@@ -2961,6 +3041,7 @@ resource "sumologic_http_source" "https-collector_prd_axonius-prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "https-collector_prd_security-amp" {
@@ -3001,6 +3082,7 @@ resource "sumologic_http_source" "https-collector_prd_security-gapp-calendar" {
   automatic_date_parsing       = "true"
   message_per_request          = "true"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "https-collector_prd_security-gapp-drive" {
@@ -3013,6 +3095,7 @@ resource "sumologic_http_source" "https-collector_prd_security-gapp-drive" {
   automatic_date_parsing       = "true"
   message_per_request          = "true"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "https-collector_prd_security-gapp-login" {
@@ -3025,6 +3108,7 @@ resource "sumologic_http_source" "https-collector_prd_security-gapp-login" {
   automatic_date_parsing       = "true"
   message_per_request          = "true"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "https-collector_prd_security-gapp-token" {
@@ -3037,6 +3121,7 @@ resource "sumologic_http_source" "https-collector_prd_security-gapp-token" {
   automatic_date_parsing       = "true"
   message_per_request          = "true"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "https-collector_prd_security-qualys-nyhq" {
@@ -3049,6 +3134,7 @@ resource "sumologic_http_source" "https-collector_prd_security-qualys-nyhq" {
   automatic_date_parsing       = "false"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "https-collector_stg_publishing-cms-http-collector-stg" {
@@ -3061,6 +3147,7 @@ resource "sumologic_http_source" "https-collector_stg_publishing-cms-http-collec
   automatic_date_parsing       = "true"
   message_per_request          = "true"
   force_timezone               = "false"
+  timezone = "UTC"
 }
 
 resource "sumologic_http_source" "Lastpass_Test_Lastpass_test" {
@@ -3072,6 +3159,7 @@ resource "sumologic_http_source" "Lastpass_Test_Lastpass_test" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "Etc/UTC"
 }
 
 resource "sumologic_http_source" "Lire_lire-api-error" {
@@ -3110,6 +3198,7 @@ resource "sumologic_http_source" "Lire_lire-prd-iad" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "Etc/UTC"
 }
 
 resource "sumologic_http_source" "Lire_lire-stg-iad" {
@@ -3122,6 +3211,7 @@ resource "sumologic_http_source" "Lire_lire-stg-iad" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "Etc/UTC"
 }
 
 resource "sumologic_http_source" "malc-dev_malc-dev-continuous" {
@@ -3133,6 +3223,7 @@ resource "sumologic_http_source" "malc-dev_malc-dev-continuous" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "Etc/UTC"
 }
 
 resource "sumologic_http_source" "malc-dev_malc-dev-frequent" {
@@ -3145,19 +3236,7 @@ resource "sumologic_http_source" "malc-dev_malc-dev-frequent" {
   message_per_request          = "false"
   fields                       = { "data_tier" : "frequent" }
   force_timezone               = "false"
-}
-
-resource "sumologic_http_source" "network-firewall-fortigate-nyhq-fwtc_Collector_network-firewall-fortigate-nyhq-fwtc" {
-  name                         = "network-firewall-fortigate-nyhq-fwtc"
-  category                     = "network-firewall-fortigate-nyhq-fwtc"
-  collector_id                 = "105193442"
-  content_type                 = "Other"
-  multiline_processing_enabled = "true"
-  timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  timezone = "Etc/UTC"
 }
 
 resource "sumologic_http_source" "network-firewall-fortigate-nyhq-fwtc_Collector_2_network-firewall-fortigate-nyhq-fwtc" {
@@ -3235,6 +3314,7 @@ resource "sumologic_http_source" "nimbul_nimbul-dev" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "nimbul_nimbul-prd" {
@@ -3247,6 +3327,7 @@ resource "sumologic_http_source" "nimbul_nimbul-prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "nyt-sharecluster-dev_shared-dev-east-r0_events" {
@@ -3318,6 +3399,7 @@ resource "sumologic_http_source" "NYTCO_nytco-stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "Olaf_Temp_Olaf_Temp" {
@@ -3341,6 +3423,7 @@ resource "sumologic_http_source" "PPD_dist-batch-dev" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "PPD_dist-batch-prd" {
@@ -3352,6 +3435,7 @@ resource "sumologic_http_source" "PPD_dist-batch-prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "PPD_dist-batch-stg" {
@@ -3363,6 +3447,7 @@ resource "sumologic_http_source" "PPD_dist-batch-stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "PPD_dist-dev" {
@@ -3413,6 +3498,7 @@ resource "sumologic_http_source" "PPD_ppd-ink-ce-dev" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "PPD_ppd-ink-ce-prd" {
@@ -3424,6 +3510,7 @@ resource "sumologic_http_source" "PPD_ppd-ink-ce-prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "PPD_ppd-ink-ce-stg" {
@@ -3435,6 +3522,7 @@ resource "sumologic_http_source" "PPD_ppd-ink-ce-stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "PPD_ppd-ink-dev" {
@@ -3624,6 +3712,7 @@ resource "sumologic_http_source" "Sugar_sugar-dev" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "Sugar_sugar-prd" {
@@ -3636,6 +3725,7 @@ resource "sumologic_http_source" "Sugar_sugar-prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "Sugar_sugar-stg" {
@@ -3648,6 +3738,7 @@ resource "sumologic_http_source" "Sugar_sugar-stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "TCEN__Time_Central__tcen-prd" {
@@ -3712,6 +3803,7 @@ resource "sumologic_http_source" "Twistlock_twistlock-console-dev" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "Twistlock_twistlock-console-prd" {
@@ -3723,6 +3815,7 @@ resource "sumologic_http_source" "Twistlock_twistlock-console-prd" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "Twistlock_twistlock-console-stg" {
@@ -3734,6 +3827,7 @@ resource "sumologic_http_source" "Twistlock_twistlock-console-stg" {
   automatic_date_parsing       = "true"
   message_per_request          = "false"
   force_timezone               = "false"
+  timezone = "America/New_York"
 }
 
 resource "sumologic_http_source" "uploadsvarnish_Collector_uploadsvarnish" {
@@ -3818,19 +3912,6 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745746
   name                         = "uploadswebandmobile-www-old"
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = "124200358"
-  content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
-  timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
-}
-
-resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474574666371_uploadswebandmobile-www-old" {
-  name                         = "uploadswebandmobile-www-old"
-  category                     = "uploads/webandmobile-www-old"
-  collector_id                 = "124200393"
   content_type                 = "Varnish"
   multiline_processing_enabled = "true"
   timezone                     = "Etc/UTC"
