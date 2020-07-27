@@ -169,10 +169,10 @@ def generate_tf_config(resource_type: str, resource_mapping: dict, credentials: 
                     if val:
                         if isinstance(val, bool):
                             tf.write(f"""    {key} = {str(val).lower()}\n""")
-                        if isinstance(val, list):
+                        elif isinstance(val, list):
                             val.reverse()
                             tf.write(f"""    {key} = {val}\n""".replace("'", '"'))
-                        elif not isinstance(val, bool):
+                        else:
                             tf.write(f"""    {key} = "{val}"\n""")
             if resource_type == "users":
                 tf.write(f"""    transfer_to = ""\n}}\n\n""")
