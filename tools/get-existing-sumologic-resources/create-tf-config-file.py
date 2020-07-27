@@ -1,10 +1,13 @@
-import json
 import os
 import re
+import sys
+import json
+from collections import OrderedDict
+
 import requests as req
 from requests.auth import HTTPBasicAuth
 from sumologic import SumoLogic
-import sys
+
 
 """
     Refer to Terraform Sumo Logic documentation for a list of supported arguments
@@ -104,7 +107,7 @@ def get_sumo_resources(resource_type: str, resource_mapping: dict, credentials: 
         if response.status_code != 200:
             print ("Status code not equal to 200. Check that your Sumo Logic credentials are set")
             return None
-        return response.json()
+        return response.json(object_pairs_hook=OrderedDict)
 
     # There is no url field, so need to get sources
     else:
@@ -135,13 +138,13 @@ def generate_tf_config(resource_type: str, resource_mapping: dict, credentials: 
 
     resources = data[resource_mapping['data_key']]
 
-    with open('existing-resources.tf', 'w') as tf:
+    with open(f'{resource_type}-resources.tf', 'w') as tf:
         for resource in resources:
             name = resource.get('name')
 
             # users does not have a name field
             if resource_type == "users":
-                name = f'{resource["firstName"]}_{resource["lastName"]}'
+                name = f'{replace_invalid_chars(resource["email"][:resource["email"].find("@")])}'
             valid_resource_name = replace_invalid_chars(name)
             id_or_collector_over_source = resource.get("id")
 
@@ -163,11 +166,18 @@ def generate_tf_config(resource_type: str, resource_mapping: dict, credentials: 
                 if arg in resource_mapping['api_to_tf']:
                     key = resource_mapping['api_to_tf'][arg]
                 if key:
-                    if isinstance(val, bool):
-                        val = str(val).lower()
                     if val:
-                        tf.write(f"""    {key} = "{val}"\n""")
-            tf.write(f'}}\n\n')
+                        if isinstance(val, bool):
+                            tf.write(f"""    {key} = {str(val).lower()}\n""")
+                        if isinstance(val, list):
+                            val.reverse()
+                            tf.write(f"""    {key} = {val}\n""".replace("'", '"'))
+                        elif not isinstance(val, bool):
+                            tf.write(f"""    {key} = "{val}"\n""")
+            if resource_type == "users":
+                tf.write(f"""    transfer_to = ""\n}}\n\n""")
+            else:
+                tf.write(f'}}\n\n')
 
 if __name__ == "__main__":
     if len(sys.argv[1:]) != 1:
