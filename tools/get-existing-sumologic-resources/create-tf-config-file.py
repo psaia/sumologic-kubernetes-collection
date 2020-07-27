@@ -165,7 +165,7 @@ def generate_tf_config(resource_type: str, resource_mapping: dict, credentials: 
                 if key:
                     if isinstance(val, bool):
                         val = str(val).lower()
-                    if type(val) == int or len(val) != 0:
+                    if val:
                         tf.write(f"""    {key} = "{val}"\n""")
             tf.write(f'}}\n\n')
 
