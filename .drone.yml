@@ -21,6 +21,9 @@ steps:
         - plan
       init_options:
         lock-timeout: 5m
+        backend-config:
+          - "bucket=remote-state"
+          - "prefix=nytimes/dv-sumologic"
     environment:
       SUMOLOGIC_ACCESSID:
         from_secret: access_id
@@ -40,6 +43,9 @@ steps:
         - apply
       init_options:
         lock-timeout: 5m
+        backend-config:
+          - "bucket=remote-state"
+          - "prefix=nytimes/dv-sumologic"
     environment:
       SUMOLOGIC_ACCESSID:
         from_secret: access_id
