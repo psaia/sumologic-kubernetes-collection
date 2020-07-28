@@ -2,7 +2,6 @@ import os
 import re
 import sys
 import json
-from collections import OrderedDict
 
 import requests as req
 from requests.auth import HTTPBasicAuth
@@ -112,7 +111,7 @@ def get_sumo_resources(resource_type: str, resource_mapping: dict, credentials: 
         if response.status_code != 200:
             print ("Status code not equal to 200. Check that your Sumo Logic credentials are set")
             return None
-        return response.json(object_pairs_hook=OrderedDict)
+        return response.json()
 
     # There is no url field, so need to get sources
     else:
@@ -174,7 +173,7 @@ def write_resource_to_file(resource_type: str, resource: dict, resource_name: st
                             # End-User workstation decided to use double quotes around some the items in the role filter
                             # They are the only team. I would just suggest changing them manually and start a
                             # conversation with that team about why that was necessary.
-                            fp.write(f"""    {key} = <<EOF\n    {val}\n    EOF\n""")
+                            fp.write(f"""    {key} = <<EOT\n{val}\nEOT\n""")
                         else:
                             fp.write(f"""    {key} = "{val}"\n""")
     if resource_type == "users":
@@ -209,14 +208,10 @@ def generate_tf_config(resource_type: str, resource_mapping: dict, credentials: 
 
 
 if __name__ == "__main__":
-    # if len(sys.argv[1:]) != 1:
-    #     print ("Incorrect number of arguments. \nUsage:\n python create-tf-config-file.py [resource type]")
-    # else:
-    #     resource_type = sys.argv[1]
-    #     credentials = sumo_login()
-    #     resource_mappings = create_resource_type_mappings()
-    #     generate_tf_config(resource_type, resource_mappings[resource_type], credentials)
-    resource_type = 'roles'
-    credentials = sumo_login()
-    resource_mappings = create_resource_type_mappings()
-    generate_tf_config(resource_type, resource_mappings[resource_type], credentials)
+    if len(sys.argv[1:]) != 1:
+        print ("Incorrect number of arguments. \nUsage:\n python create-tf-config-file.py [resource type]")
+    else:
+        resource_type = sys.argv[1]
+        credentials = sumo_login()
+        resource_mappings = create_resource_type_mappings()
+        generate_tf_config(resource_type, resource_mappings[resource_type], credentials)
