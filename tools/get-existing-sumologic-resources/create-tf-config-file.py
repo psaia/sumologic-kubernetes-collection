@@ -161,7 +161,10 @@ def write_resource_to_file(resource_type: str, resource: dict, resource_name: st
                         val.reverse()
                         fp.write(f"""    {key} = {val}\n""".replace("'", '"'))
                     else:
-                        fp.write(f"""    {key} = "{val}"\n""")
+                        if val.find('\n'):
+                            fp.write(f"""    {key} = <<EOF\n{val}\nEOF\n""")
+                        else:
+                            fp.write(f"""    {key} = "{val}"\n""")
     if resource_type == "users":
         fp.write(f"""    transfer_to = ""\n""")
     fp.write(f'}}\n\n')
