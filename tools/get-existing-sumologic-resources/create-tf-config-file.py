@@ -165,15 +165,16 @@ def write_resource_to_file(resource_type: str, resource: dict, resource_name: st
                     fp.write(f"""    {key} = {str(val).lower()}\n""")
             else:
                 if val:
-                    if isinstance(val, list) and resource_type == "users":
-                        val.reverse()
+                    if isinstance(val, list):
+                        if resource_type == "users":
+                            val.reverse()
                         fp.write(f"""    {key} = {val}\n""".replace("'", '"'))
                     else:
-                        if (val.find(" or ") != -1 or val.find(" OR ") != -1 ) or val.find('\n') != -1:
+                        if isinstance(val, str) and ((val.find(" or ") != -1 or val.find(" OR ") != -1 ) or val.find('\n') != -1):
                             # End-User workstation decided to use double quotes around some the items in the role filter
                             # They are the only team. I would just suggest changing them manually and start a
                             # conversation with that team about why that was necessary.
-                            fp.write(f"""    {key} = << EOF {val}\n   EOF""")
+                            fp.write(f"""    {key} = <<EOF\n    {val}\n    EOF\n""")
                         else:
                             fp.write(f"""    {key} = "{val}"\n""")
     if resource_type == "users":
