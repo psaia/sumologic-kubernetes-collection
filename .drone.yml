@@ -1,16 +1,97 @@
 ---
 kind: pipeline
 type: docker
-name: default
+name: dev
+
+concurrency:
+  limit: 1
+
+trigger:
+  paths:
+    include:
+      - modules/**
+      - terraform/*
 
 steps:
   - name: format
     image: hashicorp/terraform:0.12.26
     commands:
       - terraform fmt -write=false -list -diff -check -recursive terraform
-    when:
-      event: [push, pull_request]
 
+  - name: plan
+    image: jmccann/drone-terraform:6.3-0.12.20
+    settings:
+      tf_version: 0.12.26
+      root_dir: terraform
+      actions:
+        - validate
+        - plan
+      init_options:
+        lock-timeout: 5m
+        backend-config:
+           - "bucket=remote-state"
+           - "prefix=nytimes/dv-sumologic-test"
+    environment:
+      SUMOLOGIC_ACCESSID:
+        from_secret: test_access_id
+      SUMOLOGIC_ACCESSKEY:
+        from_secret: test_access_key
+      SUMOLOGIC_ENVIRONMENT: us2
+      GOOGLE_CREDENTIALS:
+        from_secret: GOOGLE_CREDENTIALS
+    when:
+      event:
+        - push
+        - pull_request
+      branch:
+        - main
+        - test
+
+  - name: apply
+    image: jmccann/drone-terraform:6.3-0.12.20
+    settings:
+      tf_version: 0.12.26
+      root_dir: terraform
+      actions:
+        - apply
+      init_options:
+        lock-timeout: 5m
+        backend-config:
+           - "bucket=remote-state"
+           - "prefix=nytimes/dv-sumologic-test"
+    environment:
+      SUMOLOGIC_ACCESSID:
+        from_secret: test_access_id
+      SUMOLOGIC_ACCESSKEY:
+        from_secret: test_access_key
+      SUMOLOGIC_ENVIRONMENT: us2
+      GOOGLE_CREDENTIALS:
+        from_secret: GOOGLE_CREDENTIALS
+    when:
+      event:
+        - push
+      branch:
+        - main
+        - test
+
+---
+kind: pipeline
+type: docker
+name: prd
+
+concurrency:
+  limit: 1
+
+trigger:
+  paths:
+    include:
+      - modules/**
+      - terraform/*
+
+depends_on:
+  - dev
+
+steps:
   - name: plan
     image: jmccann/drone-terraform:6.3-0.12.20
     settings:
@@ -29,10 +110,16 @@ steps:
         from_secret: access_id
       SUMOLOGIC_ACCESSKEY:
         from_secret: access_key
+      SUMOLOGIC_ENVIRONMENT: us1
       GOOGLE_CREDENTIALS:
         from_secret: GOOGLE_CREDENTIALS
     when:
-      event: [push]
+      event:
+        - push
+        - pull_request
+      branch:
+        - main
+        - test
 
   - name: apply
     image: jmccann/drone-terraform:6.3-0.12.20
@@ -51,8 +138,17 @@ steps:
         from_secret: access_id
       SUMOLOGIC_ACCESSKEY:
         from_secret: access_key
+      SUMOLOGIC_ENVIRONMENT: us1
       GOOGLE_CREDENTIALS:
         from_secret: GOOGLE_CREDENTIALS
     when:
-      event: [push]
-      branch: [main]
+      event:
+        - push
+      branch:
+        - main
+
+---
+kind: signature
+hmac: 4ccf3ac48eb60e0a44b671d6062e6875fde0cee4565d2046325c4b11c161b911
+
+...
