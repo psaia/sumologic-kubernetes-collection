@@ -169,7 +169,7 @@ def write_resource_to_file(resource_type: str, resource: dict, resource_name: st
                         val.reverse()
                         fp.write(f"""    {key} = {val}\n""".replace("'", '"'))
                     else:
-                        if val.find('\n') != -1:
+                        if (val.find(" or ") != -1 or val.find(" OR ") != -1 ) or val.find('\n') != -1:
                             # End-User workstation decided to use double quotes around some the items in the role filter
                             # They are the only team. I would just suggest changing them manually and start a
                             # conversation with that team about why that was necessary.
