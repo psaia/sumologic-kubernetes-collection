@@ -15,6 +15,7 @@ from typing import TextIO
     https://www.terraform.io/docs/providers/sumologic
     Sumo Logic API documentation: https://help.sumologic.com/APIs
 """
+
 def create_resource_type_mappings() -> dict:
     """
     Creates a dictionary that includes information specific to Terraform and the Sumo Logic api 
@@ -26,6 +27,7 @@ def create_resource_type_mappings() -> dict:
         resource_mappings = json.load(r)
 
     return resource_mappings
+
 
 def sumo_login() -> tuple:
     """
@@ -39,6 +41,7 @@ def sumo_login() -> tuple:
     except KeyError:
         print('Credentials for Sumo not set in environment.')
         sys.exit(1)
+
 
 def get_sources(versioned_endpoint: str, source_type: str, resource_mapping: dict, credentials: tuple) -> dict:
     """
@@ -81,7 +84,8 @@ def get_sources(versioned_endpoint: str, source_type: str, resource_mapping: dic
     # Hacky solution to deal with generate_tf_config function expecting a data_key to access api response
     return {'sources': result}
 
-def get_sumo_resources(resource_type: str, resource_mapping: dict, credentials: tuple) -> list:
+
+def get_sumo_resources(resource_type: str, resource_mapping: dict, credentials: tuple):
     """
     Makes request for resources from Sumo Logic API
     :param resource_type: Sumo Logic resource type
@@ -114,6 +118,7 @@ def get_sumo_resources(resource_type: str, resource_mapping: dict, credentials: 
     else:
         return get_sources(versioned_endpoint, resource_mapping['source_type'], resource_mapping, credentials)
 
+
 def replace_invalid_chars(resource_name: str) -> str:
     """
     Function formats resource names from Sumo Logic as valid resource names for Terraform by placing a underscore
@@ -125,11 +130,13 @@ def replace_invalid_chars(resource_name: str) -> str:
         resource_name = f'_{resource_name}'
     return re.sub("[^-A-Za-z0-9_]", '_', resource_name)
 
+
 def get_second_import_arg(resource_type: str, resource: dict) -> str:
     if resource_type == "sources":
         return f'{resource["collector_id"]}/{resource["id"]}'
     else:
         return resource['id']
+
 
 def get_valid_resource_name(resource_type: str, resource: dict) -> str:
     # users does not have a name field
@@ -141,6 +148,7 @@ def get_valid_resource_name(resource_type: str, resource: dict) -> str:
         if resource_type == "sources":
             valid_resource_name = f'{resource["collector_name"]}_{valid_resource_name}'
         return valid_resource_name
+
 
 def write_resource_to_file(resource_type: str, resource: dict, resource_name: str, resource_mapping: dict, fp: TextIO):
     fp.write(f'resource "{resource_mapping["tf_name"]}" "{resource_name}" {{\n')
@@ -157,17 +165,21 @@ def write_resource_to_file(resource_type: str, resource: dict, resource_name: st
                     fp.write(f"""    {key} = {str(val).lower()}\n""")
             else:
                 if val:
-                    if isinstance(val, list):
+                    if isinstance(val, list) and resource_type == "users":
                         val.reverse()
                         fp.write(f"""    {key} = {val}\n""".replace("'", '"'))
                     else:
-                        if val.find('\n') and (val.find(' or ') or val.find(' OR ')):
-                            fp.write(f"""    {key} = <<EOF\n{val}\nEOF\n""")
+                        if val.find('\n') != -1:
+                            # End-User workstation decided to use double quotes around some the items in the role filter
+                            # They are the only team. I would just suggest changing them manually and start a
+                            # conversation with that team about why that was necessary.
+                            fp.write(f"""    {key} = << EOF {val}\n   EOF""")
                         else:
                             fp.write(f"""    {key} = "{val}"\n""")
     if resource_type == "users":
         fp.write(f"""    transfer_to = ""\n""")
     fp.write(f'}}\n\n')
+
 
 def generate_tf_config(resource_type: str, resource_mapping: dict, credentials: tuple) -> list:
     """
@@ -194,11 +206,16 @@ def generate_tf_config(resource_type: str, resource_mapping: dict, credentials: 
 
             write_resource_to_file(resource_type, resource, valid_resource_name, resource_mapping, tf)
 
+
 if __name__ == "__main__":
-    if len(sys.argv[1:]) != 1:
-        print ("Incorrect number of arguments. \nUsage:\n python create-tf-config-file.py [resource type]")
-    else:
-        resource_type = sys.argv[1]
-        credentials = sumo_login()
-        resource_mappings = create_resource_type_mappings()
-        generate_tf_config(resource_type, resource_mappings[resource_type], credentials)
+    # if len(sys.argv[1:]) != 1:
+    #     print ("Incorrect number of arguments. \nUsage:\n python create-tf-config-file.py [resource type]")
+    # else:
+    #     resource_type = sys.argv[1]
+    #     credentials = sumo_login()
+    #     resource_mappings = create_resource_type_mappings()
+    #     generate_tf_config(resource_type, resource_mappings[resource_type], credentials)
+    resource_type = 'roles'
+    credentials = sumo_login()
+    resource_mappings = create_resource_type_mappings()
+    generate_tf_config(resource_type, resource_mappings[resource_type], credentials)

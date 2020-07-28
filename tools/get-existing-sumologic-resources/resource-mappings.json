@@ -16,8 +16,8 @@
     },
     "roles": {
         "tf_name": "sumologic_role",
-        "api_to_tf": {},
-        "tf_supported": ["name", "description", "capabilities"],
+        "api_to_tf": {"filterPredicate":  "filter_predicate"},
+        "tf_supported": ["name", "description", "filterPredicate", "capabilities"],
         "url": "/roles/",
         "data_key": "data"
     },
