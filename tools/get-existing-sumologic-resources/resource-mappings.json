@@ -16,14 +16,14 @@
     },
     "roles": {
         "tf_name": "sumologic_role",
-        "api_to_tf": {},
-        "tf_supported": ["name", "description", "capabilities"],
+        "api_to_tf": {"filterPredicate":  "filter_predicate"},
+        "tf_supported": ["name", "description", "filterPredicate", "capabilities"],
         "url": "/roles/",
         "data_key": "data"
     },
     "users": {
         "tf_name": "sumologic_user",
-        "api_to_tf": {"firstName": "first_name", "lastName": "last_name", "isActive": "active", "roleIds": "role_ids"},
+        "api_to_tf": {"firstName": "first_name", "lastName": "last_name", "isActive": "is_active", "roleIds": "role_ids"},
         "tf_supported": ["firstName", "lastName", "email", "isActive", "roleIds"],
         "url": "/users/",
         "data_key": "data"

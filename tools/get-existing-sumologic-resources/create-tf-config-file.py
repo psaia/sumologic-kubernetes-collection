@@ -1,16 +1,20 @@
-import json
 import os
 import re
+import sys
+import json
+
 import requests as req
 from requests.auth import HTTPBasicAuth
 from sumologic import SumoLogic
-import sys
+from typing import TextIO
+
 
 """
     Refer to Terraform Sumo Logic documentation for a list of supported arguments
     https://www.terraform.io/docs/providers/sumologic
     Sumo Logic API documentation: https://help.sumologic.com/APIs
 """
+
 def create_resource_type_mappings() -> dict:
     """
     Creates a dictionary that includes information specific to Terraform and the Sumo Logic api 
@@ -22,6 +26,7 @@ def create_resource_type_mappings() -> dict:
         resource_mappings = json.load(r)
 
     return resource_mappings
+
 
 def sumo_login() -> tuple:
     """
@@ -35,6 +40,7 @@ def sumo_login() -> tuple:
     except KeyError:
         print('Credentials for Sumo not set in environment.')
         sys.exit(1)
+
 
 def get_sources(versioned_endpoint: str, source_type: str, resource_mapping: dict, credentials: tuple) -> dict:
     """
@@ -77,7 +83,8 @@ def get_sources(versioned_endpoint: str, source_type: str, resource_mapping: dic
     # Hacky solution to deal with generate_tf_config function expecting a data_key to access api response
     return {'sources': result}
 
-def get_sumo_resources(resource_type: str, resource_mapping: dict, credentials: tuple) -> list:
+
+def get_sumo_resources(resource_type: str, resource_mapping: dict, credentials: tuple):
     """
     Makes request for resources from Sumo Logic API
     :param resource_type: Sumo Logic resource type
@@ -110,6 +117,7 @@ def get_sumo_resources(resource_type: str, resource_mapping: dict, credentials: 
     else:
         return get_sources(versioned_endpoint, resource_mapping['source_type'], resource_mapping, credentials)
 
+
 def replace_invalid_chars(resource_name: str) -> str:
     """
     Function formats resource names from Sumo Logic as valid resource names for Terraform by placing a underscore
@@ -120,6 +128,55 @@ def replace_invalid_chars(resource_name: str) -> str:
     if resource_name[0].isdigit():
         resource_name = f'_{resource_name}'
     return re.sub("[^-A-Za-z0-9_]", '_', resource_name)
+
+
+def get_second_import_arg(resource_type: str, resource: dict) -> str:
+    if resource_type == "sources":
+        return f'{resource["collector_id"]}/{resource["id"]}'
+    else:
+        return resource['id']
+
+
+def get_valid_resource_name(resource_type: str, resource: dict) -> str:
+    # users does not have a name field
+    if resource_type == "users":
+        return f'{replace_invalid_chars(resource["email"][:resource["email"].find("@")])}'
+    # sources do not have unique names
+    else:
+        valid_resource_name = replace_invalid_chars(resource['name'])
+        if resource_type == "sources":
+            valid_resource_name = f'{resource["collector_name"]}_{valid_resource_name}'
+        return valid_resource_name
+
+
+def write_resource_to_file(resource_type: str, resource: dict, resource_name: str, resource_mapping: dict, fp: TextIO):
+    fp.write(f'resource "{resource_mapping["tf_name"]}" "{resource_name}" {{\n')
+    for arg in resource_mapping['tf_supported']:
+        key, val = '', ''
+        if arg in resource:
+            key, val = arg, resource[arg]
+        # convert from resource_type naming to Terraform naming
+        if arg in resource_mapping['api_to_tf']:
+            key = resource_mapping['api_to_tf'][arg]
+        if key:
+            # write bool before checking val, otherwise values of false won't be written
+            if isinstance(val, bool):
+                    fp.write(f"""    {key} = {str(val).lower()}\n""")
+            else:
+                if val:
+                    if isinstance(val, list):
+                        if resource_type == "users":
+                            val.reverse()
+                        fp.write(f"""    {key} = {val}\n""".replace("'", '"'))
+                    else:
+                        # Encode and decode string to preserve string literals
+                        if isinstance(val, str):
+                            val = val.encode("unicode_escape").decode("utf-8")
+                        fp.write(f"""    {key} = "{val}"\n""")
+    if resource_type == "users":
+        fp.write(f"""    transfer_to = ""\n""")
+    fp.write(f'}}\n\n')
+
 
 def generate_tf_config(resource_type: str, resource_mapping: dict, credentials: tuple) -> list:
     """
@@ -135,39 +192,17 @@ def generate_tf_config(resource_type: str, resource_mapping: dict, credentials: 
 
     resources = data[resource_mapping['data_key']]
 
-    with open('existing-resources.tf', 'w') as tf:
+    with open(f'{resource_type}-resources.tf', 'w') as tf:
         for resource in resources:
-            name = resource.get('name')
+            valid_resource_name = get_valid_resource_name(resource_type, resource)
+            second_tf_import_arg = get_second_import_arg(resource_type, resource)
 
-            # users does not have a name field
-            if resource_type == "users":
-                name = f'{resource["firstName"]}_{resource["lastName"]}'
-            valid_resource_name = replace_invalid_chars(name)
-            id_or_collector_over_source = resource.get("id")
-
-            # sources do not have unique names, sources need collector_id/source_id for terraform import
-            if resource_type == "sources":
-                collector_name = resource["collector_name"]
-                valid_resource_name = f'{collector_name}_{valid_resource_name}'
-                id_or_collector_over_source = f'{resource["collector_id"]}/{resource["id"]}'
-
-            # id and name are needed for Terraform import
+            # needed for Terraform import
             print (f'{valid_resource_name}')
-            print (f'{id_or_collector_over_source}')
-            tf.write(f'resource "{resource_mapping["tf_name"]}" "{valid_resource_name}" {{\n')
-            for arg in resource_mapping['tf_supported']:
-                key, val = '', ''
-                if arg in resource:
-                    key, val = arg, resource[arg]
-                # convert from resource_type naming to Terraform naming
-                if arg in resource_mapping['api_to_tf']:
-                    key = resource_mapping['api_to_tf'][arg]
-                if key:
-                    if isinstance(val, bool):
-                        val = str(val).lower()
-                    if val:
-                        tf.write(f"""    {key} = "{val}"\n""")
-            tf.write(f'}}\n\n')
+            print (f'{second_tf_import_arg}')
+
+            write_resource_to_file(resource_type, resource, valid_resource_name, resource_mapping, tf)
+
 
 if __name__ == "__main__":
     if len(sys.argv[1:]) != 1:

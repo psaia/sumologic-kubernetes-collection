@@ -1,3 +1,6 @@
 .terraform
 .vscode
-existing-resources.tf
+collectors-resources.tf
+sources-resources.tf
+roles-resources.tf
+users-resources.tf
