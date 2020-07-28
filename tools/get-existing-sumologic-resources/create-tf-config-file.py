@@ -161,7 +161,7 @@ def write_resource_to_file(resource_type: str, resource: dict, resource_name: st
                         val.reverse()
                         fp.write(f"""    {key} = {val}\n""".replace("'", '"'))
                     else:
-                        if val.find('\n'):
+                        if val.find('\n') and (val.find(' or ') or val.find(' OR ')):
                             fp.write(f"""    {key} = <<EOF\n{val}\nEOF\n""")
                         else:
                             fp.write(f"""    {key} = "{val}"\n""")
