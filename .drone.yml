@@ -47,32 +47,32 @@ steps:
         - main
         - test
 
-#   - name: apply
-#     image: jmccann/drone-terraform:6.3-0.12.20
-#     settings:
-#       tf_version: 0.12.26
-#       root_dir: terraform
-#       actions:
-#         - apply
-#       init_options:
-#         lock-timeout: 5m
-#         backend-config:
-#            - "bucket=remote-state"
-#            - "prefix=nytimes/dv-sumologic-test"
-#     environment:
-#       SUMOLOGIC_ACCESSID:
-#         from_secret: test_access_id
-#       SUMOLOGIC_ACCESSKEY:
-#         from_secret: test_access_key
-#       SUMOLOGIC_ENVIRONMENT: us2
-#       GOOGLE_CREDENTIALS:
-#         from_secret: GOOGLE_CREDENTIALS
-#     when:
-#       event:
-#         - push
-#       branch:
-#         - main
-#         - test
+  - name: apply
+    image: jmccann/drone-terraform:6.3-0.12.20
+    settings:
+      tf_version: 0.12.26
+      root_dir: terraform
+      actions:
+        - apply
+      init_options:
+        lock-timeout: 5m
+        backend-config:
+           - "bucket=remote-state"
+           - "prefix=nytimes/dv-sumologic-test"
+    environment:
+      SUMOLOGIC_ACCESSID:
+        from_secret: test_access_id
+      SUMOLOGIC_ACCESSKEY:
+        from_secret: test_access_key
+      SUMOLOGIC_ENVIRONMENT: us2
+      GOOGLE_CREDENTIALS:
+        from_secret: GOOGLE_CREDENTIALS
+    when:
+      event:
+        - push
+      branch:
+        - main
+        - test
 
   - name: slack
     image: plugins/slack
@@ -183,9 +183,8 @@ steps:
         - push
       branch:
         - main
-
 ---
 kind: signature
-hmac: c59b0ea802c5a2036d9ac03393c0b6c4f3542bdbde62a03b3389ce475fa907ed
+hmac: 3cdf869af148b103cda671956436e635d5f31a4567b835598805b14b4366f476
 
 ...
