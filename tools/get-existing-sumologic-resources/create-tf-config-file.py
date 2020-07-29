@@ -44,10 +44,11 @@ def sumo_login() -> tuple:
 
 def get_sources(versioned_endpoint: str, source_type: str, resource_mapping: dict, credentials: tuple) -> dict:
     """
-    Gets a list of all the sources of a given source type
+    Makes request for collectors and sources from Sumo Logic API. Collector id is needed to make call to sources api.
     :param versioned_endpoint: Versioned endpoint to use for api calls
     :source_type: filter for sources, e.g. HTTP
     :param resource_mapping: dictionary containing relevant Terraform and Sumo Logic information for sources
+    :param credentials: tuple with the Sumo Logic access ID and key
     :return: dictionary of sources of type source_type
     """
 
@@ -84,12 +85,13 @@ def get_sources(versioned_endpoint: str, source_type: str, resource_mapping: dic
     return {'sources': result}
 
 
-def get_sumo_resources(resource_type: str, resource_mapping: dict, credentials: tuple):
+def get_sumo_resources(resource_type: str, resource_mapping: dict, credentials: tuple) -> dict:
     """
     Makes request for resources from Sumo Logic API
     :param resource_type: Sumo Logic resource type
     :param resource_mapping: dictionary containing relevant Terraform and Sumo Logic information
-    :return: list of Sumo Logic resources data
+    :param credentials: tuple with the Sumo Logic access ID and key
+    :return: dictionary of Sumo Logic resources data
     """
     valid_resource_types = ["collectors", "sources", "roles", "users"]
 
@@ -131,6 +133,12 @@ def replace_invalid_chars(resource_name: str) -> str:
 
 
 def get_second_import_arg(resource_type: str, resource: dict) -> str:
+    """
+    Constructs the second argument for terraform import based on the format expected for the given resource_type.
+    :param resource_type: Sumo Logic resource type
+    :param resource: a dictionary containing key, value pairs returned from the Sumo Logic api
+    :return: The second argument to terraform import for the given resource
+    """
     if resource_type == "sources":
         return f'{resource["collector_id"]}/{resource["id"]}'
     else:
@@ -138,6 +146,12 @@ def get_second_import_arg(resource_type: str, resource: dict) -> str:
 
 
 def get_valid_resource_name(resource_type: str, resource: dict) -> str:
+    """
+    Creates a unique terraform resource name to use in the config file.
+    :param resource_type: Sumo Logic resource type
+    :param resource: a dictionary containing key, value pairs returned from the Sumo Logic api
+    :return: A valid Terraform resource name
+    """
     # users does not have a name field
     if resource_type == "users":
         return f'{replace_invalid_chars(resource["email"][:resource["email"].find("@")])}'
@@ -150,6 +164,14 @@ def get_valid_resource_name(resource_type: str, resource: dict) -> str:
 
 
 def write_resource_to_file(resource_type: str, resource: dict, resource_name: str, resource_mapping: dict, fp: TextIO):
+    """
+    Writes resource to the given file.
+    :param resource_type: Sumo Logic resource type
+    :param resource: a dictionary containing key, value pairs returned from the Sumo Logic api
+    :param resource_mapping: dictionary containing relevant Terraform and Sumo Logic information
+    :param fp: File pointer for the file where resource will be written
+    :return: None
+    """
     fp.write(f'resource "{resource_mapping["tf_name"]}" "{resource_name}" {{\n')
     for arg in resource_mapping['tf_supported']:
         key, val = '', ''
@@ -178,16 +200,17 @@ def write_resource_to_file(resource_type: str, resource: dict, resource_name: st
     fp.write(f'}}\n\n')
 
 
-def generate_tf_config(resource_type: str, resource_mapping: dict, credentials: tuple) -> list:
+def generate_tf_config(resource_type: str, resource_mapping: dict, credentials: tuple):
     """
-    Function takes in a resource type and its corresponding resource type mappings dictionary
-    and generates a Terraform config file.
+    Generates a Terraform config file for the given resource_type and prints arguments needed for terraform import.
     :param resource_type: Sumo Logic resource type
     :param resource_mapping: dictionary containing relevant Terraform and Sumo Logic information
-    :return: list of valid resource names
+    :param credentials: tuple with the Sumo Logic access ID and key
+    :return: None
     """
     data = get_sumo_resources(resource_type, resource_mapping, credentials)
     if not data:
+        print ("No data was returned from the Sumo Logic api")
         return None
 
     resources = data[resource_mapping['data_key']]
