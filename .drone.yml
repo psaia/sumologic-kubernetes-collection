@@ -74,6 +74,25 @@ steps:
 #         - main
 #         - test
 
+  - name: slack
+    image: plugins/slack
+    channel: dv-notifications
+    username: nytimes/dv-sumologic (Dev)
+    environment:
+      SLACK_WEBHOOK:
+        from_secret: slack_webhook
+    template: >
+      @observability-team
+      dev deployment failed! {{build.link}} ({{build.branch}})
+    when:
+      status:
+        - failure
+      event:
+        - push
+      branch:
+        - main
+        - test
+
 ---
 kind: pipeline
 type: docker
@@ -147,8 +166,26 @@ steps:
       branch:
         - main
 
+  - name: slack
+    image: plugins/slack
+    channel: dv-notifications
+    username: nytimes/dv-sumologic
+    environment:
+      SLACK_WEBHOOK:
+        from_secret: slack_webhook
+    template: >
+      @observability-team
+      prd deployment failed! {{build.link}} ({{build.branch}})
+    when:
+      status:
+        - failure
+      event:
+        - push
+      branch:
+        - main
+
 ---
 kind: signature
-hmac: 7b69d0e3ce6c92ea981af77795a0c8e1d939cf0daf9667a2560bc58be669157b
+hmac: c59b0ea802c5a2036d9ac03393c0b6c4f3542bdbde62a03b3389ce475fa907ed
 
 ...
