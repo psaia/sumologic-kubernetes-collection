@@ -17,7 +17,7 @@ from typing import TextIO
 
 def create_resource_type_mappings() -> dict:
     """
-    Creates a dictionary that includes information specific to Terraform and the Sumo Logic api 
+    Creates a dictionary that includes information specific to Terraform and the Sumo Logic api
     :return: Dictionary of dictionaries that contains resource mappings for each supported resource
     """
     resource_mappings = {}
@@ -180,6 +180,11 @@ def write_resource_to_file(resource_type: str, resource: dict, resource_name: st
         # convert from resource_type naming to Terraform naming
         if arg in resource_mapping['api_to_tf']:
             key = resource_mapping['api_to_tf'][arg]
+        # We need the collector id to be a reference to the collector resource
+        if resource_type == "sources" and arg == "collector_id":
+            val = f'sumologic_collector.{resource["collector_name"]}.id'
+            tf.write(f"""    {key} = {val}\n""")
+            continue
         if key:
             # write bool before checking val, otherwise values of false won't be written
             if isinstance(val, bool):
@@ -225,7 +230,6 @@ def generate_tf_config(resource_type: str, resource_mapping: dict, credentials: 
             print (f'{second_tf_import_arg}')
 
             write_resource_to_file(resource_type, resource, valid_resource_name, resource_mapping, tf)
-
 
 if __name__ == "__main__":
     if len(sys.argv[1:]) != 1:
