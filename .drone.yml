@@ -1,6 +1,22 @@
 ---
 kind: pipeline
 type: docker
+name: default
+
+trigger:
+  paths:
+    exclude:
+      - modules/**
+      - terraform/*
+steps:
+  - name: no-op
+    image: alpine:latest
+    commands:
+      - echo "Looks good!"
+
+---
+kind: pipeline
+type: docker
 name: dev
 
 concurrency:
@@ -183,8 +199,9 @@ steps:
         - push
       branch:
         - main
+
 ---
 kind: signature
-hmac: 3cdf869af148b103cda671956436e635d5f31a4567b835598805b14b4366f476
+hmac: ef97f53ca47dddc62b35cc2a55fac99c101412cecea60de0468ad028696d6b69
 
 ...
