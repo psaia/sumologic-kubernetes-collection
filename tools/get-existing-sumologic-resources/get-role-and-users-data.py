@@ -76,8 +76,12 @@ def write_role_to_file(versioned_endpoint: str, role: dict, fp: TextIO, credenti
     :param user_ids_to_emails: dictionary mapping user ids to their corresponding user email
     :return: dictionary containing user emails that have already been fetched from the Sumo Logic api
     """
+    name = role["name"]
 
-    fp.write(f'\n        {{\n            "name": \"{role["name"]}\",\n            "members": [')
+    if role["name"] == "Administrator":
+        name = "admin"
+
+    fp.write(f'\n        {{\n            "name": \"{name}\",\n            "members": [')
 
     members = role['users']
 
@@ -87,6 +91,11 @@ def write_role_to_file(versioned_endpoint: str, role: dict, fp: TextIO, credenti
         return user_ids_to_emails
 
     for user in members:
+        # don't include roles already managed by Terraform
+        description = role.get("description")
+        if "(Managed by Terraform)" in description:
+            continue
+
         email = user_ids_to_emails.get(user)
         if not email:
             email, user_ids_to_emails = get_user_email(versioned_endpoint, user, credentials, user_ids_to_emails)
