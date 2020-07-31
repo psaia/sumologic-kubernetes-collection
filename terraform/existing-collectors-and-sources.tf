@@ -3076,7 +3076,8 @@ resource "sumologic_http_source" "https-collector_prd_security-amp" {
   message_per_request          = "false"
   force_timezone               = "false"
   default_date_formats {
-    format = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
+    format  = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
+    locator = "\\\"date\\\":(.*), \""
   }
 }
 
