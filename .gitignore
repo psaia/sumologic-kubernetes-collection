@@ -2,5 +2,5 @@
 .vscode
 collectors-resources.tf
 sources-resources.tf
-roles-resources.tf
 users-resources.tf
+*-role.tf
