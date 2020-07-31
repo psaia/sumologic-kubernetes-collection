@@ -4,7 +4,7 @@ locals {
 
 resource "sumologic_role" "sumo-role" {
   name             = local.name
-  description      = "${var.name} collector (Managed by Terraform)"
+  description      = "${var.name} role (Managed by Terraform)"
   filter_predicate = var.search_filter
   capabilities     = var.capabilities
 }
