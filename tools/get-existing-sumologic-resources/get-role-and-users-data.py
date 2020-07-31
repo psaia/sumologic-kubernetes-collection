@@ -81,6 +81,10 @@ def write_role_to_file(versioned_endpoint: str, role: dict, fp: TextIO, credenti
     if role["name"] == "Administrator":
         name = "admin"
 
+    # don't include roles already managed by Terraform
+    if "(Managed by Terraform)" in role["description"]:
+        return user_ids_to_emails
+
     fp.write(f'\n        {{\n            "name": \"{name}\",\n            "members": [')
 
     members = role['users']
@@ -91,11 +95,6 @@ def write_role_to_file(versioned_endpoint: str, role: dict, fp: TextIO, credenti
         return user_ids_to_emails
 
     for user in members:
-        # don't include roles already managed by Terraform
-        description = role.get("description")
-        if "(Managed by Terraform)" in description:
-            continue
-
         email = user_ids_to_emails.get(user)
         if not email:
             email, user_ids_to_emails = get_user_email(versioned_endpoint, user, credentials, user_ids_to_emails)
@@ -132,7 +131,8 @@ def create_role_name_to_user_email_file(credentials: tuple):
             user_ids_to_emails = write_role_to_file(versioned_endpoint, role, tf, credentials, user_ids_to_emails)
 
             # don't write "," for last role in list
-            if role != roles[-1]:
+            # don't include roles already managed by Terraform
+            if role != roles[-1] and not "(Managed by Terraform)" in role["description"]:
                 tf.write(",")
 
         tf.write(f'\n    ]\n}}\n')
