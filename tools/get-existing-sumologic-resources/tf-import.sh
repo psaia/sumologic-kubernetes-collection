@@ -11,8 +11,11 @@ fi
 filename=$1 # a file containing the output of the create-tf-config-file.py script
 resource_type=$2 # name of resource type in terraform, e.g. sumologic_collector
 
-# delete the first line in the file because it's the Sumo Logic api url
-sed '1d' $filename > tmpfile; mv tmpfile $filename
+# delete the first line in the file if it's the Sumo Logic api url
+first_line=$(head -n 1 $filename)
+if [[ "$first_line" =~ "SDK Endpoint" ]]; then
+    sed '1d' $filename > tmpfile; mv tmpfile $filename
+fi
 
 terraform init --backend=false
 
