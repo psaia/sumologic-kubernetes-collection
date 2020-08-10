@@ -47,6 +47,8 @@ steps:
         backend-config:
            - "bucket=remote-state"
            - "prefix=nytimes/dv-sumologic-test"
+      vars:
+        default_role: "2FA - SumoLogic (Test)"
     environment:
       SUMOLOGIC_ACCESSID:
         from_secret: test_access_id
@@ -75,6 +77,8 @@ steps:
         backend-config:
            - "bucket=remote-state"
            - "prefix=nytimes/dv-sumologic-test"
+      vars:
+        default_role: "2FA - SumoLogic (Test)"
     environment:
       SUMOLOGIC_ACCESSID:
         from_secret: test_access_id
@@ -140,6 +144,8 @@ steps:
         backend-config:
           - "bucket=remote-state"
           - "prefix=nytimes/dv-sumologic"
+      vars:
+        default_role: "2FA - SumoLogic"
     environment:
       SUMOLOGIC_ACCESSID:
         from_secret: access_id
@@ -168,6 +174,8 @@ steps:
         backend-config:
           - "bucket=remote-state"
           - "prefix=nytimes/dv-sumologic"
+      vars:
+        default_role: "2FA - SumoLogic"
     environment:
       SUMOLOGIC_ACCESSID:
         from_secret: access_id
