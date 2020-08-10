@@ -1,10 +1,10 @@
 locals {
-  name = replace(var.name, "/", "-")
+  name = "sumo-${replace(var.name, "/", "-")}"
 }
 
 resource "sumologic_role" "sumo-role" {
   name             = local.name
-  description      = "${var.name} role (Managed by Terraform)"
+  description      = "${local.name} role (Managed by Terraform)"
   filter_predicate = var.search_filter
   capabilities     = var.capabilities
 }
