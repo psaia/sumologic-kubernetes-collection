@@ -25,7 +25,7 @@ while read line; do
 # even numbered lines contain the second argument needed for terraform import
 if [ $(($n%2)) == 0 ]; then
     second_arg=$line
-    terraform import "$resource_type.$resource_name" $second_arg
+    terraform import "$resource_type.$resource_name" "$second_arg"
 # odd numbered lines contain the name of the resource in terraform
 else
     resource_name=$line
