@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/nytimes/dv-sumologic/tools/ad-syncer/types"
+	"github.com/nytimes/dv-sumologic/tools/adutil/types"
 )
 
 type File struct {
