@@ -48,3 +48,10 @@ module "nytm-pubsys-newsgate-ConfigBase1" {
   env      = var.env
   timezone = "America/New_York"
 }
+
+module "nytimes-spg-invoice-service" {
+  source = "../modules/collector"
+
+  name = "nytimes-spg-invoice-service"
+  env  = var.env
+}

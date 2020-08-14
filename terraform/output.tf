@@ -74,3 +74,14 @@ output "nytm-pubsys-newsgate-ConfigBase1-source-category" {
   value       = module.nytm-pubsys-newsgate-ConfigBase1.source_category
   description = "HTTP endpoints and sourceCategory created for the nytm-pubsys-newsgate-ConfigBase1 collector"
 }
+
+# nytimes-spg-invoice-service
+output "nytimes-spg-invoice-service-endpoints" {
+  value       = module.nytimes-spg-invoice-service.http_endpoints
+  description = "HTTP endpoints and sourceCategory created for the nytimes-spg-invoice-service collector"
+}
+
+output "nytimes-spg-invoice-service-source-category" {
+  value       = module.nytimes-spg-invoice-service.source_category
+  description = "HTTP endpoints and sourceCategory created for the nytimes-spg-invoice-service collector"
+}
