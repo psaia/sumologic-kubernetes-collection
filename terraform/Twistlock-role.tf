@@ -1,7 +1,7 @@
 resource "sumologic_role" "Twistlock" {
   name             = "Twistlock"
   description      = "Twistlock Application Logs"
-  filter_predicate = "_sourceCategory=dev/twistlock/console OR _sourceCategory=stg/twistlock/console OR _sourceCategory=prd/twistlock/console"
+  filter_predicate = "_sourceCategory=${sumologic_http_source.Twistlock_twistlock-console-dev.category} OR _sourceCategory=${sumologic_http_source.Twistlock_twistlock-console-stg.category} OR _sourceCategory=${sumologic_http_source.Twistlock_twistlock-console-prd.category}"
   capabilities     = ["viewScheduledViews", "manageMonitors", "viewPartitions", "viewFields", "viewFieldExtraction"]
 }
 

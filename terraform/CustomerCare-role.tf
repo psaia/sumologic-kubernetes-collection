@@ -1,7 +1,7 @@
 resource "sumologic_role" "CustomerCare" {
   name             = "CustomerCare"
   description      = "Customer Care Applogs"
-  filter_predicate = "_sourceCategory=care-connect-dev OR _sourceCategory=care-connect-stg OR _sourceCategory=care-connect-prd OR _source=care-connect-dev OR _source=care-connect-stg OR _source=care-connect-prd"
+  filter_predicate = "_sourceCategory=${sumologic_http_source.Care_Connect_care-connect-dev.category} OR _sourceCategory=${sumologic_http_source.Care_Connect_care-connect-stg.category} OR _sourceCategory=${sumologic_http_source.Care_Connect_care-connect-prd.category} OR _source=${sumologic_http_source.Care_Connect_care-connect-dev.category} OR _source=${sumologic_http_source.Care_Connect_care-connect-stg.category} OR _source=${sumologic_http_source.Care_Connect_care-connect-prd.category}"
   capabilities     = ["viewScheduledViews", "viewPartitions", "viewFields", "viewFieldExtraction", "changeDataAccessLevel"]
 }
 
