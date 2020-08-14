@@ -15,3 +15,8 @@ variable "timezone" {
   type    = string
   default = "Etc/UTC"
 }
+
+variable "env" {
+  type        = string
+  description = "Environment that the build is running against"
+}

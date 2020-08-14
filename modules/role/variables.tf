@@ -17,3 +17,18 @@ variable "owners" {
   type    = list(string)
   default = []
 }
+
+variable "env" {
+  type        = string
+  description = "Environment that the build is running against"
+}
+
+variable "role_prefix" {
+  type        = map(string)
+  description = "Prefix to be attached to Sumo Logic roles and AD groups based on environment"
+
+  default = {
+    test = "test-sumo"
+    prd  = "sumo"
+  }
+}

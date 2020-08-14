@@ -49,7 +49,13 @@ steps:
            - "prefix=nytimes/dv-sumologic-test"
       vars:
         default_role: "2FA - SumoLogic (Test)"
+        ad_domain: ent.nytint.com
+        ad_url: ldap://ad.prd.iad1.nyt.net:389
+        ad_user: corp-svc-sumo-auto
+        env: test
     environment:
+      AD_PASSWORD:
+        from_secret: ad_password
       SUMOLOGIC_ACCESSID:
         from_secret: test_access_id
       SUMOLOGIC_ACCESSKEY:
@@ -79,7 +85,13 @@ steps:
            - "prefix=nytimes/dv-sumologic-test"
       vars:
         default_role: "2FA - SumoLogic (Test)"
+        ad_domain: ent.nytint.com
+        ad_url: ldap://ad.prd.iad1.nyt.net:389
+        ad_user: corp-svc-sumo-auto
+        env: test
     environment:
+      AD_PASSWORD:
+        from_secret: ad_password
       SUMOLOGIC_ACCESSID:
         from_secret: test_access_id
       SUMOLOGIC_ACCESSKEY:
@@ -146,7 +158,13 @@ steps:
           - "prefix=nytimes/dv-sumologic"
       vars:
         default_role: "2FA - SumoLogic"
+        ad_domain: ent.nytint.com
+        ad_url: ldap://ad.prd.iad1.nyt.net:389
+        ad_user: corp-svc-sumo-auto
+        env: prd
     environment:
+      AD_PASSWORD:
+        from_secret: ad_password
       SUMOLOGIC_ACCESSID:
         from_secret: access_id
       SUMOLOGIC_ACCESSKEY:
@@ -176,7 +194,13 @@ steps:
           - "prefix=nytimes/dv-sumologic"
       vars:
         default_role: "2FA - SumoLogic"
+        ad_domain: ent.nytint.com
+        ad_url: ldap://ad.prd.iad1.nyt.net:389
+        ad_user: corp-svc-sumo-auto
+        env: prd
     environment:
+      AD_PASSWORD:
+        from_secret: ad_password
       SUMOLOGIC_ACCESSID:
         from_secret: access_id
       SUMOLOGIC_ACCESSKEY:

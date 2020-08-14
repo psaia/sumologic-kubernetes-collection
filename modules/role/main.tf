@@ -1,5 +1,5 @@
 locals {
-  name = "sumo-${replace(var.name, "/", "-")}"
+  name = "${var.role_prefix[var.env]}-${replace(var.name, "/", "-")}"
 }
 
 resource "sumologic_role" "sumo-role" {
@@ -9,10 +9,10 @@ resource "sumologic_role" "sumo-role" {
   capabilities     = var.capabilities
 }
 
-# Lay the framework for this for now--not working yet
-# resource "ad_group_to_ou" "ad-group" {
-#   ou_distinguished_name = "OU=SumoLogic RBAC,OU=2fA Objects, OU=NYTMG, DC-ent, DC=nytint, DC=com"
-#   group_name            = local.name
-#   description           = "AD Group for Sumo Logic RBAC group ${var.name}"
-#   auto_gid              = true
-# }
+# Generate AD group to match the Sumo Logic role
+resource "ad_group_to_ou" "ad-group" {
+  ou_distinguished_name = "OU=SumoLogic RBAC,OU=2FA Objects,OU=NYTMG,DC=ent,DC=nytint,DC=com"
+  group_name            = local.name
+  description           = "AD Group for Sumo Logic RBAC group ${local.name}"
+  auto_gid              = true
+}
