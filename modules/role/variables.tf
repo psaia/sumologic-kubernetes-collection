@@ -32,8 +32,3 @@ variable "role_prefix" {
     prd  = "sumo"
   }
 }
-
-variable "ad_oudn" {
-  type    = string
-  default = "OU=SumoLogic RBAC,OU=2FA Objects,OU=NYTMG,DC=ent,DC=nytint,DC=com"
-}
