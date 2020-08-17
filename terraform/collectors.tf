@@ -5,6 +5,13 @@ module "dv-test" {
   env  = var.env
 }
 
+module "nytimes-dv-sumologic" {
+  source = "../modules/collector"
+
+  name = "nytimes/dv-sumologic"
+  env  = var.env
+}
+
 module "nytimes-spg-petstore" {
   source = "../modules/collector"
 

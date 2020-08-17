@@ -9,6 +9,18 @@ output "dv-test-source-category" {
   description = "HTTP endpoints and sourceCategory created for the dv-test collector"
 }
 
+# nytimes-dv-sumologic
+output "nytimes-dv-sumologic-endpoints" {
+  value       = module.nytimes-dv-sumologic.http_endpoints
+  description = "HTTP endpoints and sourceCategory created for the dv-test collector"
+}
+
+output "nytimes-dv-sumologic-source-category" {
+  value       = module.nytimes-dv-sumologic.source_category
+  description = "HTTP endpoints and sourceCategory created for the dv-test collector"
+}
+
+
 # nytimes-spg-petstore
 output "nytimes-spg-petstore-endpoints" {
   value       = module.nytimes-spg-petstore.http_endpoints
