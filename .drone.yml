@@ -235,7 +235,87 @@ steps:
         - main
 
 ---
+kind: pipeline
+type: docker
+name: add-user
+
+trigger:
+  event:
+    - promote
+  target:
+    - add-user
+
+steps:
+  - name: add-user-to-group
+    image: golang:1.14
+    environment:
+      GOPROXY: direct
+      GOSUMDB: off
+    commands:
+      - cd tools/adutil
+      - go get
+      - go run main.go add
+  - name: notify
+    image: plugins/slack
+    settings:
+      channel: dv-observability
+      username: nytimes/dv-sumologic
+      template: >
+        {{#success build.status}}
+          Success: ${TRIGGER} added ${email} to the ${group} AD group.
+        {{else}}
+          Failure: ${TRIGGER} attempted to add ${email} to the ${group} AD group.
+        {{/success}}
+    environment:
+      SLACK_WEBHOOK:
+        from_secret: slack_webhook
+    when:
+      status:
+        - success
+        - failure
+
+---
+kind: pipeline
+type: docker
+name: del-user
+
+trigger:
+  event:
+    - promote
+  target:
+    - del-user
+
+steps:
+  - name: remove-user-from-group
+    image: golang:1.14
+    environment:
+      GOPROXY: direct
+      GOSUMDB: off
+    commands:
+      - cd tools/adutil
+      - go get
+      - go run main.go remove
+  - name: notify
+    image: plugins/slack
+    settings:
+      channel: dv-observability
+      username: nytimes/dv-sumologic
+      template: >
+        {{#success build.status}}
+          Success: ${TRIGGER} removed ${email} from the ${group} AD group.
+        {{else}}
+          Failure: ${TRIGGER} attempted to remove ${email} from the ${group} AD group.
+        {{/success}}
+    environment:
+      SLACK_WEBHOOK:
+        from_secret: slack_webhook
+    when:
+      status:
+        - success
+        - failure
+
+---
 kind: signature
-hmac: ef97f53ca47dddc62b35cc2a55fac99c101412cecea60de0468ad028696d6b69
+hmac: 39fd1cab314c22ba9e4a203f3d94b9a4479de21621b231c20f9ed96a432d66d9
 
 ...

@@ -25,13 +25,13 @@ func main() {
 						Name:     "group",
 						Required: true,
 						Usage:    "The name (CN) of the AD group to add to.",
-						EnvVars:  []string{"AD_GROUP"},
+						EnvVars:  []string{"group"},
 					},
 					&cli.StringFlag{
-						Name:     "user",
+						Name:     "email",
 						Required: true,
 						Usage:    "The email of the user to add.",
-						EnvVars:  []string{"AD_USER_EMAIL"},
+						EnvVars:  []string{"email"},
 					},
 				},
 			},
@@ -43,14 +43,14 @@ func main() {
 					&cli.StringFlag{
 						Name:     "group",
 						Required: true,
-						Usage:    "The name (CN) of the AD group to add to.",
-						EnvVars:  []string{"AD_GROUP"},
+						Usage:    "The name (CN) of the AD group to remove from.",
+						EnvVars:  []string{"group"},
 					},
 					&cli.StringFlag{
-						Name:     "user_email",
+						Name:     "email",
 						Required: true,
-						Usage:    "The email of the user to add.",
-						EnvVars:  []string{"AD_USER_EMAIL"},
+						Usage:    "The email of the user to remove from.",
+						EnvVars:  []string{"email"},
 					},
 				},
 			},
@@ -132,7 +132,7 @@ func addUser(ctx *cli.Context) error {
 	// add a user
 	return ad.AddGroupMember(
 		ctx.String("group"),
-		ctx.String("user"),
+		ctx.String("email"),
 	)
 }
 
@@ -143,7 +143,7 @@ func removeUser(ctx *cli.Context) error {
 	// remove a user
 	return ad.RemoveGroupMember(
 		ctx.String("group"),
-		ctx.String("user"),
+		ctx.String("email"),
 	)
 }
 
