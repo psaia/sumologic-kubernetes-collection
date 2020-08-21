@@ -1232,12 +1232,12 @@ resource "sumologic_http_source" "Akamai_Cloud_Monitor_Akamai_edge_connect" {
   name                         = "Akamai_edge_connect"
   category                     = "edgeconnect"
   collector_id                 = sumologic_collector.Akamai_Cloud_Monitor.id
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "UTC"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Artifactory_artifactory-dev" {
@@ -1245,12 +1245,12 @@ resource "sumologic_http_source" "Artifactory_artifactory-dev" {
   description                  = "Artifactory dev logs"
   category                     = "artifactory-dev"
   collector_id                 = sumologic_collector.Artifactory.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Artifactory_artifactory-prd" {
@@ -1258,12 +1258,12 @@ resource "sumologic_http_source" "Artifactory_artifactory-prd" {
   description                  = "Artifactory Production logs"
   category                     = "artifactory-prd"
   collector_id                 = sumologic_collector.Artifactory.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Artifactory_artifactory-stg" {
@@ -1271,24 +1271,24 @@ resource "sumologic_http_source" "Artifactory_artifactory-stg" {
   description                  = "Artifactory stg logs"
   category                     = "artifactory-stg"
   collector_id                 = sumologic_collector.Artifactory.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "atlassian-jira-events_atlassian-jira-events" {
   name                         = "atlassian-jira-events"
   category                     = "atlassian-jira-events"
   collector_id                 = sumologic_collector.atlassian-jira-events.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "ATT__At_The_Times__att-prd" {
@@ -1296,12 +1296,12 @@ resource "sumologic_http_source" "ATT__At_The_Times__att-prd" {
   description                  = "ATT production logs"
   category                     = "att-prd"
   collector_id                 = sumologic_collector.ATT__At_The_Times_.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "ATT__At_The_Times__att-stg" {
@@ -1309,72 +1309,72 @@ resource "sumologic_http_source" "ATT__At_The_Times__att-stg" {
   description                  = "ATT staging logs"
   category                     = "att-stg"
   collector_id                 = sumologic_collector.ATT__At_The_Times_.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "AWSMA_AWSMA_CT-DEV_CloudWatch_Logs" {
   name                         = "AWSMA CT-DEV CloudWatch Logs"
   category                     = "AWSMA-DEV-CW"
   collector_id                 = sumologic_collector.AWSMA.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "AWSMA_AWSMA_CT-PRD_CloudWatch_Logs" {
   name                         = "AWSMA CT-PRD CloudWatch Logs"
   category                     = "AWSMA-PRD-CW"
   collector_id                 = sumologic_collector.AWSMA.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "AWSMA_AWSMA_CT-STG_CloudWatch_Logs" {
   name                         = "AWSMA CT-STG CloudWatch Logs"
   category                     = "AWSMA-STG-CW"
   collector_id                 = sumologic_collector.AWSMA.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "AzureADLogs_AzureAD" {
   name                         = "AzureAD"
   category                     = "AzureSignInEvents"
   collector_id                 = sumologic_collector.AzureADLogs.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "AzureADLogs_AzureADLogs" {
   name                         = "AzureADLogs"
   category                     = "AzureADLogs"
   collector_id                 = sumologic_collector.AzureADLogs.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Business-PPI_business-ppi-dev" {
@@ -1382,12 +1382,12 @@ resource "sumologic_http_source" "Business-PPI_business-ppi-dev" {
   description                  = "Business PPI application developmenet logs"
   category                     = "business-ppi"
   collector_id                 = sumologic_collector.Business-PPI.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Business-PPI_business-ppi-prd" {
@@ -1395,12 +1395,12 @@ resource "sumologic_http_source" "Business-PPI_business-ppi-prd" {
   description                  = "Business PPI application production logs"
   category                     = "business-ppi"
   collector_id                 = sumologic_collector.Business-PPI.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Business-PPI_business-ppi-stg" {
@@ -1408,12 +1408,12 @@ resource "sumologic_http_source" "Business-PPI_business-ppi-stg" {
   description                  = "Business PPI application staging logs"
   category                     = "business-ppi"
   collector_id                 = sumologic_collector.Business-PPI.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Care_Connect_care-connect-dev" {
@@ -1421,12 +1421,12 @@ resource "sumologic_http_source" "Care_Connect_care-connect-dev" {
   description                  = "Customer care connect dev logs"
   category                     = "care-connect-dev"
   collector_id                 = sumologic_collector.Care_Connect.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Care_Connect_care-connect-prd" {
@@ -1434,12 +1434,12 @@ resource "sumologic_http_source" "Care_Connect_care-connect-prd" {
   description                  = "Customer Care connect app production logs"
   category                     = "care-connect-prd"
   collector_id                 = sumologic_collector.Care_Connect.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Care_Connect_care-connect-stg" {
@@ -1447,12 +1447,12 @@ resource "sumologic_http_source" "Care_Connect_care-connect-stg" {
   description                  = "Customer care connect app staging logs"
   category                     = "care-connect-stg"
   collector_id                 = sumologic_collector.Care_Connect.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Care_Services_care-service-prd" {
@@ -1460,12 +1460,12 @@ resource "sumologic_http_source" "Care_Services_care-service-prd" {
   description                  = "Care service production logs"
   category                     = "care-service-prd"
   collector_id                 = sumologic_collector.Care_Services.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Care_Services_care-service-stg" {
@@ -1473,12 +1473,12 @@ resource "sumologic_http_source" "Care_Services_care-service-stg" {
   description                  = "Care service staging logs"
   category                     = "care-service-stg"
   collector_id                 = sumologic_collector.Care_Services.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Care_Services_care-services-dev" {
@@ -1486,12 +1486,12 @@ resource "sumologic_http_source" "Care_Services_care-services-dev" {
   description                  = "Care service dev logs"
   category                     = "care-services-dev"
   collector_id                 = sumologic_collector.Care_Services.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "CMOTS_cmots-dev" {
@@ -1499,12 +1499,12 @@ resource "sumologic_http_source" "CMOTS_cmots-dev" {
   description                  = "CMOSTS/Magnolia dev logs"
   category                     = "cmots-dev"
   collector_id                 = sumologic_collector.CMOTS.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "CMOTS_cmots-prd" {
@@ -1512,12 +1512,12 @@ resource "sumologic_http_source" "CMOTS_cmots-prd" {
   description                  = "CMOTS/Magnolia Prod logs"
   category                     = "cmots-prd"
   collector_id                 = sumologic_collector.CMOTS.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "CMOTS_cmots-stg" {
@@ -1525,84 +1525,84 @@ resource "sumologic_http_source" "CMOTS_cmots-stg" {
   description                  = "CMOTS/Magnolia stage logs"
   category                     = "cmots-stg"
   collector_id                 = sumologic_collector.CMOTS.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "CMS_cms-fallback-dev" {
   name                         = "cms-fallback-dev"
   category                     = "cms-fallback-dev"
   collector_id                 = sumologic_collector.CMS.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "CMS_cms-fallback-prd" {
   name                         = "cms-fallback-prd"
   category                     = "cms-fallback-prd"
   collector_id                 = sumologic_collector.CMS.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "CMS_cms-fallback-stg" {
   name                         = "cms-fallback-stg"
   category                     = "cms-fallback-stg"
   collector_id                 = sumologic_collector.CMS.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "DV_SSM_API_ssm-api-dev" {
   name                         = "ssm-api-dev"
   category                     = "dev/ssm-api"
   collector_id                 = sumologic_collector.DV_SSM_API.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "DV_SSM_API_ssm-api-prd" {
   name                         = "ssm-api-prd"
   category                     = "prd/ssm-api"
   collector_id                 = sumologic_collector.DV_SSM_API.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "DV_SSM_API_ssm-api-stg" {
   name                         = "ssm-api-stg"
   category                     = "stg/ssm-api"
   collector_id                 = sumologic_collector.DV_SSM_API.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "dv-jenkins_dv-jenkins-dev" {
@@ -1610,12 +1610,12 @@ resource "sumologic_http_source" "dv-jenkins_dv-jenkins-dev" {
   description                  = "DV dev jenkins logs"
   category                     = "dv-jenkins-dev"
   collector_id                 = sumologic_collector.dv-jenkins.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "dv-jenkins_dv-jenkins-prd" {
@@ -1623,24 +1623,24 @@ resource "sumologic_http_source" "dv-jenkins_dv-jenkins-prd" {
   description                  = "DV Jenkins production logs"
   category                     = "dv-jenkins-prd"
   collector_id                 = sumologic_collector.dv-jenkins.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "ECMCORE_ecmcore-dev" {
   name                         = "ecmcore-dev"
   category                     = "ecmcore-dev"
   collector_id                 = sumologic_collector.ECMCORE.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "ECMCORE_ecmcore-prd" {
@@ -1648,12 +1648,12 @@ resource "sumologic_http_source" "ECMCORE_ecmcore-prd" {
   description                  = "Ecmcore production logs"
   category                     = "ecmcore-prd"
   collector_id                 = sumologic_collector.ECMCORE.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "ECMCORE_ecmcore-stg" {
@@ -1661,12 +1661,12 @@ resource "sumologic_http_source" "ECMCORE_ecmcore-stg" {
   description                  = "Ecmcore staging logs"
   category                     = "ecmcore-stg"
   collector_id                 = sumologic_collector.ECMCORE.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Ecomm-Payflow_ecommerce-ecmcore-http" {
@@ -1674,12 +1674,12 @@ resource "sumologic_http_source" "Ecomm-Payflow_ecommerce-ecmcore-http" {
   description                  = "Ecomm core https collector"
   category                     = "ecommerce-ecmcore-core"
   collector_id                 = sumologic_collector.Ecomm-Payflow.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Ecomm-Payflow_ecommerce-payflow-api-stg" {
@@ -1687,12 +1687,12 @@ resource "sumologic_http_source" "Ecomm-Payflow_ecommerce-payflow-api-stg" {
   description                  = "Ecommerce payflow api staging logs"
   category                     = "ecommerce-payflow-api-stg"
   collector_id                 = sumologic_collector.Ecomm-Payflow.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Ecomm-Payflow_ecommerce-payflow-http" {
@@ -1700,12 +1700,12 @@ resource "sumologic_http_source" "Ecomm-Payflow_ecommerce-payflow-http" {
   description                  = "Ecomm payflow http"
   category                     = "ecommerce-payflow-api"
   collector_id                 = sumologic_collector.Ecomm-Payflow.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "ECR_ecr-dev" {
@@ -1713,12 +1713,12 @@ resource "sumologic_http_source" "ECR_ecr-dev" {
   description                  = "ecomm reporting dev logs"
   category                     = "ecr-dev"
   collector_id                 = sumologic_collector.ECR.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "ECR_ecr-prd" {
@@ -1726,12 +1726,12 @@ resource "sumologic_http_source" "ECR_ecr-prd" {
   description                  = "Ecomm reporting production"
   category                     = "ecr-prd"
   collector_id                 = sumologic_collector.ECR.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "ECR_ecr-stg" {
@@ -1739,12 +1739,12 @@ resource "sumologic_http_source" "ECR_ecr-stg" {
   description                  = "Ecomm reporting staging"
   category                     = "ecr-stg"
   collector_id                 = sumologic_collector.ECR.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "File_Uploads_lga1epwcdc011secevents_csv" {
@@ -1752,12 +1752,12 @@ resource "sumologic_http_source" "File_Uploads_lga1epwcdc011secevents_csv" {
   category                     = "uploads/other"
   collector_id                 = sumologic_collector.File_Uploads.id
   content_type                 = "Other"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "File_Uploads_xaa" {
@@ -1765,12 +1765,12 @@ resource "sumologic_http_source" "File_Uploads_xaa" {
   category                     = "AzureSignInEvents"
   collector_id                 = sumologic_collector.File_Uploads.id
   content_type                 = "Other"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "File_Uploads_xaa_2" {
@@ -1778,12 +1778,12 @@ resource "sumologic_http_source" "File_Uploads_xaa_2" {
   category                     = "AzureSignInEvents"
   collector_id                 = sumologic_collector.File_Uploads.id
   content_type                 = "Other"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "File_Uploads_xab" {
@@ -1791,24 +1791,24 @@ resource "sumologic_http_source" "File_Uploads_xab" {
   category                     = "AzureSignInEvents"
   collector_id                 = sumologic_collector.File_Uploads.id
   content_type                 = "Other"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "FireEye_FireEye" {
   name                         = "FireEye"
   category                     = "FireEye"
   collector_id                 = sumologic_collector.FireEye.id
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "UTC"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "true"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = true
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "FTPS_ftps-dev-syslog" {
@@ -1816,12 +1816,12 @@ resource "sumologic_http_source" "FTPS_ftps-dev-syslog" {
   description                  = "FTPS dev syslog"
   category                     = "ftp-dev-syslog"
   collector_id                 = sumologic_collector.FTPS.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "FTPS_ftps-prd-syslog" {
@@ -1829,12 +1829,12 @@ resource "sumologic_http_source" "FTPS_ftps-prd-syslog" {
   description                  = "FTPS production syslog"
   category                     = "ftps-prd-syslog"
   collector_id                 = sumologic_collector.FTPS.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "FTPS_ftps-stg-syslog" {
@@ -1842,12 +1842,12 @@ resource "sumologic_http_source" "FTPS_ftps-stg-syslog" {
   description                  = "FTPS staging syslog"
   category                     = "ftps-stg-syslog"
   collector_id                 = sumologic_collector.FTPS.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "GKE_Samizdat_Dev" {
@@ -1855,12 +1855,12 @@ resource "sumologic_http_source" "GKE_Samizdat_Dev" {
   category                     = "webandmobile-samizdat"
   collector_id                 = sumologic_collector.GKE.id
   content_type                 = "GoogleCloudLogs"
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "GKE_Samizdat_Prd" {
@@ -1868,24 +1868,24 @@ resource "sumologic_http_source" "GKE_Samizdat_Prd" {
   category                     = "webandmobile-samizdat"
   collector_id                 = sumologic_collector.GKE.id
   content_type                 = "GoogleCloudLogs"
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "google_apps_gsuite_alerts_Google_Apps_Gsuite_Alerts" {
   name                         = "Google Apps Gsuite Alerts"
   category                     = "google_apps_gsuite_alerts"
   collector_id                 = sumologic_collector.google_apps_gsuite_alerts.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
   default_date_formats {
     format  = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
     locator = "\\\"createTime\\\":(.*),"
@@ -1897,12 +1897,12 @@ resource "sumologic_http_source" "google_apps_gsuite_audit_G_Suite_Apps_Audit_Ad
   category                     = "google_apps_gsuite_audit"
   collector_id                 = sumologic_collector.google_apps_gsuite_audit.id
   content_type                 = "GoogleAppsAuditPushNotification"
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "America/New_York"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "true"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = true
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "google_apps_gsuite_audit_G_Suite_Apps_Audit_Calendar" {
@@ -1910,12 +1910,12 @@ resource "sumologic_http_source" "google_apps_gsuite_audit_G_Suite_Apps_Audit_Ca
   category                     = "google_apps_gsuite_audit"
   collector_id                 = sumologic_collector.google_apps_gsuite_audit.id
   content_type                 = "GoogleAppsAuditPushNotification"
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "America/New_York"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "true"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = true
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "google_apps_gsuite_audit_G_Suite_Apps_Audit_Drive" {
@@ -1923,12 +1923,12 @@ resource "sumologic_http_source" "google_apps_gsuite_audit_G_Suite_Apps_Audit_Dr
   category                     = "google_apps_gsuite_audit"
   collector_id                 = sumologic_collector.google_apps_gsuite_audit.id
   content_type                 = "GoogleAppsAuditPushNotification"
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "America/New_York"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "true"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = true
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "google_apps_gsuite_audit_G_Suite_Apps_Audit_Google_" {
@@ -1936,12 +1936,12 @@ resource "sumologic_http_source" "google_apps_gsuite_audit_G_Suite_Apps_Audit_Go
   category                     = "google_apps_gsuite_audit"
   collector_id                 = sumologic_collector.google_apps_gsuite_audit.id
   content_type                 = "GoogleAppsAuditPushNotification"
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "America/New_York"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "true"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = true
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "google_apps_gsuite_audit_G_Suite_Apps_Audit_Groups" {
@@ -1949,12 +1949,12 @@ resource "sumologic_http_source" "google_apps_gsuite_audit_G_Suite_Apps_Audit_Gr
   category                     = "google_apps_gsuite_audit"
   collector_id                 = sumologic_collector.google_apps_gsuite_audit.id
   content_type                 = "GoogleAppsAuditPushNotification"
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "America/New_York"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "true"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = true
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "google_apps_gsuite_audit_G_Suite_Apps_Audit_Login" {
@@ -1962,12 +1962,12 @@ resource "sumologic_http_source" "google_apps_gsuite_audit_G_Suite_Apps_Audit_Lo
   category                     = "google_apps_gsuite_audit"
   collector_id                 = sumologic_collector.google_apps_gsuite_audit.id
   content_type                 = "GoogleAppsAuditPushNotification"
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "America/New_York"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "true"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = true
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "google_apps_gsuite_audit_GSuite_Audit_Mobile" {
@@ -1975,12 +1975,12 @@ resource "sumologic_http_source" "google_apps_gsuite_audit_GSuite_Audit_Mobile" 
   category                     = "google_apps_gsuite_audit"
   collector_id                 = sumologic_collector.google_apps_gsuite_audit.id
   content_type                 = "GoogleAppsAuditPushNotification"
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "America/New_York"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "true"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = true
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "google_apps_gsuite_audit_GSuite_Audit_Rules" {
@@ -1988,12 +1988,12 @@ resource "sumologic_http_source" "google_apps_gsuite_audit_GSuite_Audit_Rules" {
   category                     = "google_apps_gsuite_audit"
   collector_id                 = sumologic_collector.google_apps_gsuite_audit.id
   content_type                 = "GoogleAppsAuditPushNotification"
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "America/New_York"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "true"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = true
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_Attribute_Production" {
@@ -2002,13 +2002,13 @@ resource "sumologic_http_source" "HTTP_Attribute_Production" {
   category                     = "attribute-prd"
   collector_id                 = sumologic_collector.HTTP.id
   content_type                 = "GoogleCloudLogs"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
   host_name                    = "attribute-prd"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_Attribute_Staging" {
@@ -2017,13 +2017,13 @@ resource "sumologic_http_source" "HTTP_Attribute_Staging" {
   category                     = "attribute-stg"
   collector_id                 = sumologic_collector.HTTP.id
   content_type                 = "GoogleCloudLogs"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
   host_name                    = "attribute-stg"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_Custom_App" {
@@ -2031,12 +2031,12 @@ resource "sumologic_http_source" "HTTP_Custom_App" {
   category                     = "elamarantest"
   collector_id                 = sumologic_collector.HTTP.id
   content_type                 = "Other"
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_Custom_App_2" {
@@ -2044,12 +2044,12 @@ resource "sumologic_http_source" "HTTP_Custom_App_2" {
   category                     = "elamarantest"
   collector_id                 = sumologic_collector.HTTP.id
   content_type                 = "Other"
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_Custom_App_3" {
@@ -2057,12 +2057,12 @@ resource "sumologic_http_source" "HTTP_Custom_App_3" {
   category                     = "elamarantest"
   collector_id                 = sumologic_collector.HTTP.id
   content_type                 = "Other"
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_elections_logs" {
@@ -2071,12 +2071,12 @@ resource "sumologic_http_source" "HTTP_elections_logs" {
   category                     = "elections-prd"
   collector_id                 = sumologic_collector.HTTP.id
   content_type                 = "GoogleCloudLogs"
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "UTC"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-advertising-waf_prd" {
@@ -2084,12 +2084,12 @@ resource "sumologic_http_source" "HTTP_fastly-advertising-waf_prd" {
   description                  = "fastly advertising service waf log"
   category                     = "fastly-advertising-waf/prd"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-advertising-waf_stg" {
@@ -2097,12 +2097,12 @@ resource "sumologic_http_source" "HTTP_fastly-advertising-waf_stg" {
   description                  = "advertising waf log endpoint"
   category                     = "fastly-advertising-waf/stg"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-advertising_prd" {
@@ -2110,12 +2110,12 @@ resource "sumologic_http_source" "HTTP_fastly-advertising_prd" {
   description                  = "advertising prod fastly logs"
   category                     = "fastly-advertising/prd"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-advertising_stg" {
@@ -2123,12 +2123,12 @@ resource "sumologic_http_source" "HTTP_fastly-advertising_stg" {
   description                  = "advertising staging fastly logs"
   category                     = "fastly-advertising/stg"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-co-prd" {
@@ -2136,12 +2136,12 @@ resource "sumologic_http_source" "HTTP_fastly-co-prd" {
   description                  = "for co.prd fastly service"
   category                     = "prd/co-fastly"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-co-stg" {
@@ -2149,12 +2149,12 @@ resource "sumologic_http_source" "HTTP_fastly-co-stg" {
   description                  = "for fastly co.dev and co.stg services"
   category                     = "stg/co-fastly"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-cooking-prd" {
@@ -2162,12 +2162,12 @@ resource "sumologic_http_source" "HTTP_fastly-cooking-prd" {
   description                  = "for fastly cooking.prd service"
   category                     = "prd/cooking-fastly"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-cooking-stg" {
@@ -2175,12 +2175,12 @@ resource "sumologic_http_source" "HTTP_fastly-cooking-stg" {
   description                  = "for cooking.dev and cooking.stg fastly services"
   category                     = "stg/cooking-fastly"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-g1-prd" {
@@ -2188,12 +2188,12 @@ resource "sumologic_http_source" "HTTP_fastly-g1-prd" {
   description                  = "Infra-71078"
   category                     = "fastly-g1-prd"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-g1-stg" {
@@ -2201,12 +2201,12 @@ resource "sumologic_http_source" "HTTP_fastly-g1-stg" {
   description                  = "Infra-71078"
   category                     = "fastly-g1-stg"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-gcs-assets_prd" {
@@ -2214,12 +2214,12 @@ resource "sumologic_http_source" "HTTP_fastly-gcs-assets_prd" {
   description                  = "Fastly gcs assests production"
   category                     = "fastly-gcs-assets/prd"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-gcs-assets_stg" {
@@ -2227,12 +2227,12 @@ resource "sumologic_http_source" "HTTP_fastly-gcs-assets_stg" {
   description                  = "Fastly GCS assets staging"
   category                     = "fastly-gcs-assets/stg"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-int_prd" {
@@ -2240,12 +2240,12 @@ resource "sumologic_http_source" "HTTP_fastly-int_prd" {
   description                  = "Fastly int.nyt.com production"
   category                     = "fastly-int/prd"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-int_stg" {
@@ -2253,12 +2253,12 @@ resource "sumologic_http_source" "HTTP_fastly-int_stg" {
   description                  = "Fastly int.nyt.com staging logs"
   category                     = "fastly-int/stg"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-mktg-purge_prd" {
@@ -2266,12 +2266,12 @@ resource "sumologic_http_source" "HTTP_fastly-mktg-purge_prd" {
   description                  = "Fastly Maketing Purge production"
   category                     = "fastly-mktg-purge/prd"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-mktg-purge_stg" {
@@ -2279,12 +2279,12 @@ resource "sumologic_http_source" "HTTP_fastly-mktg-purge_stg" {
   description                  = "Fastly Marketing Purge staging"
   category                     = "fastly-mktg-purge/stg"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-mktg_prd" {
@@ -2292,12 +2292,12 @@ resource "sumologic_http_source" "HTTP_fastly-mktg_prd" {
   description                  = "Fastly Marketing production"
   category                     = "fastly-mktg/prd"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-mktg_stg" {
@@ -2305,12 +2305,12 @@ resource "sumologic_http_source" "HTTP_fastly-mktg_stg" {
   description                  = "Fastly Marketing staging"
   category                     = "fastly-mktg/stg"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-mwcm_prd" {
@@ -2318,12 +2318,12 @@ resource "sumologic_http_source" "HTTP_fastly-mwcm_prd" {
   description                  = "MWCM fastly production logs"
   category                     = "fastly-mwcm/prd"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-mwcm_stg" {
@@ -2331,12 +2331,12 @@ resource "sumologic_http_source" "HTTP_fastly-mwcm_stg" {
   description                  = "MWCM fastly staging logs"
   category                     = "fastly-mwcm/stg"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-nytco_prd" {
@@ -2344,12 +2344,12 @@ resource "sumologic_http_source" "HTTP_fastly-nytco_prd" {
   description                  = "NYTCO Production fastly logs"
   category                     = "fastly-nytco/prd"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-nytco_stg" {
@@ -2357,12 +2357,12 @@ resource "sumologic_http_source" "HTTP_fastly-nytco_stg" {
   description                  = "NYTCO Fastly staging logs"
   category                     = "fastly-nytco/stg"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-rss_prd" {
@@ -2370,12 +2370,12 @@ resource "sumologic_http_source" "HTTP_fastly-rss_prd" {
   description                  = "Fastly RSS Production logs"
   category                     = "fastly-rss/prd"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-rss_stg" {
@@ -2383,12 +2383,12 @@ resource "sumologic_http_source" "HTTP_fastly-rss_stg" {
   description                  = "Fastly RSS Staging logs"
   category                     = "fastly-rss/stg"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-static-prd" {
@@ -2396,12 +2396,12 @@ resource "sumologic_http_source" "HTTP_fastly-static-prd" {
   description                  = "Fastly Static Error Logs"
   category                     = "fastly-static-prd"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-static-stg" {
@@ -2409,12 +2409,12 @@ resource "sumologic_http_source" "HTTP_fastly-static-stg" {
   description                  = "Fasty static error logs"
   category                     = "fastly-static-stg"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-static_prd" {
@@ -2422,12 +2422,12 @@ resource "sumologic_http_source" "HTTP_fastly-static_prd" {
   description                  = "Fastly static production"
   category                     = "fastly-static/prd"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-static_stg" {
@@ -2435,12 +2435,12 @@ resource "sumologic_http_source" "HTTP_fastly-static_stg" {
   description                  = "Fastly static staging"
   category                     = "fastly-static/stg"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-waf-apps_prd" {
@@ -2448,12 +2448,12 @@ resource "sumologic_http_source" "HTTP_fastly-waf-apps_prd" {
   description                  = "Fastly WAF App production logs"
   category                     = "fastly-waf-apps/prd"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-waf-apps_stg" {
@@ -2461,12 +2461,12 @@ resource "sumologic_http_source" "HTTP_fastly-waf-apps_stg" {
   description                  = "Fastly WAF APP Staging logs"
   category                     = "fastly-waf-apps/stg"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-www-purge_prd" {
@@ -2474,12 +2474,12 @@ resource "sumologic_http_source" "HTTP_fastly-www-purge_prd" {
   description                  = "Fastly WWW purge production DV-2179"
   category                     = "fastly-www-purge/prd"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-www-purge_stg" {
@@ -2487,12 +2487,12 @@ resource "sumologic_http_source" "HTTP_fastly-www-purge_stg" {
   description                  = "fastly-www-purge/stg Fastly WWW purge staging DV-2179"
   category                     = "fastly-www-purge/stg"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-www_prd" {
@@ -2500,12 +2500,12 @@ resource "sumologic_http_source" "HTTP_fastly-www_prd" {
   description                  = "Fastly www production"
   category                     = "fastly-www/prd"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_fastly-www_stg" {
@@ -2513,12 +2513,12 @@ resource "sumologic_http_source" "HTTP_fastly-www_stg" {
   description                  = "Fastly www staging"
   category                     = "fastly-www/stg"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_homedelivery-prd" {
@@ -2526,12 +2526,12 @@ resource "sumologic_http_source" "HTTP_homedelivery-prd" {
   description                  = "homedelivery prod fastly logs"
   category                     = "prd/homedelivery-fastly"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_homedelivery-stg" {
@@ -2539,36 +2539,36 @@ resource "sumologic_http_source" "HTTP_homedelivery-stg" {
   description                  = "homedelivery staging fastly logs"
   category                     = "stg/homedelivery-fastly"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_int_nyt_com" {
   name                         = "int.nyt.com"
   category                     = "int.nyt.com"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_int_stg_nyt_com" {
   name                         = "int.stg.nyt.com"
   category                     = "int.stg.nyt.com"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_intf-w_nyt_com" {
@@ -2576,12 +2576,12 @@ resource "sumologic_http_source" "HTTP_intf-w_nyt_com" {
   category                     = "intf-w.nyt.com"
   collector_id                 = sumologic_collector.HTTP.id
   content_type                 = "Other"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_intf_nyt_com" {
@@ -2589,12 +2589,12 @@ resource "sumologic_http_source" "HTTP_intf_nyt_com" {
   category                     = "intf.nyt.com"
   collector_id                 = sumologic_collector.HTTP.id
   content_type                 = "Other"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_lastpass" {
@@ -2602,12 +2602,12 @@ resource "sumologic_http_source" "HTTP_lastpass" {
   description                  = "LastPass logs"
   category                     = "lastpass"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_Lire" {
@@ -2615,12 +2615,12 @@ resource "sumologic_http_source" "HTTP_Lire" {
   description                  = "Lire Auth logs"
   category                     = "prd/ecommerce/auth_event_publisher"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "true"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = true
   default_date_formats {
     format  = "yyyyMMdd'T'HH:mm:ssZZZZ"
     locator = "time:(.*)"
@@ -2632,12 +2632,12 @@ resource "sumologic_http_source" "HTTP_Lire_Staging" {
   description                  = "Lire Auth Staging logs"
   category                     = "stg/ecommerce/auth_event_publisher"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "true"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = true
   default_date_formats {
     format  = "yyyyMMdd'T'HH:mm:ssZZZZ"
     locator = "time:(.*)"
@@ -2649,12 +2649,12 @@ resource "sumologic_http_source" "HTTP_mobilewebprd-www" {
   category                     = "mobilewebprd-www"
   collector_id                 = sumologic_collector.HTTP.id
   content_type                 = "Other"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_mobilewebstg-www" {
@@ -2662,12 +2662,12 @@ resource "sumologic_http_source" "HTTP_mobilewebstg-www" {
   category                     = "mobilewebstg-www"
   collector_id                 = sumologic_collector.HTTP.id
   content_type                 = "Other"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_mwcm-dev" {
@@ -2675,12 +2675,12 @@ resource "sumologic_http_source" "HTTP_mwcm-dev" {
   description                  = "Fastly mwcm-dev"
   category                     = "mwcm-dev"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_mwcm-prd" {
@@ -2688,12 +2688,12 @@ resource "sumologic_http_source" "HTTP_mwcm-prd" {
   description                  = "Fastly mwcm-prd"
   category                     = "mwcm-prd"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_mwcm-stg" {
@@ -2701,24 +2701,24 @@ resource "sumologic_http_source" "HTTP_mwcm-stg" {
   description                  = "Fastly mwcm-stg"
   category                     = "mwcm-stg"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_myaccount-prd" {
   name                         = "myaccount-prd"
   category                     = "prd/myaccount-fastly"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_myaccount-stg" {
@@ -2726,73 +2726,73 @@ resource "sumologic_http_source" "HTTP_myaccount-stg" {
   category                     = "stg/myaccount-fastly"
   collector_id                 = sumologic_collector.HTTP.id
   content_type                 = "Other"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_platforms_nytimes_com-prd" {
   name                         = "platforms.nytimes.com-prd"
   category                     = "platforms.nytimes.com-prd"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_prd_fastly-query" {
   name                         = "prd/fastly-query"
   category                     = "prd/fastly-query"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_project-vi-alpha-dev" {
   name                         = "project-vi-alpha-dev"
   category                     = "webandmobile-projectvi-dev"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "UTC"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "false"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = false
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_project-vi-alpha-prd" {
   name                         = "project-vi-alpha-prd"
   category                     = "webandmobile-projectvi-prd"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "UTC"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "false"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = false
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_samizdat-fluentd" {
   name                         = "samizdat-fluentd"
   category                     = "samizdat-dev"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
   host_name                    = "samizdat-fluentd"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_stg-ecommerce-payflow" {
@@ -2800,24 +2800,24 @@ resource "sumologic_http_source" "HTTP_stg-ecommerce-payflow" {
   category                     = "stg/ecommerce/payflow"
   collector_id                 = sumologic_collector.HTTP.id
   content_type                 = "GoogleCloudLogs"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_stg_fastly-query" {
   name                         = "stg/fastly-query"
   category                     = "stg/fastly-query"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_tipjar-prd" {
@@ -2825,12 +2825,12 @@ resource "sumologic_http_source" "HTTP_tipjar-prd" {
   description                  = "Tipjar Prd Kubernetes Logs"
   category                     = "prd/tipjar"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_tipjar-stg" {
@@ -2838,24 +2838,24 @@ resource "sumologic_http_source" "HTTP_tipjar-stg" {
   description                  = "Tipjar Stg Kubernetes Logs"
   category                     = "stg/tipjar"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_tokenization-app-dev" {
   name                         = "tokenization-app-dev"
   category                     = "tokenization"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_tokenization-app-prd" {
@@ -2863,24 +2863,24 @@ resource "sumologic_http_source" "HTTP_tokenization-app-prd" {
   description                  = "tokenization app prd"
   category                     = "tokenization"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_tokenization-app-stg" {
   name                         = "tokenization-app-stg"
   category                     = "tokenization"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_vault-prd" {
@@ -2888,12 +2888,12 @@ resource "sumologic_http_source" "HTTP_vault-prd" {
   description                  = "Vault Logs - Delivery Engineering Secrets Management Tool"
   category                     = "prd/vault"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_vault-stg" {
@@ -2901,12 +2901,12 @@ resource "sumologic_http_source" "HTTP_vault-stg" {
   description                  = "Vault Logs - Delivery Engineering Secrets Management Tool"
   category                     = "stg/vault"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_video-service" {
@@ -2914,12 +2914,12 @@ resource "sumologic_http_source" "HTTP_video-service" {
   description                  = "Fastly video service"
   category                     = "video-service"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_video-service-stg" {
@@ -2927,12 +2927,12 @@ resource "sumologic_http_source" "HTTP_video-service-stg" {
   description                  = "Fastly video service staging"
   category                     = "video-service-stg"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_webandmobile-samizdat-prd" {
@@ -2940,12 +2940,12 @@ resource "sumologic_http_source" "HTTP_webandmobile-samizdat-prd" {
   description                  = "Samizdat prod logs from GCP"
   category                     = "webandmobile-samizdat"
   collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "true"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = true
   manual_prefix_regexp         = "^level:[A-Z]\\s+date:\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z\\s+message:.*"
 }
 
@@ -2954,12 +2954,12 @@ resource "sumologic_http_source" "HTTP_webandmobile-www" {
   category                     = "webandmobile-www"
   collector_id                 = sumologic_collector.HTTP.id
   content_type                 = "Other"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_webprd-www" {
@@ -2967,12 +2967,12 @@ resource "sumologic_http_source" "HTTP_webprd-www" {
   category                     = "webprd-www"
   collector_id                 = sumologic_collector.HTTP.id
   content_type                 = "Other"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "HTTP_webstg-www" {
@@ -2980,12 +2980,12 @@ resource "sumologic_http_source" "HTTP_webstg-www" {
   category                     = "webstg-www"
   collector_id                 = sumologic_collector.HTTP.id
   content_type                 = "Other"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "https-collector_dev_ecommerce-ecmcore-core" {
@@ -2993,12 +2993,12 @@ resource "sumologic_http_source" "https-collector_dev_ecommerce-ecmcore-core" {
   description                  = "Ecommer ecmcore logs via HTTP"
   category                     = "ecommerce-ecmcore-core"
   collector_id                 = sumologic_collector.https-collector_dev.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "https-collector_dev_infra-test" {
@@ -3006,12 +3006,12 @@ resource "sumologic_http_source" "https-collector_dev_infra-test" {
   description                  = "Testing"
   category                     = "infra-test"
   collector_id                 = sumologic_collector.https-collector_dev.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "true"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = true
 }
 
 resource "sumologic_http_source" "https-collector_dev_linux-syslog" {
@@ -3019,12 +3019,12 @@ resource "sumologic_http_source" "https-collector_dev_linux-syslog" {
   description                  = "testing linux-syslog"
   category                     = "linux-syslog"
   collector_id                 = sumologic_collector.https-collector_dev.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "https-collector_dev_proof-of-concept" {
@@ -3032,49 +3032,49 @@ resource "sumologic_http_source" "https-collector_dev_proof-of-concept" {
   description                  = "INFRA-72180"
   category                     = "proof-of-concept"
   collector_id                 = sumologic_collector.https-collector_dev.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
   host_name                    = "proof-of-concept"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "https-collector_dev_windows-dc" {
   name                         = "windows-dc"
   category                     = "windows-dc"
   collector_id                 = sumologic_collector.https-collector_dev.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "https-collector_prd_axonius-prd" {
   name                         = "axonius-prd"
   category                     = "prd/axonius"
   collector_id                 = sumologic_collector.https-collector_prd.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "https-collector_prd_security-amp" {
   name                         = "security-amp"
   category                     = "security-amp"
   collector_id                 = sumologic_collector.https-collector_prd.id
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "America/New_York"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
   default_date_formats {
     format  = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
     locator = "\\\"date\\\":(.*), \""
@@ -3085,13 +3085,13 @@ resource "sumologic_http_source" "https-collector_prd_security-fireeye-nyhq" {
   name                         = "security-fireeye-nyhq"
   category                     = "security-fireeye"
   collector_id                 = sumologic_collector.https-collector_prd.id
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "Etc/UTC"
   host_name                    = "http-collector.prd"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "true"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = true
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "https-collector_prd_security-gapp-calendar" {
@@ -3099,12 +3099,12 @@ resource "sumologic_http_source" "https-collector_prd_security-gapp-calendar" {
   category                     = "security-gapp-calendar"
   collector_id                 = sumologic_collector.https-collector_prd.id
   content_type                 = "GoogleAppsAuditPushNotification"
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "UTC"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "true"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = true
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "https-collector_prd_security-gapp-drive" {
@@ -3112,12 +3112,12 @@ resource "sumologic_http_source" "https-collector_prd_security-gapp-drive" {
   category                     = "security-gapp-drive"
   collector_id                 = sumologic_collector.https-collector_prd.id
   content_type                 = "GoogleAppsAuditPushNotification"
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "UTC"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "true"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = true
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "https-collector_prd_security-gapp-login" {
@@ -3125,12 +3125,12 @@ resource "sumologic_http_source" "https-collector_prd_security-gapp-login" {
   category                     = "security-gapp-login"
   collector_id                 = sumologic_collector.https-collector_prd.id
   content_type                 = "GoogleAppsAuditPushNotification"
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "UTC"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "true"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = true
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "https-collector_prd_security-gapp-token" {
@@ -3138,50 +3138,50 @@ resource "sumologic_http_source" "https-collector_prd_security-gapp-token" {
   category                     = "security-gapp-token"
   collector_id                 = sumologic_collector.https-collector_prd.id
   content_type                 = "GoogleAppsAuditPushNotification"
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "UTC"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "true"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = true
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "https-collector_prd_security-qualys-nyhq" {
   name                         = "security-qualys-nyhq"
   category                     = "security-qualys"
   collector_id                 = sumologic_collector.https-collector_prd.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "UTC"
   host_name                    = "http-collector.prd"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "false"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = false
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "https-collector_stg_publishing-cms-http-collector-stg" {
   name                         = "publishing-cms-http-collector-stg"
   category                     = "publishing-cms-http-collector"
   collector_id                 = sumologic_collector.https-collector_stg.id
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "UTC"
   host_name                    = "http-collector.stg"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "true"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = true
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Lastpass_Test_Lastpass_test" {
   name                         = "Lastpass_test"
   category                     = "lastpass"
   collector_id                 = sumologic_collector.Lastpass_Test.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Lire_lire-api-error" {
@@ -3189,12 +3189,12 @@ resource "sumologic_http_source" "Lire_lire-api-error" {
   description                  = "Lire api error logs"
   category                     = "lire-api-error"
   collector_id                 = sumologic_collector.Lire.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Lire_lire-api-stg-error" {
@@ -3202,12 +3202,12 @@ resource "sumologic_http_source" "Lire_lire-api-stg-error" {
   description                  = "Lire api staging error"
   category                     = "lire-api-stg-error"
   collector_id                 = sumologic_collector.Lire.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Lire_lire-prd-iad" {
@@ -3215,12 +3215,12 @@ resource "sumologic_http_source" "Lire_lire-prd-iad" {
   description                  = "Lire production logs"
   category                     = "lire-prd-iad"
   collector_id                 = sumologic_collector.Lire.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Lire_lire-stg-iad" {
@@ -3228,39 +3228,39 @@ resource "sumologic_http_source" "Lire_lire-stg-iad" {
   description                  = "Lire staging logs"
   category                     = "lire-stg-iad"
   collector_id                 = sumologic_collector.Lire.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "malc-dev_malc-dev-continuous" {
   name                         = "malc-dev-continuous"
   category                     = "malc-dev"
   collector_id                 = sumologic_collector.malc-dev.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "malc-dev_malc-dev-frequent" {
   name                         = "malc-dev-frequent"
   category                     = "malc-dev"
   collector_id                 = sumologic_collector.malc-dev.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
   fields = {
     data_tier = "frequent"
   }
-  force_timezone = "false"
+  force_timezone = false
 }
 
 resource "sumologic_http_source" "network-firewall-fortigate-nyhq-fwtc_Collector_network-firewall-fortigate-nyhq-fwtc" {
@@ -3268,12 +3268,12 @@ resource "sumologic_http_source" "network-firewall-fortigate-nyhq-fwtc_Collector
   category                     = "network-firewall-fortigate-nyhq-fwtc"
   collector_id                 = sumologic_collector.network-firewall-fortigate-nyhq-fwtc_Collector.id
   content_type                 = "Other"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "network-firewall-fortigate-nyhq-fwtc_Collector_2_network-firewall-fortigate-nyhq-fwtc" {
@@ -3281,12 +3281,12 @@ resource "sumologic_http_source" "network-firewall-fortigate-nyhq-fwtc_Collector
   category                     = "network-firewall-fortigate-nyhq-fwtc"
   collector_id                 = sumologic_collector.network-firewall-fortigate-nyhq-fwtc_Collector_2.id
   content_type                 = "Other"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "network-firewall-fortigate-nyhq-fwtc_Collector_3_network-firewall-fortigate-nyhq-fwtc" {
@@ -3294,12 +3294,12 @@ resource "sumologic_http_source" "network-firewall-fortigate-nyhq-fwtc_Collector
   category                     = "network-firewall-fortigate-nyhq-fwtc"
   collector_id                 = sumologic_collector.network-firewall-fortigate-nyhq-fwtc_Collector_3.id
   content_type                 = "Other"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "network-firewall-fortigate-nyhq-fwtc_Collector_4_network-firewall-fortigate-nyhq-fwtc" {
@@ -3307,12 +3307,12 @@ resource "sumologic_http_source" "network-firewall-fortigate-nyhq-fwtc_Collector
   category                     = "network-firewall-fortigate-nyhq-fwtc"
   collector_id                 = sumologic_collector.network-firewall-fortigate-nyhq-fwtc_Collector_4.id
   content_type                 = "Other"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "network-firewall-fortigate-nyhq-fwtc_Collector_5_network-firewall-fortigate-nyhq-fwtc" {
@@ -3320,12 +3320,12 @@ resource "sumologic_http_source" "network-firewall-fortigate-nyhq-fwtc_Collector
   category                     = "network-firewall-fortigate-nyhq-fwtc"
   collector_id                 = sumologic_collector.network-firewall-fortigate-nyhq-fwtc_Collector_5.id
   content_type                 = "Other"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "network-firewall-fortigate-nyhq-fwtc_Collector_6_network-firewall-fortigate-nyhq-fwtc" {
@@ -3333,12 +3333,12 @@ resource "sumologic_http_source" "network-firewall-fortigate-nyhq-fwtc_Collector
   category                     = "network-firewall-fortigate-nyhq-fwtc"
   collector_id                 = sumologic_collector.network-firewall-fortigate-nyhq-fwtc_Collector_6.id
   content_type                 = "Other"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "nimbul_nimbul-dev" {
@@ -3346,12 +3346,12 @@ resource "sumologic_http_source" "nimbul_nimbul-dev" {
   description                  = "Nimbul Development logs"
   category                     = "nimbul-dev"
   collector_id                 = sumologic_collector.nimbul.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "nimbul_nimbul-prd" {
@@ -3359,58 +3359,58 @@ resource "sumologic_http_source" "nimbul_nimbul-prd" {
   description                  = "NImbul Production logs"
   category                     = "nimbul-prd"
   collector_id                 = sumologic_collector.nimbul.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "nyt-sharecluster-dev_shared-dev-east-r0_events" {
   name                         = "events"
   category                     = "shared-dev-east-r0/events"
   collector_id                 = sumologic_collector.nyt-sharecluster-dev_shared-dev-east-r0.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "nyt-sharecluster-dev_shared-dev-east-r0_logs" {
   name                         = "logs"
   collector_id                 = sumologic_collector.nyt-sharecluster-dev_shared-dev-east-r0.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "nyt-sharecluster-dev_shared-stg-east-r0_events" {
   name                         = "events"
   category                     = "shared-stg-east-r0/events"
   collector_id                 = sumologic_collector.nyt-sharecluster-dev_shared-stg-east-r0.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "nyt-sharecluster-dev_shared-stg-east-r0_logs" {
   name                         = "logs"
   collector_id                 = sumologic_collector.nyt-sharecluster-dev_shared-stg-east-r0.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "NYTCO_nytco-prd" {
@@ -3418,12 +3418,12 @@ resource "sumologic_http_source" "NYTCO_nytco-prd" {
   description                  = "NYTCO production logs"
   category                     = "nytco-prd"
   collector_id                 = sumologic_collector.NYTCO.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "NYTCO_nytco-stg" {
@@ -3431,60 +3431,60 @@ resource "sumologic_http_source" "NYTCO_nytco-stg" {
   description                  = "nytco staging application logs"
   category                     = "nytco-stg"
   collector_id                 = sumologic_collector.NYTCO.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Olaf_Temp_Olaf_Temp" {
   name                         = "Olaf Temp"
   category                     = "THG/sourceCategories"
   collector_id                 = sumologic_collector.Olaf_Temp.id
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "America/New_York"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "PPD_dist-batch-dev" {
   name                         = "dist-batch-dev"
   category                     = "dist-batch"
   collector_id                 = sumologic_collector.PPD.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "PPD_dist-batch-prd" {
   name                         = "dist-batch-prd"
   category                     = "dist-batch"
   collector_id                 = sumologic_collector.PPD.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "PPD_dist-batch-stg" {
   name                         = "dist-batch-stg"
   category                     = "dist-batch"
   collector_id                 = sumologic_collector.PPD.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "PPD_dist-dev" {
@@ -3492,12 +3492,12 @@ resource "sumologic_http_source" "PPD_dist-dev" {
   description                  = "Distribution dev logs"
   category                     = "dist"
   collector_id                 = sumologic_collector.PPD.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "PPD_dist-prd" {
@@ -3505,12 +3505,12 @@ resource "sumologic_http_source" "PPD_dist-prd" {
   description                  = "Distribution Production logs"
   category                     = "dist"
   collector_id                 = sumologic_collector.PPD.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "PPD_dist-stg" {
@@ -3518,48 +3518,48 @@ resource "sumologic_http_source" "PPD_dist-stg" {
   description                  = "Distribution staging logs"
   category                     = "dist"
   collector_id                 = sumologic_collector.PPD.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "PPD_ppd-ink-ce-dev" {
   name                         = "ppd-ink-ce-dev"
   category                     = "ppd-ink-ce"
   collector_id                 = sumologic_collector.PPD.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "PPD_ppd-ink-ce-prd" {
   name                         = "ppd-ink-ce-prd"
   category                     = "ppd-ink-ce"
   collector_id                 = sumologic_collector.PPD.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "PPD_ppd-ink-ce-stg" {
   name                         = "ppd-ink-ce-stg"
   category                     = "ppd-ink-ce"
   collector_id                 = sumologic_collector.PPD.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "PPD_ppd-ink-dev" {
@@ -3567,12 +3567,12 @@ resource "sumologic_http_source" "PPD_ppd-ink-dev" {
   description                  = "Print Production Distribution dev logs"
   category                     = "ppd-ink"
   collector_id                 = sumologic_collector.PPD.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "PPD_ppd-ink-prd" {
@@ -3580,12 +3580,12 @@ resource "sumologic_http_source" "PPD_ppd-ink-prd" {
   description                  = "Print Production and Distribution production logs"
   category                     = "ppd-ink"
   collector_id                 = sumologic_collector.PPD.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "PPD_ppd-ink-stg" {
@@ -3593,48 +3593,48 @@ resource "sumologic_http_source" "PPD_ppd-ink-stg" {
   description                  = "Print Production and Distribution staging logs"
   category                     = "ppd-ink"
   collector_id                 = sumologic_collector.PPD.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Redhat-Tower-Prod_redhat-tower-dev" {
   name                         = "redhat-tower-dev"
   category                     = "redhat-tower-dev"
   collector_id                 = sumologic_collector.Redhat-Tower-Prod.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Redhat-Tower-Prod_redhat-tower-prd" {
   name                         = "redhat-tower-prd"
   category                     = "redhat-tower-prd"
   collector_id                 = sumologic_collector.Redhat-Tower-Prod.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Redhat-Tower-Prod_redhat-tower-stg" {
   name                         = "redhat-tower-stg"
   category                     = "redhat-tower-stg"
   collector_id                 = sumologic_collector.Redhat-Tower-Prod.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Search_search-api-dev" {
@@ -3642,24 +3642,24 @@ resource "sumologic_http_source" "Search_search-api-dev" {
   description                  = "Search API dev logs"
   category                     = "search-api-dev"
   collector_id                 = sumologic_collector.Search.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Search_search-api-prd" {
   name                         = "search-api-prd"
   category                     = "search-api-prd"
   collector_id                 = sumologic_collector.Search.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Search_search-api-stg" {
@@ -3667,24 +3667,24 @@ resource "sumologic_http_source" "Search_search-api-stg" {
   description                  = "Search API staging"
   category                     = "search-api-stg"
   collector_id                 = sumologic_collector.Search.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "security-malware-domains_Collector_security-malware-domains" {
   name                         = "security-malware-domains"
   category                     = "security-malware-domains"
   collector_id                 = sumologic_collector.security-malware-domains_Collector.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "security-symantec-csv_Collector_security-symantec-csv" {
@@ -3692,12 +3692,12 @@ resource "sumologic_http_source" "security-symantec-csv_Collector_security-syman
   category                     = "security-symantec-csv"
   collector_id                 = sumologic_collector.security-symantec-csv_Collector.id
   content_type                 = "Other"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "security-symantec-csv_Collector_2_security-symantec-csv" {
@@ -3705,12 +3705,12 @@ resource "sumologic_http_source" "security-symantec-csv_Collector_2_security-sym
   category                     = "security-symantec-csv"
   collector_id                 = sumologic_collector.security-symantec-csv_Collector_2.id
   content_type                 = "Other"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "SEO_fastly-spiderbites_prd" {
@@ -3718,12 +3718,12 @@ resource "sumologic_http_source" "SEO_fastly-spiderbites_prd" {
   description                  = "sumo log for fastly spiderbites service in PRD"
   category                     = "fastly-spiderbites/prd"
   collector_id                 = sumologic_collector.SEO.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "SEO_fastly-spiderbites_stg" {
@@ -3731,12 +3731,12 @@ resource "sumologic_http_source" "SEO_fastly-spiderbites_stg" {
   description                  = "sumo log for fastly spiderbites dev and stg"
   category                     = "fastly-spiderbites/stg"
   collector_id                 = sumologic_collector.SEO.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Sugar_sugar-dev" {
@@ -3744,12 +3744,12 @@ resource "sumologic_http_source" "Sugar_sugar-dev" {
   description                  = "Sugar CRM dev logs"
   category                     = "sugar-dev"
   collector_id                 = sumologic_collector.Sugar.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Sugar_sugar-prd" {
@@ -3757,12 +3757,12 @@ resource "sumologic_http_source" "Sugar_sugar-prd" {
   description                  = "Sugar CRM production logs"
   category                     = "sugar-prd"
   collector_id                 = sumologic_collector.Sugar.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Sugar_sugar-stg" {
@@ -3770,24 +3770,24 @@ resource "sumologic_http_source" "Sugar_sugar-stg" {
   description                  = "Sugar CRM staging logs"
   category                     = "sugar-stg"
   collector_id                 = sumologic_collector.Sugar.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "TCEN__Time_Central__tcen-prd" {
   name                         = "tcen-prd"
   category                     = "tcen-prd"
   collector_id                 = sumologic_collector.TCEN__Time_Central_.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "TCEN__Time_Central__tcen-stg" {
@@ -3795,12 +3795,12 @@ resource "sumologic_http_source" "TCEN__Time_Central__tcen-stg" {
   description                  = "tcen staging logs"
   category                     = "tcen-stg"
   collector_id                 = sumologic_collector.TCEN__Time_Central_.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "tipjar_tipjar-x-prd" {
@@ -3809,12 +3809,12 @@ resource "sumologic_http_source" "tipjar_tipjar-x-prd" {
   category                     = "tipjar-x-prd"
   collector_id                 = sumologic_collector.tipjar.id
   content_type                 = "GoogleCloudLogs"
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "America/New_York"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "tipjar_tipjar-x-stg" {
@@ -3823,48 +3823,48 @@ resource "sumologic_http_source" "tipjar_tipjar-x-stg" {
   category                     = "tipjar-x-stg"
   collector_id                 = sumologic_collector.tipjar.id
   content_type                 = "GoogleCloudLogs"
-  multiline_processing_enabled = "false"
+  multiline_processing_enabled = false
   timezone                     = "America/New_York"
-  use_autoline_matching        = "false"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = false
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Twistlock_twistlock-console-dev" {
   name                         = "twistlock-console-dev"
   category                     = "dev/twistlock/console"
   collector_id                 = sumologic_collector.Twistlock.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Twistlock_twistlock-console-prd" {
   name                         = "twistlock-console-prd"
   category                     = "prd/twistlock/console"
   collector_id                 = sumologic_collector.Twistlock.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "Twistlock_twistlock-console-stg" {
   name                         = "twistlock-console-stg"
   category                     = "stg/twistlock/console"
   collector_id                 = sumologic_collector.Twistlock.id
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadsvarnish_Collector_uploadsvarnish" {
@@ -3872,12 +3872,12 @@ resource "sumologic_http_source" "uploadsvarnish_Collector_uploadsvarnish" {
   category                     = "uploads/varnish"
   collector_id                 = sumologic_collector.uploadsvarnish_Collector.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_uploadswebandmobile-www-old" {
@@ -3885,12 +3885,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_uploadsw
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_10_uploadswebandmobile-www-old" {
@@ -3898,12 +3898,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_10_uploa
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_10.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474574440476_uploadswebandmobile-www-old" {
@@ -3911,12 +3911,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745744
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474574440476.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474574494106_uploadswebandmobile-www-old" {
@@ -3924,12 +3924,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745744
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474574494106.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474574542224_uploadswebandmobile-www-old" {
@@ -3937,12 +3937,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745745
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474574542224.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474574609179_uploadswebandmobile-www-old" {
@@ -3950,12 +3950,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745746
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474574609179.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474574666371_uploadswebandmobile-www-old" {
@@ -3963,12 +3963,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745746
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474574666371.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474574723032_uploadswebandmobile-www-old" {
@@ -3976,12 +3976,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745747
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474574723032.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474574772742_uploadswebandmobile-www-old" {
@@ -3989,12 +3989,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745747
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474574772742.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474575151510_uploadswebandmobile-www-old" {
@@ -4002,12 +4002,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745751
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474575151510.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474575250208_uploadswebandmobile-www-old" {
@@ -4015,12 +4015,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745752
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474575250208.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474575291370_uploadswebandmobile-www-old" {
@@ -4028,12 +4028,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745752
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474575291370.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474575336152_uploadswebandmobile-www-old" {
@@ -4041,12 +4041,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745753
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474575336152.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474575915226_uploadswebandmobile-www-old" {
@@ -4054,12 +4054,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745759
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474575915226.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474575964903_uploadswebandmobile-www-old" {
@@ -4067,12 +4067,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745759
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474575964903.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474576022931_uploadswebandmobile-www-old" {
@@ -4080,12 +4080,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745760
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474576022931.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474576066474_uploadswebandmobile-www-old" {
@@ -4093,12 +4093,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745760
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474576066474.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474576155165_uploadswebandmobile-www-old" {
@@ -4106,12 +4106,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745761
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474576155165.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474576213333_uploadswebandmobile-www-old" {
@@ -4119,12 +4119,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745762
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474576213333.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474576292141_uploadswebandmobile-www-old" {
@@ -4132,12 +4132,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745762
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474576292141.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474576441004_uploadswebandmobile-www-old" {
@@ -4145,12 +4145,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745764
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474576441004.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474576495067_uploadswebandmobile-www-old" {
@@ -4158,12 +4158,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745764
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474576495067.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474576690118_uploadswebandmobile-www-old" {
@@ -4171,12 +4171,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745766
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474576690118.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474576956179_uploadswebandmobile-www-old" {
@@ -4184,12 +4184,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745769
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474576956179.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474577036574_uploadswebandmobile-www-old" {
@@ -4197,12 +4197,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745770
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474577036574.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474599227601_uploadswebandmobile-www-old" {
@@ -4210,12 +4210,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745992
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474599227601.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474599275107_uploadswebandmobile-www-old" {
@@ -4223,12 +4223,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745992
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474599275107.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474599322501_uploadswebandmobile-www-old" {
@@ -4236,12 +4236,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745993
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474599322501.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474599368688_uploadswebandmobile-www-old" {
@@ -4249,12 +4249,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745993
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474599368688.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474599413166_uploadswebandmobile-www-old" {
@@ -4262,12 +4262,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745994
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474599413166.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474599458672_uploadswebandmobile-www-old" {
@@ -4275,12 +4275,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745994
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474599458672.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474599520306_uploadswebandmobile-www-old" {
@@ -4288,12 +4288,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745995
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474599520306.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474599556574_uploadswebandmobile-www-old" {
@@ -4301,12 +4301,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745995
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474599556574.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474599592039_uploadswebandmobile-www-old" {
@@ -4314,12 +4314,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745995
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474599592039.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474599646547_uploadswebandmobile-www-old" {
@@ -4327,12 +4327,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745996
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474599646547.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474599692649_uploadswebandmobile-www-old" {
@@ -4340,12 +4340,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745996
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474599692649.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474599735870_uploadswebandmobile-www-old" {
@@ -4353,12 +4353,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14745997
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474599735870.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474600081504_uploadswebandmobile-www-old" {
@@ -4366,12 +4366,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746000
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474600081504.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474600126643_uploadswebandmobile-www-old" {
@@ -4379,12 +4379,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746001
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474600126643.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474600177949_uploadswebandmobile-www-old" {
@@ -4392,12 +4392,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746001
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474600177949.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474600222117_uploadswebandmobile-www-old" {
@@ -4405,12 +4405,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746002
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474600222117.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474600276448_uploadswebandmobile-www-old" {
@@ -4418,12 +4418,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746002
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474600276448.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474600318268_uploadswebandmobile-www-old" {
@@ -4431,12 +4431,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746003
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474600318268.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474600359657_uploadswebandmobile-www-old" {
@@ -4444,12 +4444,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746003
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474600359657.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474600408703_uploadswebandmobile-www-old" {
@@ -4457,12 +4457,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746004
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474600408703.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474600448890_uploadswebandmobile-www-old" {
@@ -4470,12 +4470,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746004
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474600448890.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474600489746_uploadswebandmobile-www-old" {
@@ -4483,12 +4483,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746004
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474600489746.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474600532871_uploadswebandmobile-www-old" {
@@ -4496,12 +4496,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746005
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474600532871.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474600592478_uploadswebandmobile-www-old" {
@@ -4509,12 +4509,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746005
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474600592478.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474600640434_uploadswebandmobile-www-old" {
@@ -4522,12 +4522,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746006
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474600640434.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474600683900_uploadswebandmobile-www-old" {
@@ -4535,12 +4535,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746006
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474600683900.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474600730706_uploadswebandmobile-www-old" {
@@ -4548,12 +4548,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746007
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474600730706.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474600774809_uploadswebandmobile-www-old" {
@@ -4561,12 +4561,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746007
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474600774809.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474600837189_uploadswebandmobile-www-old" {
@@ -4574,12 +4574,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746008
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474600837189.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474600891810_uploadswebandmobile-www-old" {
@@ -4587,12 +4587,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746008
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474600891810.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474600949815_uploadswebandmobile-www-old" {
@@ -4600,12 +4600,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746009
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474600949815.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474600997574_uploadswebandmobile-www-old" {
@@ -4613,12 +4613,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746009
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474600997574.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474601055033_uploadswebandmobile-www-old" {
@@ -4626,12 +4626,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746010
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474601055033.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474601099802_uploadswebandmobile-www-old" {
@@ -4639,12 +4639,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746010
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474601099802.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474601414221_uploadswebandmobile-www-old" {
@@ -4652,12 +4652,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746014
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474601414221.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474601508322_uploadswebandmobile-www-old" {
@@ -4665,12 +4665,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746015
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474601508322.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474601618549_uploadswebandmobile-www-old" {
@@ -4678,12 +4678,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746016
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474601618549.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474601656568_uploadswebandmobile-www-old" {
@@ -4691,12 +4691,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746016
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474601656568.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474601730438_uploadswebandmobile-www-old" {
@@ -4704,12 +4704,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746017
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474601730438.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474601776854_uploadswebandmobile-www-old" {
@@ -4717,12 +4717,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746017
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474601776854.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474601818856_uploadswebandmobile-www-old" {
@@ -4730,12 +4730,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746018
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474601818856.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474601852961_uploadswebandmobile-www-old" {
@@ -4743,12 +4743,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746018
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474601852961.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474601906429_uploadswebandmobile-www-old" {
@@ -4756,12 +4756,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746019
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474601906429.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474601966120_uploadswebandmobile-www-old" {
@@ -4769,12 +4769,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746019
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474601966120.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474602007486_uploadswebandmobile-www-old" {
@@ -4782,12 +4782,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746020
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474602007486.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474602044835_uploadswebandmobile-www-old" {
@@ -4795,12 +4795,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746020
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474602044835.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474602099164_uploadswebandmobile-www-old" {
@@ -4808,12 +4808,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746020
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474602099164.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474602143328_uploadswebandmobile-www-old" {
@@ -4821,12 +4821,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746021
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474602143328.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474602189379_uploadswebandmobile-www-old" {
@@ -4834,12 +4834,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746021
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474602189379.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474602267358_uploadswebandmobile-www-old" {
@@ -4847,12 +4847,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746022
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474602267358.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474602341573_uploadswebandmobile-www-old" {
@@ -4860,12 +4860,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746023
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474602341573.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474602387237_uploadswebandmobile-www-old" {
@@ -4873,12 +4873,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746023
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474602387237.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474602448892_uploadswebandmobile-www-old" {
@@ -4886,12 +4886,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746024
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474602448892.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474602490971_uploadswebandmobile-www-old" {
@@ -4899,12 +4899,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746024
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474602490971.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474602523666_uploadswebandmobile-www-old" {
@@ -4912,12 +4912,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746025
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474602523666.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474602572184_uploadswebandmobile-www-old" {
@@ -4925,12 +4925,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746025
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474602572184.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474602623742_uploadswebandmobile-www-old" {
@@ -4938,12 +4938,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746026
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474602623742.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474602959633_uploadswebandmobile-www-old" {
@@ -4951,12 +4951,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746029
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474602959633.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474603041615_uploadswebandmobile-www-old" {
@@ -4964,12 +4964,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746030
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474603041615.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474603073851_uploadswebandmobile-www-old" {
@@ -4977,12 +4977,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746030
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474603073851.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474603127356_uploadswebandmobile-www-old" {
@@ -4990,12 +4990,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746031
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474603127356.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474603179487_uploadswebandmobile-www-old" {
@@ -5003,12 +5003,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746031
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474603179487.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474603280463_uploadswebandmobile-www-old" {
@@ -5016,12 +5016,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746032
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474603280463.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474603316167_uploadswebandmobile-www-old" {
@@ -5029,12 +5029,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746033
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474603316167.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474603366072_uploadswebandmobile-www-old" {
@@ -5042,12 +5042,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746033
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474603366072.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474603410928_uploadswebandmobile-www-old" {
@@ -5055,12 +5055,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746034
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474603410928.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474603464144_uploadswebandmobile-www-old" {
@@ -5068,12 +5068,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746034
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474603464144.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474603521674_uploadswebandmobile-www-old" {
@@ -5081,12 +5081,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746035
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474603521674.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474603567236_uploadswebandmobile-www-old" {
@@ -5094,12 +5094,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746035
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474603567236.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474603611074_uploadswebandmobile-www-old" {
@@ -5107,12 +5107,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746036
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474603611074.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474603652316_uploadswebandmobile-www-old" {
@@ -5120,12 +5120,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746036
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474603652316.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474603738282_uploadswebandmobile-www-old" {
@@ -5133,12 +5133,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746037
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474603738282.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474603796784_uploadswebandmobile-www-old" {
@@ -5146,12 +5146,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746037
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474603796784.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474603856621_uploadswebandmobile-www-old" {
@@ -5159,12 +5159,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746038
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474603856621.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474603900268_uploadswebandmobile-www-old" {
@@ -5172,12 +5172,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746039
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474603900268.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474603932579_uploadswebandmobile-www-old" {
@@ -5185,12 +5185,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746039
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474603932579.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474603991605_uploadswebandmobile-www-old" {
@@ -5198,12 +5198,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746039
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474603991605.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474604024093_uploadswebandmobile-www-old" {
@@ -5211,12 +5211,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746040
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474604024093.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474604105010_uploadswebandmobile-www-old" {
@@ -5224,12 +5224,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746041
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474604105010.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474604148145_uploadswebandmobile-www-old" {
@@ -5237,12 +5237,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746041
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474604148145.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474604193111_uploadswebandmobile-www-old" {
@@ -5250,12 +5250,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746041
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474604193111.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474631707676_uploadswebandmobile-www-old" {
@@ -5263,12 +5263,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746317
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474631707676.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474631738590_uploadswebandmobile-www-old" {
@@ -5276,12 +5276,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746317
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474631738590.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474631772161_uploadswebandmobile-www-old" {
@@ -5289,12 +5289,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746317
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474631772161.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474631807995_uploadswebandmobile-www-old" {
@@ -5302,12 +5302,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746318
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474631807995.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474631960544_uploadswebandmobile-www-old" {
@@ -5315,12 +5315,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746319
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474631960544.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474632316725_uploadswebandmobile-www-old" {
@@ -5328,12 +5328,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746323
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474632316725.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474632356052_uploadswebandmobile-www-old" {
@@ -5341,12 +5341,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746323
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474632356052.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474632391608_uploadswebandmobile-www-old" {
@@ -5354,12 +5354,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746323
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474632391608.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474632493330_uploadswebandmobile-www-old" {
@@ -5367,12 +5367,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746324
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474632493330.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474632523362_uploadswebandmobile-www-old" {
@@ -5380,12 +5380,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746325
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474632523362.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474632567138_uploadswebandmobile-www-old" {
@@ -5393,12 +5393,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746325
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474632567138.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474632609443_uploadswebandmobile-www-old" {
@@ -5406,12 +5406,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746326
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474632609443.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474632666666_uploadswebandmobile-www-old" {
@@ -5419,12 +5419,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746326
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474632666666.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474632706236_uploadswebandmobile-www-old" {
@@ -5432,12 +5432,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746327
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474632706236.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474632747187_uploadswebandmobile-www-old" {
@@ -5445,12 +5445,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746327
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474632747187.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474632778177_uploadswebandmobile-www-old" {
@@ -5458,12 +5458,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746327
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474632778177.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474632837195_uploadswebandmobile-www-old" {
@@ -5471,12 +5471,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746328
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474632837195.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474632897576_uploadswebandmobile-www-old" {
@@ -5484,12 +5484,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746328
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474632897576.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474632937510_uploadswebandmobile-www-old" {
@@ -5497,12 +5497,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746329
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474632937510.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474632984639_uploadswebandmobile-www-old" {
@@ -5510,12 +5510,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746329
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474632984639.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474633030532_uploadswebandmobile-www-old" {
@@ -5523,12 +5523,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746330
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474633030532.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474633060948_uploadswebandmobile-www-old" {
@@ -5536,12 +5536,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746330
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474633060948.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474633118769_uploadswebandmobile-www-old" {
@@ -5549,12 +5549,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746331
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474633118769.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474633150403_uploadswebandmobile-www-old" {
@@ -5562,12 +5562,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746331
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474633150403.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474633258682_uploadswebandmobile-www-old" {
@@ -5575,12 +5575,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746332
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474633258682.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474633287288_uploadswebandmobile-www-old" {
@@ -5588,12 +5588,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746332
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474633287288.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474633353030_uploadswebandmobile-www-old" {
@@ -5601,12 +5601,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746333
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474633353030.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474633418225_uploadswebandmobile-www-old" {
@@ -5614,12 +5614,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746334
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474633418225.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474633458687_uploadswebandmobile-www-old" {
@@ -5627,12 +5627,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746334
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474633458687.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474633515239_uploadswebandmobile-www-old" {
@@ -5640,12 +5640,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746335
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474633515239.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474633562161_uploadswebandmobile-www-old" {
@@ -5653,12 +5653,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746335
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474633562161.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474633636565_uploadswebandmobile-www-old" {
@@ -5666,12 +5666,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746336
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474633636565.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474633665072_uploadswebandmobile-www-old" {
@@ -5679,12 +5679,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746336
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474633665072.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474633700122_uploadswebandmobile-www-old" {
@@ -5692,12 +5692,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746337
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474633700122.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474633761572_uploadswebandmobile-www-old" {
@@ -5705,12 +5705,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746337
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474633761572.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474633826481_uploadswebandmobile-www-old" {
@@ -5718,12 +5718,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746338
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474633826481.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474633883294_uploadswebandmobile-www-old" {
@@ -5731,12 +5731,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746338
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474633883294.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474633913440_uploadswebandmobile-www-old" {
@@ -5744,12 +5744,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746339
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474633913440.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474633959421_uploadswebandmobile-www-old" {
@@ -5757,12 +5757,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746339
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474633959421.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474633989686_uploadswebandmobile-www-old" {
@@ -5770,12 +5770,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746339
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474633989686.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474634050682_uploadswebandmobile-www-old" {
@@ -5783,12 +5783,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746340
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474634050682.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474634097268_uploadswebandmobile-www-old" {
@@ -5796,12 +5796,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746340
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474634097268.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474634137985_uploadswebandmobile-www-old" {
@@ -5809,12 +5809,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746341
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474634137985.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474634179530_uploadswebandmobile-www-old" {
@@ -5822,12 +5822,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746341
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474634179530.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474634210210_uploadswebandmobile-www-old" {
@@ -5835,12 +5835,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746342
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474634210210.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474634290549_uploadswebandmobile-www-old" {
@@ -5848,12 +5848,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746342
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474634290549.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474634325046_uploadswebandmobile-www-old" {
@@ -5861,12 +5861,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746343
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474634325046.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474634397436_uploadswebandmobile-www-old" {
@@ -5874,12 +5874,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746343
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474634397436.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474634427159_uploadswebandmobile-www-old" {
@@ -5887,12 +5887,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746344
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474634427159.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474634470405_uploadswebandmobile-www-old" {
@@ -5900,12 +5900,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746344
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474634470405.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474634511645_uploadswebandmobile-www-old" {
@@ -5913,12 +5913,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746345
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474634511645.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474634554190_uploadswebandmobile-www-old" {
@@ -5926,12 +5926,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746345
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474634554190.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474634589642_uploadswebandmobile-www-old" {
@@ -5939,12 +5939,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746345
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474634589642.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474634642502_uploadswebandmobile-www-old" {
@@ -5952,12 +5952,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746346
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474634642502.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474634702284_uploadswebandmobile-www-old" {
@@ -5965,12 +5965,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746347
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474634702284.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474634752452_uploadswebandmobile-www-old" {
@@ -5978,12 +5978,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746347
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474634752452.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474634805400_uploadswebandmobile-www-old" {
@@ -5991,12 +5991,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746348
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474634805400.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474634840480_uploadswebandmobile-www-old" {
@@ -6004,12 +6004,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746348
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474634840480.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474634883967_uploadswebandmobile-www-old" {
@@ -6017,12 +6017,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746348
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474634883967.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474634922463_uploadswebandmobile-www-old" {
@@ -6030,12 +6030,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746349
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474634922463.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474635049222_uploadswebandmobile-www-old" {
@@ -6043,12 +6043,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746350
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474635049222.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474635089967_uploadswebandmobile-www-old" {
@@ -6056,12 +6056,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746350
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474635089967.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474635128621_uploadswebandmobile-www-old" {
@@ -6069,12 +6069,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746351
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474635128621.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474635161038_uploadswebandmobile-www-old" {
@@ -6082,12 +6082,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746351
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474635161038.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474635220571_uploadswebandmobile-www-old" {
@@ -6095,12 +6095,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746352
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474635220571.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_1474635263349_uploadswebandmobile-www-old" {
@@ -6108,12 +6108,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_14746352
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_1474635263349.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_2_uploadswebandmobile-www-old" {
@@ -6121,12 +6121,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_2_upload
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_2.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_3_uploadswebandmobile-www-old" {
@@ -6134,12 +6134,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_3_upload
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_3.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_4_uploadswebandmobile-www-old" {
@@ -6147,12 +6147,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_4_upload
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_4.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_5_uploadswebandmobile-www-old" {
@@ -6160,12 +6160,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_5_upload
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_5.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_6_uploadswebandmobile-www-old" {
@@ -6173,12 +6173,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_6_upload
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_6.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_7_uploadswebandmobile-www-old" {
@@ -6186,12 +6186,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_7_upload
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_7.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_8_uploadswebandmobile-www-old" {
@@ -6199,12 +6199,12 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_8_upload
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_8.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
 resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_9_uploadswebandmobile-www-old" {
@@ -6212,11 +6212,11 @@ resource "sumologic_http_source" "uploadswebandmobile-www-old_Collector_9_upload
   category                     = "uploads/webandmobile-www-old"
   collector_id                 = sumologic_collector.uploadswebandmobile-www-old_Collector_9.id
   content_type                 = "Varnish"
-  multiline_processing_enabled = "true"
+  multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
-  use_autoline_matching        = "true"
-  automatic_date_parsing       = "true"
-  message_per_request          = "false"
-  force_timezone               = "false"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
 }
 
