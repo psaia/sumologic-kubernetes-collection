@@ -26,4 +26,5 @@ module "collector_role" {
   name          = var.name
   env           = var.env
   search_filter = join(" OR ", [for src in sumologic_http_source.sources : "_source=${src.name} OR _sourceCategory=${src.category}"])
+  enable_ad     = var.enable_ad
 }
