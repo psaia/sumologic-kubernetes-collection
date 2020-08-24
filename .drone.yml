@@ -118,7 +118,7 @@ steps:
       channel: dv-notifications
       username: nytimes/dv-sumologic (Dev)
       template: >
-        @observability-team
+        <@observability-team>
         dev deployment failed! {{build.link}} ({{build.branch}})
     environment:
       SLACK_WEBHOOK:
@@ -227,7 +227,7 @@ steps:
       channel: dv-notifications
       username: nytimes/dv-sumologic
       template: >
-        @observability-team
+        <@observability-team>
         prd deployment failed! {{build.link}} ({{build.branch}})
     environment:
       SLACK_WEBHOOK:
