@@ -8,8 +8,9 @@ module "dv-test" {
 module "nytimes-dv-sumologic" {
   source = "../modules/collector"
 
-  name = "nytimes/dv-sumologic"
-  env  = var.env
+  name      = "nytimes/dv-sumologic"
+  env       = var.env
+  enable_ad = true
 }
 
 module "nytimes-spg-petstore" {
