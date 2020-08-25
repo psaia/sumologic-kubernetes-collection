@@ -56,7 +56,7 @@ steps:
       vars:
         default_role: "2FA - SumoLogic (Test)"
         ad_domain: ent.nytint.com
-        ad_url: ldap://ad.prd.iad1.nyt.net:389
+        ad_url: ldap://AWSE-EPW-CDC04.ENT.NYTINT.COM:389
         ad_user: corp-svc-sumo-auto
         env: test
     environment:
@@ -92,7 +92,7 @@ steps:
       vars:
         default_role: "2FA - SumoLogic (Test)"
         ad_domain: ent.nytint.com
-        ad_url: ldap://ad.prd.iad1.nyt.net:389
+        ad_url: ldap://AWSE-EPW-CDC04.ENT.NYTINT.COM:389
         ad_user: corp-svc-sumo-auto
         env: test
     environment:
@@ -166,7 +166,7 @@ steps:
       vars:
         default_role: "2FA - SumoLogic"
         ad_domain: ent.nytint.com
-        ad_url: ldap://ad.prd.iad1.nyt.net:389
+        ad_url: ldap://AWSE-EPW-CDC04.ENT.NYTINT.COM:389
         ad_user: corp-svc-sumo-auto
         env: prd
     environment:
@@ -202,7 +202,7 @@ steps:
       vars:
         default_role: "2FA - SumoLogic"
         ad_domain: ent.nytint.com
-        ad_url: ldap://ad.prd.iad1.nyt.net:389
+        ad_url: ldap://AWSE-EPW-CDC04.ENT.NYTINT.COM:389
         ad_user: corp-svc-sumo-auto
         env: prd
     environment:
