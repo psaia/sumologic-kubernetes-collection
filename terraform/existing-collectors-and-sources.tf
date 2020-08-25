@@ -73,6 +73,12 @@ resource "sumologic_collector" "CMS" {
   timezone = "Etc/UTC"
 }
 
+resource "sumologic_collector" "DV_Goblin_Bot" {
+  name        = "DV Goblin Bot"
+  description = "Bot to automate namespace setup in vault"
+  timezone    = "Etc/UTC"
+}
+
 resource "sumologic_collector" "DV_SSM_API" {
   name        = "DV SSM API"
   description = "DevSecOps: logs for ssm api"
@@ -175,6 +181,12 @@ resource "sumologic_collector" "Infra-Test-Collector" {
   name        = "Infra-Test-Collector"
   description = "Collector used to test sending logs to https endpoint"
   timezone    = "Etc/UTC"
+}
+
+resource "sumologic_collector" "int-fallback-dev" {
+  name     = "int-fallback-dev"
+  timezone = "Etc/UTC"
+  fields   = { "cluster" = "int-fallback-dev" }
 }
 
 resource "sumologic_collector" "Lastpass_Test" {
@@ -1563,6 +1575,26 @@ resource "sumologic_http_source" "CMS_cms-fallback-stg" {
   collector_id                 = sumologic_collector.CMS.id
   multiline_processing_enabled = true
   timezone                     = "Etc/UTC"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
+}
+
+resource "sumologic_http_source" "DV_Goblin_Bot_goblin-bot_dev_stg" {
+  name                         = "goblin-bot dev/stg"
+  collector_id                 = sumologic_collector.DV_Goblin_Bot.id
+  multiline_processing_enabled = true
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
+}
+
+resource "sumologic_http_source" "DV_Goblin_Bot_goblin-bot_prd" {
+  name                         = "goblin-bot prd"
+  collector_id                 = sumologic_collector.DV_Goblin_Bot.id
+  multiline_processing_enabled = true
   use_autoline_matching        = true
   automatic_date_parsing       = true
   message_per_request          = false
@@ -3169,6 +3201,117 @@ resource "sumologic_http_source" "https-collector_stg_publishing-cms-http-collec
   use_autoline_matching        = false
   automatic_date_parsing       = true
   message_per_request          = true
+  force_timezone               = false
+}
+
+resource "sumologic_http_source" "int-fallback-dev__default-metrics_" {
+  name                         = "(default-metrics)"
+  collector_id                 = sumologic_collector.int-fallback-dev.id
+  multiline_processing_enabled = true
+  timezone                     = "Etc/UTC"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
+}
+
+resource "sumologic_http_source" "int-fallback-dev_apiserver-metrics" {
+  name                         = "apiserver-metrics"
+  collector_id                 = sumologic_collector.int-fallback-dev.id
+  multiline_processing_enabled = true
+  timezone                     = "Etc/UTC"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
+}
+
+resource "sumologic_http_source" "int-fallback-dev_control-plane-metrics" {
+  name                         = "control-plane-metrics"
+  collector_id                 = sumologic_collector.int-fallback-dev.id
+  multiline_processing_enabled = true
+  timezone                     = "Etc/UTC"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
+}
+
+resource "sumologic_http_source" "int-fallback-dev_events" {
+  name                         = "events"
+  category                     = "int-fallback-dev/events"
+  collector_id                 = sumologic_collector.int-fallback-dev.id
+  multiline_processing_enabled = true
+  timezone                     = "Etc/UTC"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
+}
+
+resource "sumologic_http_source" "int-fallback-dev_kube-controller-manager-metrics" {
+  name                         = "kube-controller-manager-metrics"
+  collector_id                 = sumologic_collector.int-fallback-dev.id
+  multiline_processing_enabled = true
+  timezone                     = "Etc/UTC"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
+}
+
+resource "sumologic_http_source" "int-fallback-dev_kube-scheduler-metrics" {
+  name                         = "kube-scheduler-metrics"
+  collector_id                 = sumologic_collector.int-fallback-dev.id
+  multiline_processing_enabled = true
+  timezone                     = "Etc/UTC"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
+}
+
+resource "sumologic_http_source" "int-fallback-dev_kube-state-metrics" {
+  name                         = "kube-state-metrics"
+  collector_id                 = sumologic_collector.int-fallback-dev.id
+  multiline_processing_enabled = true
+  timezone                     = "Etc/UTC"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
+}
+
+resource "sumologic_http_source" "int-fallback-dev_kubelet-metrics" {
+  name                         = "kubelet-metrics"
+  collector_id                 = sumologic_collector.int-fallback-dev.id
+  multiline_processing_enabled = true
+  timezone                     = "Etc/UTC"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
+}
+
+resource "sumologic_http_source" "int-fallback-dev_logs" {
+  name                         = "logs"
+  collector_id                 = sumologic_collector.int-fallback-dev.id
+  multiline_processing_enabled = true
+  timezone                     = "Etc/UTC"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
+}
+
+resource "sumologic_http_source" "int-fallback-dev_node-exporter-metrics" {
+  name                         = "node-exporter-metrics"
+  collector_id                 = sumologic_collector.int-fallback-dev.id
+  multiline_processing_enabled = true
+  timezone                     = "Etc/UTC"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
   force_timezone               = false
 }
 
