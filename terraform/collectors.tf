@@ -10,7 +10,7 @@ module "nytimes-dv-sumologic" {
 
   name      = "nytimes/dv-sumologic"
   env       = var.env
-  enable_ad = true
+  enable_ad = false
 }
 
 module "nytimes-spg-petstore" {
