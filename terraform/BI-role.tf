@@ -5,3 +5,8 @@ resource "sumologic_role" "BI" {
   capabilities     = ["viewScheduledViews", "manageMonitors", "viewPartitions", "viewFields", "viewFieldExtraction", "changeDataAccessLevel"]
 }
 
+resource "ad_group_to_ou" "ad-group-BI" {
+  ou_distinguished_name = var.ad_oudn
+  group_name            = sumologic_role.BI.name
+  description           = "AD Group for Sumo Logic RBAC group ${sumologic_role.BI.name}"
+}

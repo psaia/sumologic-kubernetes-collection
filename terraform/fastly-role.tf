@@ -5,3 +5,8 @@ resource "sumologic_role" "fastly" {
   capabilities     = ["manageFieldExtractionRules", "manageMonitors", "viewPartitions", "viewFields", "viewFieldExtraction", "manageFields"]
 }
 
+resource "ad_group_to_ou" "ad-group-fastly" {
+  ou_distinguished_name = var.ad_oudn
+  group_name            = sumologic_role.fastly.name
+  description           = "AD Group for Sumo Logic RBAC group ${sumologic_role.fastly.name}"
+}

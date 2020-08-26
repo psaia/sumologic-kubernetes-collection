@@ -5,3 +5,8 @@ resource "sumologic_role" "CMS" {
   capabilities     = ["viewCollectors", "manageMonitors", "viewPartitions"]
 }
 
+resource "ad_group_to_ou" "ad-group-CMS" {
+  ou_distinguished_name = var.ad_oudn
+  group_name            = sumologic_role.CMS.name
+  description           = "AD Group for Sumo Logic RBAC group ${sumologic_role.CMS.name}"
+}

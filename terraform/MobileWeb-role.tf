@@ -5,3 +5,8 @@ resource "sumologic_role" "MobileWeb" {
   capabilities     = ["viewScheduledViews", "manageMonitors", "viewPartitions", "viewFields", "viewFieldExtraction", "changeDataAccessLevel"]
 }
 
+resource "ad_group_to_ou" "ad-group-MobileWeb" {
+  ou_distinguished_name = var.ad_oudn
+  group_name            = sumologic_role.MobileWeb.name
+  description           = "AD Group for Sumo Logic RBAC group ${sumologic_role.MobileWeb.name}"
+}

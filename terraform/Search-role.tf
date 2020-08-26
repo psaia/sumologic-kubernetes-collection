@@ -5,3 +5,8 @@ resource "sumologic_role" "Search" {
   capabilities     = ["viewScheduledViews", "manageMonitors", "viewPartitions", "viewFields", "viewFieldExtraction"]
 }
 
+resource "ad_group_to_ou" "ad-group-Search" {
+  ou_distinguished_name = var.ad_oudn
+  group_name            = sumologic_role.Search.name
+  description           = "AD Group for Sumo Logic RBAC group ${sumologic_role.Search.name}"
+}

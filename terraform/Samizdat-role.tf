@@ -5,3 +5,8 @@ resource "sumologic_role" "Samizdat" {
   capabilities     = ["viewScheduledViews", "metricsExtraction", "manageFieldExtractionRules", "manageMonitors", "viewPartitions", "manageIndexes", "manageScheduledViews", "viewFields", "viewFieldExtraction", "manageFields"]
 }
 
+resource "ad_group_to_ou" "ad-group-Samizdat" {
+  ou_distinguished_name = var.ad_oudn
+  group_name            = sumologic_role.Samizdat.name
+  description           = "AD Group for Sumo Logic RBAC group ${sumologic_role.Samizdat.name}"
+}

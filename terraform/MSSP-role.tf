@@ -5,3 +5,8 @@ resource "sumologic_role" "MSSP" {
   capabilities     = ["viewScheduledViews", "manageFieldExtractionRules", "manageMonitors", "viewPartitions", "viewFields", "viewFieldExtraction", "changeDataAccessLevel", "manageFields", "manageDataVolumeFeed"]
 }
 
+resource "ad_group_to_ou" "ad-group-MSSP" {
+  ou_distinguished_name = var.ad_oudn
+  group_name            = sumologic_role.MSSP.name
+  description           = "AD Group for Sumo Logic RBAC group ${sumologic_role.MSSP.name}"
+}

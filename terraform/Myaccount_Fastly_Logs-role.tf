@@ -5,3 +5,8 @@ resource "sumologic_role" "Myaccount_Fastly_Logs" {
   capabilities     = ["viewScheduledViews", "viewPartitions", "viewFields", "viewFieldExtraction", "viewCollectors"]
 }
 
+resource "ad_group_to_ou" "ad-group-Myaccount_Fastly_Logs" {
+  ou_distinguished_name = var.ad_oudn
+  group_name            = sumologic_role.Myaccount_Fastly_Logs.name
+  description           = "AD Group for Sumo Logic RBAC group ${sumologic_role.Myaccount_Fastly_Logs.name}"
+}
