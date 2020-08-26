@@ -20,8 +20,3 @@ variable "env" {
   type        = string
   description = "Environment that the build is running against"
 }
-
-variable "enable_ad" {
-  type    = bool
-  default = false
-}
