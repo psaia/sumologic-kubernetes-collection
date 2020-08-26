@@ -40,5 +40,5 @@ variable "ad_oudn" {
 
 variable "enable_ad" {
   type    = bool
-  default = false
+  default = true
 }
