@@ -23,5 +23,5 @@ variable "env" {
 
 variable "enable_ad" {
   type    = bool
-  default = true
+  default = false
 }
