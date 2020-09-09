@@ -6,6 +6,7 @@
                 "security+sumosupport+nytimes@sumologic.com",
                 "mbpatil@nytimes.com",
                 "rupen.shah@nytimes.com",
+                "adrian.sankar@nytimes.com",
                 "xianglong.lu@nytimes.com",
                 "john.mckee@nytimes.com",
                 "david.porsche@nytimes.com",
@@ -64,11 +65,44 @@
                 "vinessa.wan@nytimes.com",
                 "debasis.nayak@nytimes.com",
                 "mel.cone@nytimes.com",
-                "bill.mckinley@nytimes.com"
+                "bill.mckinley@nytimes.com",
+                "fabrice.aneche@nytimes.com",
+                "kevin.kronenbitter@nytimes.com"
             ]
         },
         {
-            "name": "advertising",
+            "name": "int-fallback",
+            "members": [
+                "holcomb@nytimes.com",
+                "suman.roy@nytimes.com",
+                "james.lawrie@nytimes.com",
+                "ernesto.munoz@nytimes.com",
+                "jeremys@nytimes.com",
+                "ashbynm@nytimes.com",
+                "christopher.montoro@nytimes.com",
+                "michael.kaminski@nytimes.com",
+                "jeff.sisson@nytimes.com",
+                "william.davis@nytimes.com",
+                "hubert.mandeville@nytimes.com",
+                "matthew.stake@nytimes.com",
+                "thompson.marzagao@nytimes.com",
+                "armando.colpa@nytimes.com",
+                "douglas.back@nytimes.com",
+                "minerva.archer@nytimes.com",
+                "emily.intersimone@nytimes.com",
+                "brandon.wood@nytimes.com",
+                "randall.leeds@nytimes.com",
+                "nozlee.samadzadeh@nytimes.com",
+                "shree.tanna@nytimes.com",
+                "shane.moore@nytimes.com",
+                "juan.garcia@nytimes.com",
+                "arun.gomathinayagam@nytimes.com",
+                "anna.bialas@nytimes.com",
+                "hamilton.boardman@nytimes.com"
+            ]
+        },
+        {
+            "name": "sumo-advertising",
             "members": [
                 "yunzhu.li@nytimes.com",
                 "gerald.killeen@nytimes.com",
@@ -79,7 +113,7 @@
             ]
         },
         {
-            "name": "Analyst",
+            "name": "sumo-Analyst",
             "members": [
                 "mbpatil@nytimes.com",
                 "adrian.sankar@nytimes.com",
@@ -96,7 +130,7 @@
             ]
         },
         {
-            "name": "Aristo",
+            "name": "sumo-Aristo",
             "members": [
                 "michal.glowacki@nytimes.com",
                 "alex.demarco@nytimes.com",
@@ -214,17 +248,20 @@
                 "hristo.dachev@nytimes.com",
                 "manoj.rana@nytimes.com",
                 "david.melvin@nytimes.com",
-                "george.theka@nytimes.com"
+                "george.theka@nytimes.com",
+                "navyatha.kakarla@nytimes.com",
+                "aicardo.vazquez@nytimes.com",
+                "stephen.ward@nytimes.com"
             ]
         },
         {
-            "name": "Atlassian",
+            "name": "sumo-Atlassian",
             "members": [
                 "jarobles@nytimes.com"
             ]
         },
         {
-            "name": "ATT",
+            "name": "sumo-ATT",
             "members": [
                 "cabadlg@nytimes.com",
                 "aj.hartley@nytimes.com",
@@ -233,7 +270,7 @@
             ]
         },
         {
-            "name": "Auth",
+            "name": "sumo-Auth",
             "members": [
                 "michal.glowacki@nytimes.com",
                 "oleksii.khliupin@nytimes.com",
@@ -269,21 +306,22 @@
                 "gaelle.sharma@nytimes.com",
                 "an.yu@nytimes.com",
                 "justin.fuller@nytimes.com",
-                "pete.saia@nytimes.com"
+                "pete.saia@nytimes.com",
+                "aaron.lee@nytimes.com"
             ]
         },
         {
-            "name": "BI",
+            "name": "sumo-BI",
             "members": [
                 "ed.gulczynski@nytimes.com"
             ]
         },
         {
-            "name": "Blogs",
+            "name": "sumo-Blogs",
             "members": []
         },
         {
-            "name": "CMOTS",
+            "name": "sumo-CMOTS",
             "members": [
                 "vladimir.ramik@nytimes.com",
                 "kiran.pasunuri@nytimes.com",
@@ -295,7 +333,7 @@
             ]
         },
         {
-            "name": "CMS",
+            "name": "sumo-CMS",
             "members": [
                 "arthur.shapiro@nytimes.com",
                 "stephen.dotz@nytimes.com",
@@ -368,7 +406,7 @@
             ]
         },
         {
-            "name": "Collector Managers",
+            "name": "sumo-Collector Managers",
             "members": [
                 "john.mckee@nytimes.com",
                 "james.pettit@nytimes.com",
@@ -376,7 +414,7 @@
             ]
         },
         {
-            "name": "Compliance",
+            "name": "sumo-Compliance",
             "members": [
                 "dryfoj@nytimes.com",
                 "karim.beldjilali@nytimes.com",
@@ -385,7 +423,7 @@
             ]
         },
         {
-            "name": "Customer Service",
+            "name": "sumo-Customer Service",
             "members": [
                 "joseph.cora@nytimes.com",
                 "ashfaqul.islam@nytimes.com",
@@ -400,7 +438,7 @@
             ]
         },
         {
-            "name": "CustomerCare",
+            "name": "sumo-CustomerCare",
             "members": [
                 "joseph.cora@nytimes.com",
                 "ashfaqul.islam@nytimes.com",
@@ -417,11 +455,11 @@
             ]
         },
         {
-            "name": "DBAs",
+            "name": "sumo-DBAs",
             "members": []
         },
         {
-            "name": "Dist",
+            "name": "sumo-Dist",
             "members": [
                 "vladimir.nesterenko@nytimes.com",
                 "rohit.arora@nytimes.com",
@@ -438,7 +476,7 @@
             ]
         },
         {
-            "name": "DSE",
+            "name": "sumo-DSE",
             "members": [
                 "shu-chau.liau@nytimes.com",
                 "frank.yin@nytimes.com",
@@ -446,7 +484,7 @@
             ]
         },
         {
-            "name": "ECOMM",
+            "name": "sumo-ECOMM",
             "members": [
                 "michal.glowacki@nytimes.com",
                 "alex.demarco@nytimes.com",
@@ -574,18 +612,22 @@
                 "satyabodha.rao@nytimes.com",
                 "pete.saia@nytimes.com",
                 "david.melvin@nytimes.com",
-                "george.theka@nytimes.com"
+                "george.theka@nytimes.com",
+                "navyatha.kakarla@nytimes.com",
+                "aicardo.vazquez@nytimes.com",
+                "stephen.ward@nytimes.com",
+                "aaron.lee@nytimes.com"
             ]
         },
         {
-            "name": "Endusers",
+            "name": "sumo-Endusers",
             "members": [
                 "rubin@nytimes.com",
                 "yacavone@nytimes.com"
             ]
         },
         {
-            "name": "eus-workstation",
+            "name": "sumo-eus-workstation",
             "members": [
                 "jarobles@nytimes.com",
                 "rubin@nytimes.com",
@@ -598,7 +640,7 @@
             ]
         },
         {
-            "name": "fastly",
+            "name": "sumo-fastly",
             "members": [
                 "jeremys@nytimes.com",
                 "michal.glowacki@nytimes.com",
@@ -661,59 +703,7 @@
             ]
         },
         {
-            "name": "Guest",
-            "members": [
-                "vincent.manapat@nytimes.com",
-                "daniel.kao@nytimes.com",
-                "caio.gondim@nytimes.com",
-                "sam.fonseca@nytimes.com",
-                "graham.sheen@nytimes.com",
-                "brian.matuszewski@nytimes.com",
-                "devi.pericherla@nytimes.com",
-                "brandon.hopkins@nytimes.com",
-                "david.wang@nytimes.com",
-                "jessica.kosturko@nytimes.com",
-                "tguedda@nytimes.com",
-                "joanne.huang@nytimes.com",
-                "gregory.barasch@nytimes.com",
-                "olivier.demeulder+sumo@nytimes.com",
-                "ashish.dhandharia@nytimes.com",
-                "ismael.cedano@nytimes.com",
-                "sterling.walker@nytimes.com",
-                "adam.schuster@nytimes.com",
-                "michael.ayoola@nytimes.com",
-                "jeyner.cespedes8183@nytnet.onmicrosoft.com",
-                "binit.patel@nytimes.com",
-                "jonah.smith@nytimes.com",
-                "eric.slosser@nytimes.com",
-                "andrew.fischer@nytimes.com",
-                "sid.nutulapati@nytimes.com",
-                "steven.mills@nytimes.com",
-                "ramona.harrison@nytimes.com",
-                "tanzer@nytimes.com",
-                "kate.harris@nytimes.com",
-                "elaine.sanfilippo-burchman@nytimes.com",
-                "pooja.reddy@nytimes.com",
-                "lisa.kamm@nytimes.com",
-                "jack.wheeler@nytimes.com",
-                "randall.leeds@nytimes.com",
-                "krzysztof.zablocki@nytimes.com",
-                "marie.jaquish@nytimes.com",
-                "lamine.thiaw@nytimes.com",
-                "luis.queral@nytimes.com",
-                "vinod.ramakrishna@nytimes.com",
-                "max.baldwin@nytimes.com",
-                "maitreyi.rajaram@nytimes.com",
-                "harper.dodd@nytimes.com",
-                "george.lu@nytimes.com",
-                "victor.berthelet@nytimes.com",
-                "ryan.allison@nytimes.com",
-                "leslie.pedro@nytimes.com",
-                "fabrice.aneche@nytimes.com"
-            ]
-        },
-        {
-            "name": "Messaging",
+            "name": "sumo-Messaging",
             "members": [
                 "carlos.rymer@nytimes.com",
                 "aditya.natraj@nytimes.com",
@@ -721,7 +711,7 @@
             ]
         },
         {
-            "name": "MobileWeb",
+            "name": "sumo-MobileWeb",
             "members": [
                 "daniel.cassidy@nytimes.com",
                 "dan.sherman@nytimes.com",
@@ -771,13 +761,13 @@
             ]
         },
         {
-            "name": "MSSP",
+            "name": "sumo-MSSP",
             "members": [
                 "nytimes.sumo@herjavecgroup.com"
             ]
         },
         {
-            "name": "Myaccount Fastly Logs",
+            "name": "sumo-Myaccount Fastly Logs",
             "members": [
                 "moustafa.makboul@nytimes.com",
                 "amy.jiang@nytimes.com",
@@ -786,7 +776,7 @@
             ]
         },
         {
-            "name": "Network",
+            "name": "sumo-Network",
             "members": [
                 "castro@nytimes.com",
                 "ilana@nytimes.com",
@@ -799,7 +789,6 @@
                 "ilya.zindman@nytimes.com",
                 "jeyner.cespedes@nytimes.com",
                 "einstein.jean-charles@nytimes.com",
-                "ezekiel.murillo@nytimes.com",
                 "manny.reynoso@nytimes.com",
                 "keith.keeling@nytimes.com",
                 "kaon.thana@nytimes.com",
@@ -807,14 +796,14 @@
             ]
         },
         {
-            "name": "NYT Beta",
+            "name": "sumo-NYT Beta",
             "members": [
                 "eugene.wang@nytimes.com",
                 "gerald.killeen@nytimes.com"
             ]
         },
         {
-            "name": "nytco",
+            "name": "sumo-nytco",
             "members": [
                 "cabadlg@nytimes.com",
                 "aj.hartley@nytimes.com",
@@ -825,7 +814,7 @@
             ]
         },
         {
-            "name": "Output",
+            "name": "sumo-Output",
             "members": [
                 "netsky@nytimes.com",
                 "joginder.pahuja@nytimes.com",
@@ -839,17 +828,17 @@
             ]
         },
         {
-            "name": "Paperboy",
+            "name": "sumo-Paperboy",
             "members": []
         },
         {
-            "name": "Personalization",
+            "name": "sumo-Personalization",
             "members": [
                 "aditya.natraj@nytimes.com"
             ]
         },
         {
-            "name": "photo",
+            "name": "sumo-photo",
             "members": [
                 "ashbynm@nytimes.com",
                 "francisco.souza@nytimes.com",
@@ -863,7 +852,7 @@
             ]
         },
         {
-            "name": "PPI",
+            "name": "sumo-PPI",
             "members": [
                 "netsky@nytimes.com",
                 "joginder.pahuja@nytimes.com",
@@ -877,7 +866,7 @@
             ]
         },
         {
-            "name": "Pubsys",
+            "name": "sumo-Pubsys",
             "members": [
                 "arthur.shapiro@nytimes.com",
                 "suman.roy@nytimes.com",
@@ -904,7 +893,7 @@
             ]
         },
         {
-            "name": "Samizdat",
+            "name": "sumo-Samizdat",
             "members": [
                 "daniel.cassidy@nytimes.com",
                 "james.lawrie@nytimes.com",
@@ -921,6 +910,7 @@
                 "tim.xia@nytimes.com",
                 "alessandro.alempijevic@nytimes.com",
                 "kriton.dolias@nytimes.com",
+                "olivier.demeulder@nytimes.com",
                 "thu.trinh@nytimes.com",
                 "mailiis.law@nytimes.com",
                 "vincent.vanbuskirk@nytimes.com",
@@ -933,7 +923,7 @@
             ]
         },
         {
-            "name": "Search",
+            "name": "sumo-Search",
             "members": [
                 "boerge.svingen@nytimes.com",
                 "jeremiah.via@nytimes.com",
@@ -944,7 +934,7 @@
             ]
         },
         {
-            "name": "Security",
+            "name": "sumo-Security",
             "members": [
                 "infosec@nytimes.com",
                 "runa.sandvik@nytimes.com",
@@ -961,11 +951,12 @@
                 "erinmichelle.perri@nytimes.com",
                 "brian.wanner@nytimes.com",
                 "emily.wilson@nytimes.com",
-                "devan.patel@nytimes.com"
+                "devan.patel@nytimes.com",
+                "ezequiel.murillo@nytimes.com"
             ]
         },
         {
-            "name": "SEG",
+            "name": "sumo-SEG",
             "members": [
                 "justin.lucente@nytimes.com",
                 "devorah.moskowitz@nytimes.com",
@@ -975,11 +966,11 @@
             ]
         },
         {
-            "name": "ServiceNow",
+            "name": "sumo-ServiceNow",
             "members": []
         },
         {
-            "name": "Shared Cluster DEV",
+            "name": "sumo-Shared Cluster DEV",
             "members": [
                 "james.lawrie@nytimes.com",
                 "christopher.montoro@nytimes.com",
@@ -990,7 +981,7 @@
             ]
         },
         {
-            "name": "Storage",
+            "name": "sumo-Storage",
             "members": [
                 "faircpg@nytimes.com",
                 "sreekala.ayyappan@nytimes.com",
@@ -998,7 +989,7 @@
             ]
         },
         {
-            "name": "tcen",
+            "name": "sumo-tcen",
             "members": [
                 "cabadlg@nytimes.com",
                 "aj.hartley@nytimes.com",
@@ -1008,17 +999,17 @@
             ]
         },
         {
-            "name": "Tips Jar",
+            "name": "sumo-Tips Jar",
             "members": [
                 "jaymin.patel@nytimes.com"
             ]
         },
         {
-            "name": "Twistlock",
+            "name": "sumo-Twistlock",
             "members": []
         },
         {
-            "name": "UGC",
+            "name": "sumo-UGC",
             "members": [
                 "jeff.sisson@nytimes.com",
                 "anna.walsh@nytimes.com",
@@ -1035,15 +1026,16 @@
                 "desmund.weathers@nytimes.com",
                 "anastasia.melnikova@nytimes.com",
                 "sierra.saitta@nytimes.com",
-                "eitan.rosenberg@nytimes.com"
+                "eitan.rosenberg@nytimes.com",
+                "branden.lawrence@nytimes.com"
             ]
         },
         {
-            "name": "Vault",
+            "name": "sumo-Vault",
             "members": []
         },
         {
-            "name": "Video",
+            "name": "sumo-Video",
             "members": [
                 "dan.sherman@nytimes.com",
                 "kentaro.kaji@nytimes.com",
@@ -1079,7 +1071,7 @@
             ]
         },
         {
-            "name": "Windows",
+            "name": "sumo-Windows",
             "members": [
                 "adrian.sankar@nytimes.com",
                 "jarobles@nytimes.com",
@@ -1093,13 +1085,13 @@
             ]
         },
         {
-            "name": "WindowsDC",
+            "name": "sumo-WindowsDC",
             "members": [
                 "adrian.sankar@nytimes.com"
             ]
         },
         {
-            "name": "WWW",
+            "name": "sumo-WWW",
             "members": [
                 "stephen.dotz@nytimes.com",
                 "suman.roy@nytimes.com",
@@ -1205,11 +1197,13 @@
                 "courtney.wilburn@wirecutter.com",
                 "peter.blasco@wirecutter.com",
                 "eitan.rosenberg@nytimes.com",
-                "ryan.allison@nytimes.com"
+                "ryan.allison@nytimes.com",
+                "branden.lawrence@nytimes.com",
+                "aaron.lee@nytimes.com"
             ]
         },
         {
-            "name": "XPS",
+            "name": "sumo-XPS",
             "members": []
         }
     ]
