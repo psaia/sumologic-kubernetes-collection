@@ -97,3 +97,14 @@ output "nytimes-spg-invoice-service-source-category" {
   value       = module.nytimes-spg-invoice-service.source_category
   description = "HTTP endpoints and sourceCategory created for the nytimes-spg-invoice-service collector"
 }
+
+# nytimes-spg-itunes-subscription-service
+output "nytimes-spg-itunes-subscription-service-endpoints" {
+  value       = module.nytimes-spg-itunes-subscription-service.http_endpoints
+  description = "HTTP endpoints and sourceCategory created for the nytimes-spg-itunes-subscription-service collector"
+}
+
+output "nytimes-spg-itunes-subscription-service-source-category" {
+  value       = module.nytimes-spg-itunes-subscription-service.source_category
+  description = "HTTP endpoints and sourceCategory created for the nytimes-spg-itunes-subscription-service collector"
+}

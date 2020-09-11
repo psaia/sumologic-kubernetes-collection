@@ -63,6 +63,13 @@ module "nytimes-spg-invoice-service" {
   env  = var.env
 }
 
+module "nytimes-spg-itunes-subscription-service" {
+  source = "../modules/collector"
+
+  name = "nytimes-spg-itunes-subscription-service"
+  env  = var.env
+}
+
 # These service don't have an associated GitHub repo
 module "nytimes-infra-ftp-services" {
   source = "../modules/collector"
