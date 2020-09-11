@@ -71,7 +71,7 @@
             ]
         },
         {
-            "name": "int-fallback",
+            "name": "sumo-int-fallback",
             "members": [
                 "holcomb@nytimes.com",
                 "suman.roy@nytimes.com",
