@@ -255,6 +255,13 @@ steps:
   - name: add-user-to-group
     image: golang:1.14
     environment:
+      AD_GROUP_OUDN: "OU=SumoLogic RBAC,OU=2FA Objects,OU=NYTMG,DC=ent,DC=nytint,DC=com"
+      AD_GROUP_PREFIX: "sumo"
+      AD_PASS:
+        from_secret: ad_password
+      AD_URL: ldap://ad.prd.iad1.nyt.net:389
+      AD_USER: corp-svc-sumo-auto@ent.nytint.com
+      AD_USER_OUDN: "OU=NYTMG,DC=ent,DC=nytint,DC=com"
       GOPROXY: direct
       GOSUMDB: off
     commands:
@@ -295,6 +302,13 @@ steps:
   - name: remove-user-from-group
     image: golang:1.14
     environment:
+      AD_GROUP_OUDN: "OU=SumoLogic RBAC,OU=2FA Objects,OU=NYTMG,DC=ent,DC=nytint,DC=com"
+      AD_GROUP_PREFIX: "sumo"
+      AD_PASS:
+        from_secret: ad_password
+      AD_URL: ldap://ad.prd.iad1.nyt.net:389
+      AD_USER: corp-svc-sumo-auto@ent.nytint.com
+      AD_USER_OUDN: "OU=NYTMG,DC=ent,DC=nytint,DC=com"
       GOPROXY: direct
       GOSUMDB: off
     commands:
@@ -322,6 +336,6 @@ steps:
 
 ---
 kind: signature
-hmac: 7710c4854d7f82a10283d2af9c698242292e13348e5d8800069657ec45c157f4
+hmac: 989c54fe52bf6fec32901c1b3d32cc26332a3f48ba283af436f81f8d4070c2e0
 
 ...
