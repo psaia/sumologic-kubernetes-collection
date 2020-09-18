@@ -38,6 +38,10 @@ resource "sumologic_role" "admin" {
     "manageDataVolumeFeed",
     "manageTokens",
   ]
+  # This filter for the admin role is required becuause the default account's (2FA Sumologic) one.
+  # The detault account's filter is currently set up to block access to any collectors. Without this additional 
+  # filter below, admins were not able to view any logs.
+  filter_predicate = "_sourceCategory=*"
 }
 
 resource "ad_group_to_ou" "ad-group-admin" {
