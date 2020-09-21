@@ -108,3 +108,14 @@ output "nytimes-spg-itunes-subscription-service-source-category" {
   value       = module.nytimes-spg-itunes-subscription-service.source_category
   description = "HTTP endpoints and sourceCategory created for the nytimes-spg-itunes-subscription-service collector"
 }
+
+# nytimes-fallback-elections-services
+output "nytimes-dv-elections-terraform-endpoints" {
+  value       = module.nytimes-dv-elections-terraform.http_endpoints
+  description = "HTTP endpoints and sourceCategory created for the nytimes-fallback-elections-services collector"
+}
+
+output "nytimes-dv-elections-terraform-source-category" {
+  value       = module.nytimes-dv-elections-terraform.source_category
+  description = "HTTP endpoints and sourceCategory created for the nytimes-fallback-elections-services collector"
+}

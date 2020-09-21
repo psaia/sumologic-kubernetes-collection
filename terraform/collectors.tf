@@ -78,3 +78,11 @@ module "nytimes-infra-ftp-services" {
   env     = var.env
   sources = ["prd"]
 }
+
+# elections collector
+module "nytimes-dv-elections-terraform" {
+  source = "../modules/collector"
+
+  name = "nytimes-dv-elections-terraform"
+  env  = var.env
+}
