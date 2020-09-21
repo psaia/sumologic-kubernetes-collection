@@ -252,6 +252,11 @@ trigger:
     - add-user
 
 steps:
+  - name: log-env
+    image: alpine:latest
+    commands:
+     - echo "Adding $email to $group..."
+
   - name: add-user-to-group
     image: golang:1.14
     environment:
@@ -267,7 +272,7 @@ steps:
     commands:
       - cd tools/adutil
       - go get
-      - go run main.go add
+      - go run main.go add --group $group --email $email
   - name: notify
     image: plugins/slack
     settings:
@@ -299,6 +304,11 @@ trigger:
     - del-user
 
 steps:
+  - name: log-env
+    image: alpine:latest
+    commands:
+     - echo "Removing $email from $group..."
+
   - name: remove-user-from-group
     image: golang:1.14
     environment:
@@ -314,7 +324,7 @@ steps:
     commands:
       - cd tools/adutil
       - go get
-      - go run main.go remove
+      - go run main.go remove --group $group --email $email
   - name: notify
     image: plugins/slack
     settings:
@@ -336,6 +346,6 @@ steps:
 
 ---
 kind: signature
-hmac: 989c54fe52bf6fec32901c1b3d32cc26332a3f48ba283af436f81f8d4070c2e0
+hmac: a2297dfca46c4da92cddd92d841a9a9b7377724abc1eb2e9d8d556f4a6bd2147
 
 ...
