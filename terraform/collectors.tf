@@ -70,6 +70,13 @@ module "nytimes-spg-itunes-subscription-service" {
   env  = var.env
 }
 
+module "nytimes-spg-inyt-subscription-api" {
+  source = "../modules/collector"
+
+  name = "nytimes-spg-inyt-subscription-api"
+  env  = var.env
+}
+
 # These service don't have an associated GitHub repo
 module "nytimes-infra-ftp-services" {
   source = "../modules/collector"
@@ -94,3 +101,4 @@ module "nytm-dv-drone" {
   name = "nytm/dv-drone"
   env  = var.env
 }
+
