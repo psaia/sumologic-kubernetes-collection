@@ -86,3 +86,11 @@ module "nytimes-dv-elections-terraform" {
   name = "nytimes-dv-elections-terraform"
   env  = var.env
 }
+
+# Drone CI logs
+module "nytm-dv-drone" {
+  source = "../modules/collector"
+
+  name = "nytm/dv-drone"
+  env  = var.env
+}

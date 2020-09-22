@@ -119,3 +119,14 @@ output "nytimes-dv-elections-terraform-source-category" {
   value       = module.nytimes-dv-elections-terraform.source_category
   description = "HTTP endpoints and sourceCategory created for the nytimes-fallback-elections-services collector"
 }
+
+# nytm-dv-drone
+output "nytm-dv-drone-endpoints" {
+  value       = module.nytm-dv-drone.http_endpoints
+  description = "HTTP endpoints and sourceCategory created for the nytm-dv-drone collector"
+}
+
+output "nytm-dv-drone-source-category" {
+  value       = module.nytm-dv-drone.source_category
+  description = "HTTP endpoints and sourceCategory created for the nytm-dv-dronee collector"
+}
