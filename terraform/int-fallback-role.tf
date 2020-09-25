@@ -1,6 +1,6 @@
 /*resource "sumologic_role" "int-fallback" {
     name = "${var.role_prefix[var.env]}-int-fallback"
-    filter_predicate = "(_source=${sumologic_http_source.int-fallback-dev_logs.name} AND _collector=${sumologic_collector.int-fallback-dev.name}) OR (_source=logs AND _collector=int-fallback-stg)"
+    filter_predicate = "(_source=${sumologic_http_source.int-fallback-dev_logs.name} AND _collector=${sumologic_collector.int-fallback-dev.name}) OR (_source=logs AND _collector=int-fallback-stg) OR (_source="logs" and _collector="int-fallback-stg-vpc") OR (_source="logs" and _collector="int-fallback-prd-vpc")"
     capabilities = ["viewFields", "viewFieldExtraction", "viewPartitions", "viewScheduledViews"]
 }*/
 
