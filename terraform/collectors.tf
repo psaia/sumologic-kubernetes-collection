@@ -40,6 +40,13 @@ module "nytimes-spg-productservice" {
   env  = var.env
 }
 
+module "nytimes-spg-printsite-management-service" {
+  source = "../modules/collector"
+
+  name = "nytimes/spg-printsite-management-service"
+  env  = var.env
+}
+
 module "nytm-pubsys-output-scripts" {
   source = "../modules/collector"
 

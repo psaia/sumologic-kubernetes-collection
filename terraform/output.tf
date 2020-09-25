@@ -65,6 +65,17 @@ output "nytimes-spg-productservice-source-category" {
   description = "HTTP endpoints and sourceCategory created for the nytimes-spg-productservice collector"
 }
 
+# nytimes-spg-printsite-management-service
+output "nytimes-spg-printsite-management-service-endpoints" {
+  value       = module.nytimes-spg-printsite-management-service.http_endpoints
+  description = "HTTP endpoints and sourceCategory created for the nytimes-spg-printsite-management-service collector"
+}
+
+output "nytimes-spg-printsite-management-service-source-category" {
+  value       = module.nytimes-spg-printsite-management-service.source_category
+  description = "HTTP endpoints and sourceCategory created for the nytimes-spg-printsite-management-service collector"
+}
+
 # nytm-pubsys-output-scripts
 output "nytm-pubsys-output-scripts-endpoints" {
   value       = module.nytm-pubsys-output-scripts.http_endpoints
