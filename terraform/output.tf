@@ -152,3 +152,15 @@ output "nytm-dv-drone-source-category" {
   value       = module.nytm-dv-drone.source_category
   description = "HTTP endpoints and sourceCategory created for the nytm-dv-dronee collector"
 }
+
+# nytm-fastly-myaccount
+output "nytm-fastly-myaccount-endpoints" {
+  value       = module.nytm-fastly-myaccount.http_endpoints
+  description = "HTTP endpoints and sourceCategory created for the nytm-fastly-myaccount collector"
+}
+
+output "nytm-fastly-myaccount-source-category" {
+  value       = module.nytm-fastly-myaccount.source_category
+  description = "HTTP endpoints and sourceCategory created for the nytm-fastly-myaccount collector"
+}
+

@@ -109,3 +109,11 @@ module "nytm-dv-drone" {
   env  = var.env
 }
 
+# fastly-myaccount JSON logs
+module "nytm-fastly-myaccount" {
+  source = "../modules/collector"
+
+  name = "nytm/fastly-myaccount"
+  env  = var.env
+}
+
