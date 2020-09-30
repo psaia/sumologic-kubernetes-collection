@@ -6,6 +6,7 @@ name: default
 trigger:
   paths:
     exclude:
+      - .drone.yml
       - modules/**
       - terraform/*
 steps:
@@ -25,6 +26,7 @@ concurrency:
 trigger:
   paths:
     include:
+      - .drone.yml
       - modules/**
       - terraform/*
 
@@ -76,6 +78,7 @@ steps:
       branch:
         - main
         - test
+        - feature/*
 
   - name: apply
     image: jmccann/drone-terraform:6.3-0.12.20
@@ -143,6 +146,7 @@ concurrency:
 trigger:
   paths:
     include:
+      - .drone.yml
       - modules/**
       - terraform/*
 
@@ -346,6 +350,6 @@ steps:
 
 ---
 kind: signature
-hmac: a2297dfca46c4da92cddd92d841a9a9b7377724abc1eb2e9d8d556f4a6bd2147
+hmac: 76bb5b8c615cf458fdc1146f2fdac84bce275f811d0c56fbe79aa22fe1001ae3
 
 ...

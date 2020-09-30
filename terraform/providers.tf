@@ -3,6 +3,8 @@ provider "ad" {
   url    = var.ad_url
   user   = var.ad_user
   # password = this is set through AD_PASSWORD
+
+  version = "0.3.0"
 }
 
 provider "sumologic" {

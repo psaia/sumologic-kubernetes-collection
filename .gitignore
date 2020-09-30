@@ -3,5 +3,4 @@
 collectors-resources.tf
 sources-resources.tf
 users-resources.tf
-*-role.tf
 roles-and-users.json
