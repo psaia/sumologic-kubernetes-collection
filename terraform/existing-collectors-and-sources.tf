@@ -243,18 +243,6 @@ resource "sumologic_collector" "nimbul" {
   timezone    = "America/New_York"
 }
 
-resource "sumologic_collector" "nyt-sharecluster-dev_shared-dev-east-r0" {
-  name     = "nyt-sharecluster-dev_shared-dev-east-r0"
-  timezone = "Etc/UTC"
-  fields   = { "cluster" : "shared-dev-east-r0" }
-}
-
-resource "sumologic_collector" "nyt-sharecluster-dev_shared-stg-east-r0" {
-  name     = "nyt-sharecluster-dev_shared-stg-east-r0"
-  timezone = "Etc/UTC"
-  fields   = { "cluster" : "shared-stg-east-r0" }
-}
-
 resource "sumologic_collector" "NYTCO" {
   name        = "NYTCO"
   description = "Logs for NYTCO application"
@@ -3504,52 +3492,6 @@ resource "sumologic_http_source" "nimbul_nimbul-prd" {
   collector_id                 = sumologic_collector.nimbul.id
   multiline_processing_enabled = true
   timezone                     = "America/New_York"
-  use_autoline_matching        = true
-  automatic_date_parsing       = true
-  message_per_request          = false
-  force_timezone               = false
-}
-
-resource "sumologic_http_source" "nyt-sharecluster-dev_shared-dev-east-r0_events" {
-  name                         = "events"
-  category                     = "shared-dev-east-r0/events"
-  collector_id                 = sumologic_collector.nyt-sharecluster-dev_shared-dev-east-r0.id
-  multiline_processing_enabled = true
-  timezone                     = "Etc/UTC"
-  use_autoline_matching        = true
-  automatic_date_parsing       = true
-  message_per_request          = false
-  force_timezone               = false
-}
-
-resource "sumologic_http_source" "nyt-sharecluster-dev_shared-dev-east-r0_logs" {
-  name                         = "logs"
-  collector_id                 = sumologic_collector.nyt-sharecluster-dev_shared-dev-east-r0.id
-  multiline_processing_enabled = true
-  timezone                     = "Etc/UTC"
-  use_autoline_matching        = true
-  automatic_date_parsing       = true
-  message_per_request          = false
-  force_timezone               = false
-}
-
-resource "sumologic_http_source" "nyt-sharecluster-dev_shared-stg-east-r0_events" {
-  name                         = "events"
-  category                     = "shared-stg-east-r0/events"
-  collector_id                 = sumologic_collector.nyt-sharecluster-dev_shared-stg-east-r0.id
-  multiline_processing_enabled = true
-  timezone                     = "Etc/UTC"
-  use_autoline_matching        = true
-  automatic_date_parsing       = true
-  message_per_request          = false
-  force_timezone               = false
-}
-
-resource "sumologic_http_source" "nyt-sharecluster-dev_shared-stg-east-r0_logs" {
-  name                         = "logs"
-  collector_id                 = sumologic_collector.nyt-sharecluster-dev_shared-stg-east-r0.id
-  multiline_processing_enabled = true
-  timezone                     = "Etc/UTC"
   use_autoline_matching        = true
   automatic_date_parsing       = true
   message_per_request          = false
