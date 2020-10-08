@@ -109,6 +109,17 @@ output "nytimes-spg-invoice-service-source-category" {
   description = "HTTP endpoints and sourceCategory created for the nytimes-spg-invoice-service collector"
 }
 
+# nytimes-spg-subinfo
+output "nytimes-spg-subinfo-endpoints" {
+  value       = module.nytimes-spg-subinfo.http_endpoints
+  description = "HTTP endpoints and sourceCategory created for the nytimes-spg-subinfo collector"
+}
+
+output "nytimes-spg-subinfo-category" {
+  value       = module.nytimes-spg-subinfo.source_category
+  description = "HTTP endpoints and sourceCategory created for the nytimes-spg-subinfo collector"
+}
+
 # nytimes-spg-itunes-subscription-service
 output "nytimes-spg-itunes-subscription-service-endpoints" {
   value       = module.nytimes-spg-itunes-subscription-service.http_endpoints
@@ -130,6 +141,7 @@ output "nytimes-spg-inyt-subscription-api-category" {
   value       = module.nytimes-spg-inyt-subscription-api.source_category
   description = "HTTP endpoints and sourceCategory created for the nytimes-spg-inyt-subscription-api collector"
 }
+
 
 # nytimes-fallback-elections-services
 output "nytimes-dv-elections-terraform-endpoints" {
