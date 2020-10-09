@@ -176,3 +176,13 @@ output "nytm-fastly-myaccount-source-category" {
   description = "HTTP endpoints and sourceCategory created for the nytm-fastly-myaccount collector"
 }
 
+output "nytm-payflow-waf-endpoints" {
+  value       = module.nytm-payflow-waf.http_endpoints
+  description = "HTTP endpoints and sourceCategory created for the nytm-payflow-waf collector"
+}
+
+output "nytm-payflow-waf-category" {
+  value       = module.nytm-payflow-waf.source_category
+  description = "HTTP endpoints and sourceCategory created for the nytm-payflow-waf collector"
+}
+

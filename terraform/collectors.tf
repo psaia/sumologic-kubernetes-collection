@@ -125,3 +125,10 @@ module "nytm-fastly-myaccount" {
   env  = var.env
 }
 
+module "nytm-payflow-waf" {
+  source = "../modules/collector"
+
+  name = "nytimes-payflow-waf"
+  env  = var.env
+}
+
