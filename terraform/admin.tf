@@ -25,6 +25,7 @@ resource "sumologic_role" "admin" {
     "manageBudgets",
     "manageSaml",
     "manageContent",
+    "createAccessKeys",
     "manageSupportAccountAccess",
     "shareDashboardOutsideOrg",
     "metricsTransformation",
