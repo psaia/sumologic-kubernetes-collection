@@ -9,4 +9,7 @@ resource "ad_group_to_ou" "ad-group-SEG" {
   ou_distinguished_name = var.ad_oudn
   group_name            = sumologic_role.SEG.name
   description           = "AD Group for Sumo Logic RBAC group ${sumologic_role.SEG.name}"
+  lifecycle {
+    prevent_destroy = true
+  }
 }

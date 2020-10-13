@@ -9,4 +9,7 @@ resource "ad_group_to_ou" "ad-group-Pubsys" {
   ou_distinguished_name = var.ad_oudn
   group_name            = sumologic_role.Pubsys.name
   description           = "AD Group for Sumo Logic RBAC group ${sumologic_role.Pubsys.name}"
+  lifecycle {
+    prevent_destroy = true
+  }
 }

@@ -9,4 +9,7 @@ resource "ad_group_to_ou" "ad-group-Paperboy" {
   ou_distinguished_name = var.ad_oudn
   group_name            = sumologic_role.Paperboy.name
   description           = "AD Group for Sumo Logic RBAC group ${sumologic_role.Paperboy.name}"
+  lifecycle {
+    prevent_destroy = true
+  }
 }

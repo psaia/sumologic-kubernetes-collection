@@ -9,4 +9,7 @@ resource "ad_group_to_ou" "ad-group-Windows" {
   ou_distinguished_name = var.ad_oudn
   group_name            = sumologic_role.Windows.name
   description           = "AD Group for Sumo Logic RBAC group ${sumologic_role.Windows.name}"
+  lifecycle {
+    prevent_destroy = true
+  }
 }

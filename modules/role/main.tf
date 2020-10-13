@@ -14,4 +14,7 @@ resource "ad_group_to_ou" "ad-group" {
   ou_distinguished_name = var.ad_oudn
   group_name            = local.name
   description           = "AD Group for Sumo Logic RBAC group ${local.name}"
+  lifecycle {
+    prevent_destroy = true
+  }
 }

@@ -9,4 +9,7 @@ resource "ad_group_to_ou" "ad-group-NYT_Beta" {
   ou_distinguished_name = var.ad_oudn
   group_name            = sumologic_role.NYT_Beta.name
   description           = "AD Group for Sumo Logic RBAC group ${sumologic_role.NYT_Beta.name}"
+  lifecycle {
+    prevent_destroy = true
+  }
 }
