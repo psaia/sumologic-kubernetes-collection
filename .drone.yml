@@ -36,12 +36,6 @@ steps:
     commands:
       - terraform fmt -write=false -list -diff -check -recursive terraform
 
-  - name: no-output
-    image: alpine:latest
-    commands:
-      - echo "Removing output file..."
-      - rm terraform/output.tf
-
   - name: plan
     image: jmccann/drone-terraform:6.3-0.12.20
     settings:
