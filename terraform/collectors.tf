@@ -77,6 +77,13 @@ module "nytimes-spg-subinfo" {
   env  = var.env
 }
 
+module "nytimes-spg-settlements" {
+  source = "../modules/collector"
+
+  name = "nytimes-spg-settlements"
+  env  = var.env
+}
+
 module "nytimes-spg-itunes-subscription-service" {
   source = "../modules/collector"
 

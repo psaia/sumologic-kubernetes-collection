@@ -120,6 +120,17 @@ output "nytimes-spg-subinfo-category" {
   description = "HTTP endpoints and sourceCategory created for the nytimes-spg-subinfo collector"
 }
 
+# nytimes-spg-settlements
+output "nytimes-spg-settlements-endpoints" {
+  value       = module.nytimes-spg-settlements.http_endpoints
+  description = "HTTP endpoints and sourceCategory created for the nytimes-spg-settlements collector"
+}
+
+output "nytimes-spg-settlements-category" {
+  value       = module.nytimes-spg-settlements.source_category
+  description = "HTTP endpoints and sourceCategory created for the nytimes-spg-settlements collector"
+}
+
 # nytimes-spg-itunes-subscription-service
 output "nytimes-spg-itunes-subscription-service-endpoints" {
   value       = module.nytimes-spg-itunes-subscription-service.http_endpoints
