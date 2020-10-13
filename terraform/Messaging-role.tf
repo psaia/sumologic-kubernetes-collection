@@ -2,7 +2,7 @@ resource "sumologic_role" "Messaging" {
   name             = "${var.role_prefix[var.env]}-Messaging"
   description      = "Messaging Team"
   filter_predicate = "_sourceCategory=webandmobile-messaging"
-  capabilities     = ["viewScheduledViews", "manageMonitors", "viewPartitions", "viewFields", "viewFieldExtraction", "changeDataAccessLevel"]
+  capabilities     = ["viewScheduledViews", "manageMonitors", "viewPartitions", "viewFields", "viewFieldExtraction", "createAccessKeys", "changeDataAccessLevel"]
 }
 
 resource "ad_group_to_ou" "ad-group-Messaging" {

@@ -2,7 +2,7 @@ resource "sumologic_role" "BI" {
   name             = "${var.role_prefix[var.env]}-BI"
   description      = "BI Team"
   filter_predicate = "_sourceCategory=business-bi"
-  capabilities     = ["viewScheduledViews", "manageMonitors", "viewPartitions", "viewFields", "viewFieldExtraction", "changeDataAccessLevel"]
+  capabilities     = ["viewScheduledViews", "manageMonitors", "viewPartitions", "viewFields", "viewFieldExtraction", "createAccessKeys", "changeDataAccessLevel"]
 }
 
 resource "ad_group_to_ou" "ad-group-BI" {

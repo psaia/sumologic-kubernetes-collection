@@ -9,7 +9,7 @@ variable "search_filter" {
 
 variable "capabilities" {
   type    = list(string)
-  default = []
+  default = ["createAccessKeys"]
 }
 
 variable "owners" {

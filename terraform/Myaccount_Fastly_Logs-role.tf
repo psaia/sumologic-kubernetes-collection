@@ -2,7 +2,7 @@ resource "sumologic_role" "Myaccount_Fastly_Logs" {
   name             = "${var.role_prefix[var.env]}-Myaccount Fastly Logs"
   description      = "Access to fastly logs for myaccount service"
   filter_predicate = "_sourceCategory=${sumologic_http_source.HTTP_myaccount-prd.category} OR _sourceCategory=${sumologic_http_source.HTTP_myaccount-stg.category}"
-  capabilities     = ["viewScheduledViews", "viewPartitions", "viewFields", "viewFieldExtraction", "viewCollectors"]
+  capabilities     = ["viewScheduledViews", "viewPartitions", "viewFields", "viewFieldExtraction", "createAccessKeys", "viewCollectors"]
 }
 
 resource "ad_group_to_ou" "ad-group-Myaccount_Fastly_Logs" {

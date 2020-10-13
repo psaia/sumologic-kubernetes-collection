@@ -1,7 +1,7 @@
 resource "sumologic_role" "Endusers" {
   name         = "${var.role_prefix[var.env]}-Endusers"
   description  = "Enduser Support Team"
-  capabilities = ["viewScheduledViews", "manageMonitors", "viewPartitions", "viewFields", "viewFieldExtraction", "changeDataAccessLevel", "viewCollectors"]
+  capabilities = ["viewScheduledViews", "manageMonitors", "viewPartitions", "viewFields", "viewFieldExtraction", "createAccessKeys", "changeDataAccessLevel", "viewCollectors"]
 }
 
 resource "ad_group_to_ou" "ad-group-Endusers" {

@@ -1,7 +1,7 @@
 resource "sumologic_role" "DBAs" {
   name         = "${var.role_prefix[var.env]}-DBAs"
   description  = "Database Administartors"
-  capabilities = ["viewScheduledViews", "manageMonitors", "viewPartitions", "viewFields", "viewFieldExtraction", "changeDataAccessLevel"]
+  capabilities = ["viewScheduledViews", "manageMonitors", "viewPartitions", "viewFields", "viewFieldExtraction", "createAccessKeys", "changeDataAccessLevel"]
 }
 
 resource "ad_group_to_ou" "ad-group-DBAs" {
