@@ -15,119 +15,119 @@ steps:
     commands:
       - echo "Looks good!"
 
-# ---
-# kind: pipeline
-# type: docker
-# name: dev
+---
+kind: pipeline
+type: docker
+name: dev
 
-# concurrency:
-#   limit: 1
+concurrency:
+  limit: 1
 
-# trigger:
-#   paths:
-#     include:
-#       - .drone.yml
-#       - modules/**
-#       - terraform/*
+trigger:
+  paths:
+    include:
+      - .drone.yml
+      - modules/**
+      - terraform/*
 
-# steps:
-#   - name: format
-#     image: hashicorp/terraform:0.12.26
-#     commands:
-#       - terraform fmt -write=false -list -diff -check -recursive terraform
+steps:
+  - name: format
+    image: hashicorp/terraform:0.12.26
+    commands:
+      - terraform fmt -write=false -list -diff -check -recursive terraform
 
-#   - name: plan
-#     image: jmccann/drone-terraform:6.3-0.12.20
-#     settings:
-#       tf_version: 0.12.26
-#       root_dir: terraform
-#       actions:
-#         - validate
-#         - plan
-#       init_options:
-#         lock-timeout: 5m
-#         backend-config:
-#            - "bucket=remote-state"
-#            - "prefix=nytimes/dv-sumologic-test"
-#       vars:
-#         default_role: "2FA - SumoLogic (Test)"
-#         ad_domain: ent.nytint.com
-#         ad_url: ldap://AWSE-EPW-CDC04.ENT.NYTINT.COM:389
-#         ad_user: corp-svc-sumo-auto
-#         env: test
-#     environment:
-#       AD_PASSWORD:
-#         from_secret: ad_password
-#       SUMOLOGIC_ACCESSID:
-#         from_secret: test_access_id
-#       SUMOLOGIC_ACCESSKEY:
-#         from_secret: test_access_key
-#       SUMOLOGIC_ENVIRONMENT: us2
-#       GOOGLE_CREDENTIALS:
-#         from_secret: GOOGLE_CREDENTIALS
-#     when:
-#       event:
-#         - push
-#         - pull_request
-#       branch:
-#         - main
-#         - test
-#         - feature/*
+  - name: plan
+    image: jmccann/drone-terraform:6.3-0.12.20
+    settings:
+      tf_version: 0.12.26
+      root_dir: terraform
+      actions:
+        - validate
+        - plan
+      init_options:
+        lock-timeout: 5m
+        backend-config:
+           - "bucket=remote-state"
+           - "prefix=nytimes/dv-sumologic-test"
+      vars:
+        default_role: "2FA - SumoLogic (Test)"
+        ad_domain: ent.nytint.com
+        ad_url: ldap://AWSE-EPW-CDC04.ENT.NYTINT.COM:389
+        ad_user: corp-svc-sumo-auto
+        env: test
+    environment:
+      AD_PASSWORD:
+        from_secret: ad_password
+      SUMOLOGIC_ACCESSID:
+        from_secret: test_access_id
+      SUMOLOGIC_ACCESSKEY:
+        from_secret: test_access_key
+      SUMOLOGIC_ENVIRONMENT: us2
+      GOOGLE_CREDENTIALS:
+        from_secret: GOOGLE_CREDENTIALS
+    when:
+      event:
+        - push
+        - pull_request
+      branch:
+        - main
+        - test
+        - feature/*
 
-#   - name: apply
-#     image: jmccann/drone-terraform:6.3-0.12.20
-#     settings:
-#       tf_version: 0.12.26
-#       root_dir: terraform
-#       actions:
-#         - apply
-#       init_options:
-#         lock-timeout: 5m
-#         backend-config:
-#            - "bucket=remote-state"
-#            - "prefix=nytimes/dv-sumologic-test"
-#       vars:
-#         default_role: "2FA - SumoLogic (Test)"
-#         ad_domain: ent.nytint.com
-#         ad_url: ldap://AWSE-EPW-CDC04.ENT.NYTINT.COM:389
-#         ad_user: corp-svc-sumo-auto
-#         env: test
-#     environment:
-#       AD_PASSWORD:
-#         from_secret: ad_password
-#       SUMOLOGIC_ACCESSID:
-#         from_secret: test_access_id
-#       SUMOLOGIC_ACCESSKEY:
-#         from_secret: test_access_key
-#       SUMOLOGIC_ENVIRONMENT: us2
-#       GOOGLE_CREDENTIALS:
-#         from_secret: GOOGLE_CREDENTIALS
-#     when:
-#       event:
-#         - push
-#       branch:
-#         - main
-#         - test
+  - name: apply
+    image: jmccann/drone-terraform:6.3-0.12.20
+    settings:
+      tf_version: 0.12.26
+      root_dir: terraform
+      actions:
+        - apply
+      init_options:
+        lock-timeout: 5m
+        backend-config:
+           - "bucket=remote-state"
+           - "prefix=nytimes/dv-sumologic-test"
+      vars:
+        default_role: "2FA - SumoLogic (Test)"
+        ad_domain: ent.nytint.com
+        ad_url: ldap://AWSE-EPW-CDC04.ENT.NYTINT.COM:389
+        ad_user: corp-svc-sumo-auto
+        env: test
+    environment:
+      AD_PASSWORD:
+        from_secret: ad_password
+      SUMOLOGIC_ACCESSID:
+        from_secret: test_access_id
+      SUMOLOGIC_ACCESSKEY:
+        from_secret: test_access_key
+      SUMOLOGIC_ENVIRONMENT: us2
+      GOOGLE_CREDENTIALS:
+        from_secret: GOOGLE_CREDENTIALS
+    when:
+      event:
+        - push
+      branch:
+        - main
+        - test
 
-#   - name: slack
-#     image: plugins/slack
-#     settings:
-#       channel: dv-notifications
-#       username: nytimes/dv-sumologic (Dev)
-#       template: >
-#         <@observability-team>
-#         dev deployment failed! {{build.link}} ({{build.branch}})
-#     environment:
-#       SLACK_WEBHOOK:
-#         from_secret: slack_webhook
-#     when:
-#       status:
-#         - failure
-#       event:
-#         - push
-#       branch:
-#         - main
-#         - test
+  - name: slack
+    image: plugins/slack
+    settings:
+      channel: dv-notifications
+      username: nytimes/dv-sumologic (Dev)
+      template: >
+        <@observability-team>
+        dev deployment failed! {{build.link}} ({{build.branch}})
+    environment:
+      SLACK_WEBHOOK:
+        from_secret: slack_webhook
+    when:
+      status:
+        - failure
+      event:
+        - push
+      branch:
+        - main
+        - test
 
 ---
 kind: pipeline
@@ -144,8 +144,8 @@ trigger:
       - modules/**
       - terraform/*
 
-# depends_on:
-#   - dev
+depends_on:
+  - dev
 
 steps:
   - name: plan
