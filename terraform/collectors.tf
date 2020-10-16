@@ -139,3 +139,9 @@ module "nytm-payflow-waf" {
   env  = var.env
 }
 
+module "nytm-ecomm-aristo" {
+  source = "../modules/collector"
+
+  name = "nytm-ecomm-aristo"
+  env  = var.env
+}
