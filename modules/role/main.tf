@@ -12,6 +12,7 @@ resource "sumologic_role" "sumo-role" {
 # Generate AD group to match the Sumo Logic role
 resource "ad_group_to_ou" "ad-group" {
   ou_distinguished_name = var.ad_oudn
+  group_manager         = var.group_manager
   group_name            = local.name
   description           = "AD Group for Sumo Logic RBAC group ${local.name}"
   lifecycle {

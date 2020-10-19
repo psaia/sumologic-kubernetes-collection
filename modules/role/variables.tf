@@ -37,3 +37,9 @@ variable "ad_oudn" {
   type    = string
   default = "OU=SumoLogic RBAC,OU=2FA Objects,OU=NYTMG,DC=ent,DC=nytint,DC=COM"
 }
+
+variable "group_manager" {
+  type        = string
+  description = "Group manager of the sumo- AD group. Must be full AD Distinguished Name."
+  default     = null
+}
