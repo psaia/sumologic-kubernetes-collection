@@ -7,7 +7,6 @@ resource "sumologic_role" "infra-services" {
 
 resource "ad_group_to_ou" "ad-group-infra-services" {
   ou_distinguished_name = var.ad_oudn
-  group_manager         = "CN=Shah\\, Rupen,OU=Users,OU=NYHQ,OU=NYTMG,DC=ent,DC=nyint,DC=com"
   group_name            = sumologic_role.infra-services.name
   description           = "AD Group for Sumo Logic RBAC ${sumologic_role.infra-services.name}"
   lifecycle {
