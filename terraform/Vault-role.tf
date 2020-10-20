@@ -1,7 +1,7 @@
 resource "sumologic_role" "Vault" {
   name             = "${var.role_prefix[var.env]}-Vault"
   description      = "Vault HTTP Logs"
-  filter_predicate = "_sourceCategory=${sumologic_http_source.HTTP_vault-stg.category} OR _sourceCategory=${sumologic_http_source.HTTP_vault-prd.category} OR _sourceCategory=${module.nytimes-dv-vault-aws.search_filter}"
+  filter_predicate = "_sourceCategory=${sumologic_http_source.HTTP_vault-stg.category} OR _sourceCategory=${sumologic_http_source.HTTP_vault-prd.category} OR ${module.nytimes-dv-vault-aws.search_filter}"
   capabilities     = ["viewScheduledViews", "manageMonitors", "viewPartitions", "viewFields", "viewFieldExtraction", "createAccessKeys", "changeDataAccessLevel"]
 }
 
