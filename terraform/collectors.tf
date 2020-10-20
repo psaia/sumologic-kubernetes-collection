@@ -148,3 +148,11 @@ module "nytm-ecomm-aristo" {
     "_convertHeadersToFields" = "true"
   }
 }
+
+# Vault AWS collection
+module "nytimes-dv-vault-aws" {
+  source = "../modules/collector"
+
+  name = "nytimes-dv-vault-aws"
+  env  = var.env
+}
