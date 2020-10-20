@@ -144,4 +144,7 @@ module "nytm-ecomm-aristo" {
 
   name = "nytm-ecomm-aristo"
   env  = var.env
+  collector_fields = {
+    "_convertHeadersToFields" = "true"
+  }
 }

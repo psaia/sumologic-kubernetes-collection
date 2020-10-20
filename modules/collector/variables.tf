@@ -20,3 +20,9 @@ variable "env" {
   type        = string
   description = "Environment that the build is running against"
 }
+
+variable "collector_fields" {
+  type        = map
+  default     = {}
+  description = "Optional fields for the http collector"
+}

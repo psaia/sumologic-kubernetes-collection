@@ -17,6 +17,7 @@ resource "sumologic_http_source" "sources" {
   category     = "${local.name}-${each.value}"
   collector_id = sumologic_collector.collector.id
   timezone     = var.timezone
+  fields       = var.collector_fields
 }
 
 # Role for this specific collector
