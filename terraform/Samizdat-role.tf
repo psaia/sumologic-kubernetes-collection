@@ -8,6 +8,7 @@ resource "sumologic_role" "Samizdat" {
 resource "ad_group_to_ou" "ad-group-Samizdat" {
   ou_distinguished_name = var.ad_oudn
   group_name            = sumologic_role.Samizdat.name
+  group_manager         = "CN=Nance\\, Timothy,OU=Users,OU=NYHQ,OU=NYTMG,DC=ent,DC=nytint,DC=com"
   description           = "AD Group for Sumo Logic RBAC group ${sumologic_role.Samizdat.name}"
   lifecycle {
     prevent_destroy = true
