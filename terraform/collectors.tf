@@ -98,6 +98,12 @@ module "nytimes-spg-inyt-subscription-api" {
   env  = var.env
 }
 
+module "nytimes-spg-inyt-datacompliance-api" {
+  source = "../modules/collector"
+
+  name = "nytimes-spg-inyt-datacompliance-api"
+  env  = var.env
+}
 
 # These service don't have an associated GitHub repo
 module "nytimes-infra-ftp-services" {
