@@ -77,6 +77,13 @@ module "nytimes-spg-subinfo" {
   env  = var.env
 }
 
+module "nytimes-spg-paypal-integration" {
+  source = "../modules/collector"
+
+  name = "nytimes-spg-paypal-integration"
+  env  = var.env
+}
+
 module "nytimes-spg-settlements" {
   source = "../modules/collector"
 
