@@ -9,6 +9,7 @@ resource "ad_group_to_ou" "ad-group-WWW" {
   ou_distinguished_name = var.ad_oudn
   group_name            = sumologic_role.WWW.name
   description           = "AD Group for Sumo Logic RBAC group ${sumologic_role.WWW.name}"
+  group_manager         = "CN=Killeen\\, Gerald,OU=Users,OU=NYHQ,OU=NYTMG,DC=ent,DC=nytint,DC=com"
   lifecycle {
     prevent_destroy = true
   }
