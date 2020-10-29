@@ -13,8 +13,8 @@ resource "ad_group_to_ou" "ad-group-Aristo" {
   ou_distinguished_name = var.ad_oudn
   group_name            = sumologic_role.Aristo.name
   description           = "AD Group for Sumo Logic RBAC group ${sumologic_role.Aristo.name}"
+  group_manager         = "CN=Theka\\, George,OU=Users,OU=NYHQ,OU=NYTMG,DC=ent,DC=nytint,DC=com"
   lifecycle {
     prevent_destroy = true
   }
 }
-
