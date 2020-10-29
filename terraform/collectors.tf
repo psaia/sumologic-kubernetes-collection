@@ -162,3 +162,10 @@ module "nytimes-dv-vault-aws" {
   name = "nytimes-dv-vault-aws"
   env  = var.env
 }
+
+module "nytimes-dv-docker-registry" {
+  source = "../modules/collector"
+
+  name = "nytimes-dv-docker-registry"
+  env  = var.env
+}
