@@ -14,6 +14,7 @@ resource "ad_group_to_ou" "ad-group-int-fallback" {
   ou_distinguished_name = var.ad_oudn
   group_name            = "${var.role_prefix[var.env]}-int-fallback"
   description           = "AD Group for Sumo Logic RBAC group ${var.role_prefix[var.env]}-int-fallback"
+  group_manager         = "CN=Roy\\, Suman,OU=Users,OU=NYHQ,OU=NYTMG,DC=ent,DC=nytint,DC=com"
   lifecycle {
     prevent_destroy = true
   }
