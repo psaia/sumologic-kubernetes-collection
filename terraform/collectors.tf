@@ -169,3 +169,10 @@ module "nytimes-dv-docker-registry" {
   name = "nytimes-dv-docker-registry"
   env  = var.env
 }
+
+module "nytimes-nirmata-poc" {
+  source = "../modules/collector"
+
+  name = "nytimes-nirmata-poc"
+  env  = var.env
+}
