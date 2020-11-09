@@ -9,6 +9,7 @@ resource "ad_group_to_ou" "ad-group-Customer_Service" {
   ou_distinguished_name = var.ad_oudn
   group_name            = sumologic_role.Customer_Service.name
   description           = "AD Group for Sumo Logic RBAC group ${sumologic_role.Customer_Service.name}"
+  group_manager         = "CN=Cora\\, Joseph,OU=GApps Objects Users,OU=Users,OU=NYHQ,OU=NYTMG,DC=ent,DC=nytint,DC=com"
   lifecycle {
     prevent_destroy = true
   }
