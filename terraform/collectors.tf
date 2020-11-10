@@ -176,3 +176,13 @@ module "nytimes-nirmata-poc" {
   name = "nytimes-nirmata-poc"
   env  = var.env
 }
+
+# Egress proxies for pci environments
+# No associated repo
+module "nytimes-dv-pci-proxy" {
+  source = "../modules/collector"
+
+  name    = "nytimes-dv-pci-proxy"
+  env     = var.env
+  sources = ["prd"]
+}
