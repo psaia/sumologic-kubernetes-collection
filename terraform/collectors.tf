@@ -186,3 +186,13 @@ module "nytimes-dv-pci-proxy" {
   env     = var.env
   sources = ["prd"]
 }
+
+module "nytimes-github" {
+  source = "../modules/collector"
+
+  name = "nytimes-github"
+  env  = var.env
+  collector_fields = {
+    "_convertHeadersToFields" = "true"
+  }
+}
