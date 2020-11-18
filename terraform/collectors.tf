@@ -148,8 +148,10 @@ module "nytm-fastly-myaccount" {
 module "nytm-ecomm-aristo" {
   source = "../modules/collector"
 
-  name = "nytm-ecomm-aristo"
-  env  = var.env
+  name     = "nytm-ecomm-aristo"
+  env      = var.env
+  timezone = "America/New_York"
+
   collector_fields = {
     "_convertHeadersToFields" = "true"
   }
