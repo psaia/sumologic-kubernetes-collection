@@ -8,8 +8,9 @@ module "dv-test" {
 module "nytimes-dv-sumologic" {
   source = "../modules/collector"
 
-  name = "nytimes/dv-sumologic"
-  env  = var.env
+  name           = "nytimes/dv-sumologic"
+  env            = var.env
+  write_to_vault = true
 }
 
 module "nytimes-spg-petstore" {
@@ -58,6 +59,7 @@ module "nytm-pubsys-output-scripts" {
 module "nytm-pubsys-newsgate-ConfigBase1" {
   source = "../modules/collector"
 
+  #
   name     = "nytm/pubsys-newsgate-ConfigBase1"
   env      = var.env
   timezone = "America/New_York"
@@ -66,49 +68,49 @@ module "nytm-pubsys-newsgate-ConfigBase1" {
 module "nytimes-spg-invoice-service" {
   source = "../modules/collector"
 
-  name = "nytimes-spg-invoice-service"
+  name = "nytimes/spg-invoice-service"
   env  = var.env
 }
 
 module "nytimes-spg-subinfo" {
   source = "../modules/collector"
 
-  name = "nytimes-spg-subinfo"
+  name = "nytimes/spg-subinfo"
   env  = var.env
 }
 
 module "nytimes-spg-paypal-integration" {
   source = "../modules/collector"
 
-  name = "nytimes-spg-paypal-integration"
+  name = "nytimes/spg-paypal-integration"
   env  = var.env
 }
 
 module "nytimes-spg-settlements" {
   source = "../modules/collector"
 
-  name = "nytimes-spg-settlements"
+  name = "nytimes/spg-settlements"
   env  = var.env
 }
 
 module "nytimes-spg-itunes-subscription-service" {
   source = "../modules/collector"
 
-  name = "nytimes-spg-itunes-subscription-service"
+  name = "nytimes/spg-itunes-subscription-service"
   env  = var.env
 }
 
 module "nytimes-spg-inyt-subscription-api" {
   source = "../modules/collector"
 
-  name = "nytimes-spg-inyt-subscription-api"
+  name = "nytimes/spg-inyt-subscription-api"
   env  = var.env
 }
 
 module "nytimes-spg-inyt-datacompliance-api" {
   source = "../modules/collector"
 
-  name = "nytimes-spg-inyt-datacompliance-api"
+  name = "nytimes/spg-inyt-datacompliance-api"
   env  = var.env
 }
 
@@ -116,7 +118,7 @@ module "nytimes-spg-inyt-datacompliance-api" {
 module "nytimes-infra-ftp-services" {
   source = "../modules/collector"
 
-  name    = "nytimes-infra-ftp-services"
+  name    = "nytimes/infra-ftp-services"
   env     = var.env
   sources = ["prd"]
 }
@@ -125,7 +127,7 @@ module "nytimes-infra-ftp-services" {
 module "nytimes-dv-elections-terraform" {
   source = "../modules/collector"
 
-  name = "nytimes-dv-elections-terraform"
+  name = "nytimes/dv-elections-terraform"
   env  = var.env
 }
 
@@ -133,16 +135,18 @@ module "nytimes-dv-elections-terraform" {
 module "nytm-dv-drone" {
   source = "../modules/collector"
 
-  name = "nytm/dv-drone"
-  env  = var.env
+  name           = "nytm/dv-drone"
+  env            = var.env
+  write_to_vault = true
 }
 
 # fastly-myaccount JSON logs
 module "nytm-fastly-myaccount" {
   source = "../modules/collector"
 
-  name = "nytm/fastly-myaccount"
-  env  = var.env
+  name           = "nytm/fastly-myaccount"
+  env            = var.env
+  write_to_vault = true
 }
 
 module "nytm-ecomm-aristo" {
@@ -151,7 +155,6 @@ module "nytm-ecomm-aristo" {
   name     = "nytm-ecomm-aristo"
   env      = var.env
   timezone = "America/New_York"
-
   collector_fields = {
     "_convertHeadersToFields" = "true"
   }
@@ -161,21 +164,22 @@ module "nytm-ecomm-aristo" {
 module "nytimes-dv-vault-aws" {
   source = "../modules/collector"
 
-  name = "nytimes-dv-vault-aws"
+  name = "nytimes/dv-vault-aws"
   env  = var.env
 }
 
 module "nytimes-dv-docker-registry" {
   source = "../modules/collector"
 
-  name = "nytimes-dv-docker-registry"
-  env  = var.env
+  name           = "nytimes/dv-docker-registry"
+  env            = var.env
+  write_to_vault = true
 }
 
 module "nytimes-nirmata-poc" {
   source = "../modules/collector"
 
-  name = "nytimes-nirmata-poc"
+  name = "nytimes/nirmata-poc"
   env  = var.env
 }
 
@@ -184,7 +188,7 @@ module "nytimes-nirmata-poc" {
 module "nytimes-dv-pci-proxy" {
   source = "../modules/collector"
 
-  name    = "nytimes-dv-pci-proxy"
+  name    = "nytimes/dv-pci-proxy"
   env     = var.env
   sources = ["prd"]
 }
@@ -192,7 +196,7 @@ module "nytimes-dv-pci-proxy" {
 module "nytimes-github" {
   source = "../modules/collector"
 
-  name = "nytimes-github"
+  name = "nytimes/github"
   env  = var.env
   collector_fields = {
     "_convertHeadersToFields" = "true"

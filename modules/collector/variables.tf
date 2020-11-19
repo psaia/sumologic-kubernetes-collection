@@ -26,3 +26,10 @@ variable "collector_fields" {
   default     = {}
   description = "Optional fields for the http collector"
 }
+
+variable "write_to_vault" {
+  type        = bool
+  description = "Whether or not to write the endpoints to the matching namespace of the repo in Vault"
+
+  default = false
+}

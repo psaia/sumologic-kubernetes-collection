@@ -13,6 +13,11 @@ provider "sumologic" {
   # environment =  this is set through SUMOLOGIC_ENVIRONMENT
 }
 
+provider "vault" {
+  # address = this is set through VAULT_ADDR
+  # token   = this is sourced from ~/.vault-token
+}
+
 variable "ad_domain" {
   type = string
 }

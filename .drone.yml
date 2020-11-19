@@ -30,11 +30,25 @@ trigger:
       - modules/**
       - terraform/*
 
+# for ~/.vault-token to be usable
+workspace:
+  path: /root
+
 steps:
   - name: format
     image: hashicorp/terraform:0.12.26
     commands:
       - terraform fmt -write=false -list -diff -check -recursive terraform
+
+  - name: vault-login
+    image: vault:0.9.0
+    commands:
+    - vault write -field=token auth/nytimes/dv-sumologic/approle/login role_id=$ROLE_ID secret_id=$SECRET_ID > ~/.vault-token
+    environment:
+      ROLE_ID: 30c5bf3b-3070-6f03-ff33-74141b4c8494  # auth/nytimes/dv-sumologic/approle/role/drone/role-id
+      SECRET_ID:
+        from_secret: VAULT_SECRET_ID  # auth/nytimes/dv-sumologic/approle/role/drone/secret-id
+      VAULT_ADDR: https://vault-prd.dv.nyt.net
 
   - name: plan
     image: jmccann/drone-terraform:6.3-0.12.20
@@ -65,6 +79,7 @@ steps:
       SUMOLOGIC_ENVIRONMENT: us2
       GOOGLE_CREDENTIALS:
         from_secret: GOOGLE_CREDENTIALS
+      VAULT_ADDR: https://vault-prd.dv.nyt.net
     when:
       event:
         - push
@@ -102,6 +117,7 @@ steps:
       SUMOLOGIC_ENVIRONMENT: us2
       GOOGLE_CREDENTIALS:
         from_secret: GOOGLE_CREDENTIALS
+      VAULT_ADDR: https://vault-prd.dv.nyt.net
     when:
       event:
         - push
@@ -144,10 +160,24 @@ trigger:
       - modules/**
       - terraform/*
 
+# for ~/.vault-token to be usable
+workspace:
+  path: /root
+
 depends_on:
   - dev
 
 steps:
+  - name: vault-login
+    image: vault:0.9.0
+    commands:
+    - vault write -field=token auth/nytimes/dv-sumologic/approle/login role_id=$ROLE_ID secret_id=$SECRET_ID > ~/.vault-token
+    environment:
+      ROLE_ID: 30c5bf3b-3070-6f03-ff33-74141b4c8494  # auth/nytimes/dv-sumologic/approle/role/drone/role-id
+      SECRET_ID:
+        from_secret: VAULT_SECRET_ID  # auth/nytimes/dv-sumologic/approle/role/drone/secret-id
+      VAULT_ADDR: https://vault-prd.dv.nyt.net
+
   - name: plan
     image: jmccann/drone-terraform:6.3-0.12.20
     settings:
@@ -177,6 +207,7 @@ steps:
       SUMOLOGIC_ENVIRONMENT: us1
       GOOGLE_CREDENTIALS:
         from_secret: GOOGLE_CREDENTIALS
+      VAULT_ADDR: https://vault-prd.dv.nyt.net
     when:
       event:
         - push
@@ -213,6 +244,7 @@ steps:
       SUMOLOGIC_ENVIRONMENT: us1
       GOOGLE_CREDENTIALS:
         from_secret: GOOGLE_CREDENTIALS
+      VAULT_ADDR: https://vault-prd.dv.nyt.net
     when:
       event:
         - push
@@ -344,6 +376,6 @@ steps:
 
 ---
 kind: signature
-hmac: 76bb5b8c615cf458fdc1146f2fdac84bce275f811d0c56fbe79aa22fe1001ae3
+hmac: e828bb39ce40a18139bf6b79f635c8c7720d01d40a8676c5cef0d44c83923088
 
 ...
