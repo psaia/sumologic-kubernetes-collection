@@ -140,15 +140,6 @@ module "nytm-dv-drone" {
   write_to_vault = true
 }
 
-# fastly-myaccount JSON logs
-module "nytm-fastly-myaccount" {
-  source = "../modules/collector"
-
-  name           = "nytm/fastly-myaccount"
-  env            = var.env
-  write_to_vault = true
-}
-
 module "nytm-ecomm-aristo" {
   source = "../modules/collector"
 
