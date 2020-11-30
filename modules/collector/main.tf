@@ -21,21 +21,23 @@ resource "sumologic_http_source" "sources" {
 }
 
 # Write the endpoints to Vault
-resource "vault_generic_secret" "dv_namespace" {
-  path         = "nytimes/dv-sumologic/versioned/endpoints/${var.env}/${local.name}"
-  disable_read = true
-  data_json    = format("{%s}", join(",", [for src in var.sources : format("\"%s\": \"%s\"", src, sumologic_http_source.sources[src].url)]))
+resource "vault_generic_endpoint" "dv_namespace" {
+  path           = "nytimes/dv-sumologic/versioned/data/endpoints/${var.env}/${local.name}"
+  disable_read   = true
+  disable_delete = true
+  data_json      = format("{%s}", join(",", [for src in var.sources : format("\"%s\": \"%s\"", src, sumologic_http_source.sources[src].url)]))
   #
 }
 
 # Write the endpoints to Vault
-resource "vault_generic_secret" "repo_namespace" {
+resource "vault_generic_endpoint" "repo_namespace" {
   # Only write endpoints if enabled for prod only
   for_each = var.write_to_vault && var.env == "prd" ? var.sources : []
 
-  path         = "${var.name}/versioned/${each.value}/sumo_key"
-  disable_read = true
-  data_json    = <<EOT
+  path           = "${var.name}/versioned/data/${each.value}/sumo_key"
+  disable_read   = true
+  disable_delete = true
+  data_json      = <<EOT
 {
   "source_category": "${sumologic_http_source.sources[each.value].category}",
   "url": "${sumologic_http_source.sources[each.value].url}",
