@@ -193,3 +193,13 @@ module "nytimes-github" {
     "_convertHeadersToFields" = "true"
   }
 }
+
+module "nytimes-spg-order-service" {
+  source = "../modules/collector"
+
+  name = "nytimes/spg-order-service"
+  env  = var.env
+  collector_fields = {
+    "_convertHeadersToFields" = "true"
+  }
+}
