@@ -203,3 +203,13 @@ module "nytimes-spg-order-service" {
     "_convertHeadersToFields" = "true"
   }
 }
+
+# Care EKS Cluster Collectors
+# No associated repo
+module "nytimes-care-eks-cluster" {
+  source = "../modules/collector"
+
+  name    = "nytimes/care-eks-cluster"
+  env     = var.env
+  sources = ["prd"]
+}
