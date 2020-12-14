@@ -45,7 +45,7 @@ steps:
     commands:
     - vault write -field=token auth/nytimes/dv-sumologic/approle/login role_id=$ROLE_ID secret_id=$SECRET_ID > ~/.vault-token
     environment:
-      ROLE_ID: 30c5bf3b-3070-6f03-ff33-74141b4c8494  # auth/nytimes/dv-sumologic/approle/role/drone/role-id
+      ROLE_ID: 6eff16a2-27e3-f7b1-7ff2-f8368c56d54d # auth/nytimes/dv-sumologic/approle/role/sumo-drone-pipeline/role-id
       SECRET_ID:
         from_secret: VAULT_SECRET_ID  # auth/nytimes/dv-sumologic/approle/role/drone/secret-id
       VAULT_ADDR: https://vault-prd.dv.nyt.net
@@ -173,7 +173,7 @@ steps:
     commands:
     - vault write -field=token auth/nytimes/dv-sumologic/approle/login role_id=$ROLE_ID secret_id=$SECRET_ID > ~/.vault-token
     environment:
-      ROLE_ID: 30c5bf3b-3070-6f03-ff33-74141b4c8494  # auth/nytimes/dv-sumologic/approle/role/drone/role-id
+      ROLE_ID: 6eff16a2-27e3-f7b1-7ff2-f8368c56d54d # auth/nytimes/dv-sumologic/approle/role/sumo-drone-pipeline/role-id
       SECRET_ID:
         from_secret: VAULT_SECRET_ID  # auth/nytimes/dv-sumologic/approle/role/drone/secret-id
       VAULT_ADDR: https://vault-prd.dv.nyt.net
