@@ -1,10 +1,10 @@
 locals {
-  sources = [
+  customercare_sources = [
     sumologic_http_source.Care_Connect_care-connect-dev,
     sumologic_http_source.Care_Connect_care-connect-stg,
     sumologic_http_source.Care_Connect_care-connect-prd
   ]
-  filter_pred = join(" OR ", [for src in local.sources : "_source=${src.name} OR _sourceCategory=${src.category}"])
+  filter_pred = join(" OR ", [for src in local.customercare_sources : "_source=${src.name} OR _sourceCategory=${src.category}"])
 }
 
 resource "sumologic_role" "CustomerCare" {
