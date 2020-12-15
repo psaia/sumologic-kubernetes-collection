@@ -209,7 +209,6 @@ module "nytimes-spg-order-service" {
 module "nytimes-care-eks-cluster" {
   source = "../modules/collector"
 
-  name    = "nytimes/care-eks-cluster"
-  env     = var.env
-  sources = ["prd"]
+  name = "nytimes/care-eks-cluster"
+  env  = var.env
 }

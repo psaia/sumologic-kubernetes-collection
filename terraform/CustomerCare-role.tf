@@ -1,7 +1,16 @@
+locals {
+  sources = [
+    sumologic_http_source.Care_Connect_care-connect-dev,
+    sumologic_http_source.Care_Connect_care-connect-stg,
+    sumologic_http_source.Care_Connect_care-connect-prd
+  ]
+  filter_pred = join(" OR ", [for src in local.sources : "_source=${src.name} OR _sourceCategory=${src.category}"])
+}
+
 resource "sumologic_role" "CustomerCare" {
   name             = "${var.role_prefix[var.env]}-CustomerCare"
   description      = "Customer Care Applogs"
-  filter_predicate = "_sourceCategory=${sumologic_http_source.Care_Connect_care-connect-dev.category} OR _sourceCategory=${sumologic_http_source.Care_Connect_care-connect-stg.category} OR _sourceCategory=${sumologic_http_source.Care_Connect_care-connect-prd.category} OR _source=${sumologic_http_source.Care_Connect_care-connect-dev.category} OR _source=${sumologic_http_source.Care_Connect_care-connect-stg.category} OR _source=${sumologic_http_source.Care_Connect_care-connect-prd.category}"
+  filter_predicate = "${local.filter_pred} OR ${module.nytimes-care-eks-cluster.search_filter}"
   capabilities     = ["viewScheduledViews", "viewPartitions", "viewFields", "viewFieldExtraction", "createAccessKeys", "changeDataAccessLevel"]
 }
 
