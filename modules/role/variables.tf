@@ -9,7 +9,7 @@ variable "search_filter" {
 
 variable "capabilities" {
   type    = list(string)
-  default = ["createAccessKeys"]
+  default = ["viewScheduledViews", "viewPartitions", "viewFields", "viewFieldExtraction", "createAccessKeys", "changeDataAccessLevel"]
 }
 
 variable "owners" {
