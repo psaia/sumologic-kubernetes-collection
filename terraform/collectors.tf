@@ -212,3 +212,11 @@ module "nytimes-care-eks-cluster" {
   name = "nytimes/care-eks-cluster"
   env  = var.env
 }
+
+# fastly-bestsellers Collectors
+module "nytm-fastly-bestsellers" {
+  source = "../modules/collector"
+
+  name = "nytm-fastly-bestsellers"
+  env  = var.env
+}
