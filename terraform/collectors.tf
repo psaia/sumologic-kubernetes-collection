@@ -220,3 +220,11 @@ module "nytm-fastly-bestsellers" {
   name = "nytm-fastly-bestsellers"
   env  = var.env
 }
+
+# fastly-bestsellers Collectors
+module "nytimes-auth-seshd" {
+  source = "../modules/collector"
+
+  name = "nytimes-auth-seshd"
+  env  = var.env
+}
