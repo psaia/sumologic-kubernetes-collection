@@ -228,3 +228,11 @@ module "nytimes-auth-seshd" {
   name = "nytimes-auth-seshd"
   env  = var.env
 }
+
+# infosec webhooks
+module "nytimes-infosec-webhooks" {
+  source = "../modules/collector"
+
+  name = "nytimes-infosec-webhooks"
+  env  = var.env
+}
