@@ -236,3 +236,11 @@ module "nytimes-infosec-webhooks" {
   name = "nytimes-infosec-webhooks"
   env  = var.env
 }
+
+# Drone CI logs from AWSMA EKS cluster
+module "nytimes-dv-awsma-drone" {
+  source = "../modules/collector"
+
+  name = "nytimes/dv-awsma-drone"
+  env  = var.env
+}
