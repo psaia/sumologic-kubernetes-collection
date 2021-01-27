@@ -646,3 +646,39 @@ resource "sumologic_http_source" "HTTP_fastly-myaccount_dev" {
   message_per_request          = false
   force_timezone               = false
 }
+resource "sumologic_http_source" "HTTP_fastly-bestsellers_dev" {
+  name                         = "fastly-bestsellers/dev"
+  description                  = "Fastly bestsellers dev"
+  category                     = "fastly-bestsellers/dev"
+  collector_id                 = sumologic_collector.HTTP.id
+  multiline_processing_enabled = true
+  timezone                     = "UTC"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
+}
+resource "sumologic_http_source" "HTTP_fastly-bestsellers_stg" {
+  name                         = "fastly-bestsellers/stg"
+  description                  = "Fastly bestsellers stg"
+  category                     = "fastly-bestsellers/stg"
+  collector_id                 = sumologic_collector.HTTP.id
+  multiline_processing_enabled = true
+  timezone                     = "UTC"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
+}
+resource "sumologic_http_source" "HTTP_fastly-bestsellers_prd" {
+  name                         = "fastly-bestsellers/prd"
+  description                  = "Fastly bestsellers prd"
+  category                     = "fastly-bestsellers/prd"
+  collector_id                 = sumologic_collector.HTTP.id
+  multiline_processing_enabled = true
+  timezone                     = "UTC"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
+}

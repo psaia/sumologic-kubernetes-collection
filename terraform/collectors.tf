@@ -214,14 +214,6 @@ module "nytimes-care-eks-cluster" {
 }
 
 # fastly-bestsellers Collectors
-module "nytm-fastly-bestsellers" {
-  source = "../modules/collector"
-
-  name = "nytm-fastly-bestsellers"
-  env  = var.env
-}
-
-# fastly-bestsellers Collectors
 module "nytimes-auth-seshd" {
   source = "../modules/collector"
 
