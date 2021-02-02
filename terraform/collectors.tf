@@ -245,3 +245,19 @@ module "nytimes-dv-awsma-drone" {
   name = "nytimes/dv-awsma-drone"
   env  = var.env
 }
+
+# Corelight logs - no associated repo
+module "nytimes-infosec-corelight" {
+  source = "../modules/collector"
+
+  name = "nytimes-infosec-corelight"
+  env  = var.env
+}
+
+# Umbrella logs - no associated repo
+module "nytimes-infosec-umbrella" {
+  source = "../modules/collector"
+
+  name = "nytimes-infosec-umbrella"
+  env  = var.env
+}

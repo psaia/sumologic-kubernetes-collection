@@ -9,3 +9,7 @@ output "search_filter" {
 output "source_category" {
   value = [for src in sumologic_http_source.sources : src.category]
 }
+
+output "sumologic_collector_id" {
+  value = sumologic_collector.collector.id
+}
