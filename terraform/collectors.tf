@@ -229,6 +229,15 @@ module "nytimes-infosec-webhooks" {
   env  = var.env
 }
 
+# infosec gcp-ip report
+module "nytimes-infosec-gcp-ip-report" {
+  source = "../modules/collector"
+
+  name    = "nytimes-infosec-gcp-ip-report"
+  env     = var.env
+  sources = ["prd"]
+}
+
 # Drone CI logs from AWSMA EKS cluster
 module "nytimes-dv-awsma-drone" {
   source = "../modules/collector"
