@@ -1,7 +1,7 @@
 resource "sumologic_s3_source" "infosec-corelight" {
   name                         = "corelight Logs"
   description                  = "Log files from corelight appliances"
-  category                     = "aws/s3"
+  category                     = "corelight"
   content_type                 = "AwsS3Bucket"
   scan_interval                = 300000
   paused                       = false
@@ -19,26 +19,29 @@ resource "sumologic_s3_source" "infosec-corelight" {
     path_expression = "*"
   }
 
-  default_date_formats {
-    format  = "epoch"
-    locator = <<EOT
-        ^([^.]+)\.
-        EOT
-  }
-
   filters {
-    name        = "Remove Comments"
+    name        = "Exclude Comments"
     filter_type = "Exclude"
-    regexp      = "^#.*"
+    regexp      = "#.*"
   }
 }
 
-# Parse key fields at ingest
+# Parse standard fields at ingest
 resource "sumologic_field_extraction_rule" "corelight-basic" {
   name             = "Corelight basic data extraction"
   scope            = "_collector=nytimes-infosec-corelight"
   parse_expression = <<EOT
-        parse regex "^\d{10}\.\d{6}\t(?<id>\w+)\t(?<src_ip>[\d.]+)\t(?<src_port>[\d]+)\t(?<dest_ip>[\d.]+)\t(?<dest_port>[\d.]+)\t(?<event>.*)"
+        json "id.orig_h","id.orig_p","id.resp_h","id.resp_p" as src_ip,src_port,dest_ip,dest_port
         EOT
+  enabled          = true
+}
+
+# Parse out specific log type
+resource "sumologic_field_extraction_rule" "corelight-event-type" {
+  name             = "Corelight event type"
+  scope            = "_collector=nytimes-infosec-corelight"
+  parse_expression = <<EOT
+      parse regex field=_sourcename "\/(?<event_type>[a-z]+)_20"
+      EOT
   enabled          = true
 }
