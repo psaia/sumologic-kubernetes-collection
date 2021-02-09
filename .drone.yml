@@ -38,7 +38,15 @@ steps:
   - name: format
     image: hashicorp/terraform:0.12.26
     commands:
-      - terraform fmt -write=false -list -diff -check -recursive terraform
+      - terraform fmt -list -diff -recursive terraform
+
+  - name: push-commit
+    image: appleboy/drone-git-push:0.2.1
+    settings:
+      remote_name: origin
+      branch: ${DRONE_SOURCE_BRANCH}
+      commit: true
+      commit_message: "Format terraform files"
 
   - name: vault-login
     image: vault:0.9.0
@@ -376,6 +384,6 @@ steps:
 
 ---
 kind: signature
-hmac: e828bb39ce40a18139bf6b79f635c8c7720d01d40a8676c5cef0d44c83923088
+hmac: 7834a02d5b3fb10cdb7cae7b5ace1b9a97b9a35232eb681fcfa8cea5d51918fe
 
 ...

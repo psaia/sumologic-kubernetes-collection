@@ -4,3 +4,8 @@ collectors-resources.tf
 sources-resources.tf
 users-resources.tf
 roles-and-users.json
+
+# add these so that the drone-git-push plugin doesn't commit them
+.netrc
+.gitconfig
+.terraform.d/checkpoint_signature
