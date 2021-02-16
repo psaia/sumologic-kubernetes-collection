@@ -31,7 +31,10 @@ resource "sumologic_field_extraction_rule" "corelight-basic" {
   name             = "Corelight basic data extraction"
   scope            = "_collector=nytimes-infosec-corelight"
   parse_expression = <<EOT
-        json "id.orig_h","id.orig_p","id.resp_h","id.resp_p" as src_ip,src_port,dest_ip,dest_port
+        parse "\"id.orig_h\":\"*\"" as src_ip nodrop
+        | parse "\"id.orig_p\":*" as src_port nodrop
+        | parse "\"id.resp_h\":\"*\"" as dest_ip nodrop
+        | parse "\"id.resp_p\":*" as dest_port nodrop
         EOT
   enabled          = true
 }
