@@ -1,5 +1,5 @@
 resource "sumologic_s3_source" "infosec-corelight" {
-  name                         = "corelight Logs"
+  name                         = "corelight logs"
   description                  = "Log files from corelight appliances"
   category                     = "corelight"
   content_type                 = "AwsS3Bucket"
@@ -10,12 +10,12 @@ resource "sumologic_s3_source" "infosec-corelight" {
 
   authentication {
     type     = "AWSRoleBasedAuthentication"
-    role_arn = "arn:aws:iam::147536899606:role/corelight-sumo-ingest-role"
+    role_arn = "arn:aws:iam::550861604386:role/corelight-sumo-ingest-role"
   }
 
   path {
     type            = "S3BucketPathExpression"
-    bucket_name     = "infosec-corelight-396d6b7c"
+    bucket_name     = "infosec-corelight-51347c84"
     path_expression = "*"
   }
 
