@@ -261,3 +261,11 @@ module "nytimes-infosec-umbrella" {
   name = "nytimes-infosec-umbrella"
   env  = var.env
 }
+
+# Multimedia EKS Cluster Collector
+module "nytimes-multimedia-awsma-eks" {
+  source = "../modules/collector"
+
+  name = "nytimes-multimedia-awsma-eks"
+  env  = var.env
+}
