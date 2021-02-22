@@ -2,7 +2,7 @@
 
 # Bind
 resource "sumologic_field_extraction_rule" "infosec-dns-bind" {
-  name             = "DNS: Bind data extraction"
+  name             = "Infosec DNS Bind"
   scope            = "_sourcecategory=dns-daemon"
   parse_expression = <<EOT
         parse regex "named\[\d+\]:\s+client\s+(?:@\S+\s+)?(?<src_ip>[0-9.]+)#(?<src_port>\d+)(?:\/key\s+\S+)?\s+\(\S+\):\s+view\s+\S+:\s+query:\s+(?<query>\S+)\s+IN\s+(?<query_type>[A-Z]+)" nodrop
@@ -13,7 +13,7 @@ resource "sumologic_field_extraction_rule" "infosec-dns-bind" {
 
 # GCP Query Logs
 resource "sumologic_field_extraction_rule" "infosec-dns-gcp" {
-  name             = "DNS: GCP DNS log data extraction"
+  name             = "Infosec DNS GCP"
   scope            = "_sourcecategory=gcp-dns"
   parse_expression = <<EOT
         parse "queryName\":\"*\"" as query nodrop
@@ -27,7 +27,7 @@ resource "sumologic_field_extraction_rule" "infosec-dns-gcp" {
 
 # Umbrella Logs
 resource "sumologic_field_extraction_rule" "infosec-dns-umbrella" {
-  name             = "DNS: Umbrella DNS log data extraction"
+  name             = "Infosec DNS Umbrella"
   scope            = "_sourcecategory=umbrella or _sourcename=dnslogs*"
   parse_expression = <<EOT
         csv _raw extract 2 as policy,4 as src_ip,6 as action,7 as query_type,9 as query,10 as dest_category
@@ -38,7 +38,7 @@ resource "sumologic_field_extraction_rule" "infosec-dns-umbrella" {
 
 # Corelight DNS
 resource "sumologic_field_extraction_rule" "infosec-dns-corelight" {
-  name             = "DNS: GCP dns log data extraction"
+  name             = "Infosec DNS Corelight"
   scope            = "_sourcecategory=corelight _sourceName=*/dns_*"
   parse_expression = <<EOT
         parse "query\":\"*\"" as query nodrop
@@ -48,7 +48,7 @@ resource "sumologic_field_extraction_rule" "infosec-dns-corelight" {
 
 ### Firewall ###
 resource "sumologic_field_extraction_rule" "infosec-firewall-fortigate" {
-  name             = "Firewall: Fortigate logs"
+  name             = "Infosec Firewall Fortigate"
   scope            = "_sourceCategory=network-firewall or _sourceCategory=forti-analyzer"
   parse_expression = <<EOT
         parse "srcip=* " as src_ip nodrop
@@ -66,7 +66,7 @@ resource "sumologic_field_extraction_rule" "infosec-firewall-fortigate" {
 
 # Fortigate HTTP logs
 resource "sumologic_field_extraction_rule" "infosec-http-fortigate" {
-  name             = "HTTP: Fortigate logs"
+  name             = "Infosec HTTP Fortigate"
   scope            = "_sourceCategory=network-firewall webfilter"
   parse_expression = <<EOT
         parse "hostname=\"*\"" as dest_host nodrop
@@ -79,7 +79,7 @@ resource "sumologic_field_extraction_rule" "infosec-http-fortigate" {
 
 # Corelight HTTP Logs
 resource "sumologic_field_extraction_rule" "infosec-http-corelight" {
-  name             = "HTTP: Corelight"
+  name             = "Infosec HTTP Corelight"
   scope            = "_sourceCategory=corelight _sourceName=*/http_*"
   parse_expression = <<EOT
         parse "method\":\"*\"" as http_method nodrop
@@ -93,7 +93,7 @@ resource "sumologic_field_extraction_rule" "infosec-http-corelight" {
 
 # Squid PCI Proxy Logs
 resource "sumologic_field_extraction_rule" "infosec-http-squid" {
-  name             = "HTTP: Squid"
+  name             = "Infosec HTTP Squid"
   scope            = "_source=nytimes-dv-pci-proxy-prd"
   parse_expression = <<EOT
         parse regex "TCP_(?<action>[A-Z]+)/\d+\s+\d+\s+(?<http_method>\S+)\s+(?<dest_host>[^:]+):(?<dest_port>\d+)\s+\S+\s+HIER_[A-Z]+/(?<dest_ip>[\d.-]+)" nodrop
@@ -106,7 +106,7 @@ resource "sumologic_field_extraction_rule" "infosec-http-squid" {
 
 # Windows
 resource "sumologic_field_extraction_rule" "infosec-auth-windows" {
-  name             = "Auth: Windows"
+  name             = "Infosec Auth Windows"
   scope            = <<EOT
         (_sourceCategory=nytimes-windows-dc-prd OR _sourceCategory=Workstation-Logs OR _sourceCategory=Server-Logs) AND _sourcename = "Security" AND ("EventCode = 4624;" OR "EventCode = 4625;" OR "EventCode = 4768;" OR "EventCode = 4771;")
         EOT
@@ -122,7 +122,7 @@ resource "sumologic_field_extraction_rule" "infosec-auth-windows" {
 
 # Google Workspace
 resource "sumologic_field_extraction_rule" "infosec-auth-google" {
-  name             = "Auth: Google Workspace"
+  name             = "Infosec Auth Google"
   scope            = <<EOT
         _sourceCategory = google_apps_gsuite_audit (("login_failure" and "login_failure_type")  or ("login_challenge" and "login_challenge_status")) "\"type\": \"login\""
         EOT
@@ -136,7 +136,7 @@ resource "sumologic_field_extraction_rule" "infosec-auth-google" {
 
 # Azure AD
 resource "sumologic_field_extraction_rule" "infosec-auth-azure" {
-  name             = "Auth: Azure"
+  name             = "Infosec Auth Azure"
   scope            = "_sourceCategory=AzureADLogs"
   parse_expression = <<EOT
         parse "callerIpAddress\":\"*\"," as src_ip nodrop
@@ -148,7 +148,7 @@ resource "sumologic_field_extraction_rule" "infosec-auth-azure" {
 
 # AWS
 resource "sumologic_field_extraction_rule" "infosec-auth-aws" {
-  name             = "Auth: AWS"
+  name             = "Infosec Auth AWS"
   scope            = "_sourceCategory=AWS_EAGLE"
   parse_expression = <<EOT
         parse "userName\":\"*\"" as src_user nodrop
@@ -162,7 +162,7 @@ resource "sumologic_field_extraction_rule" "infosec-auth-aws" {
 
 # F5 VPN
 resource "sumologic_field_extraction_rule" "infosec-session-f5-vpn" {
-  name             = "Session: F5 VPN"
+  name             = "Infosec Session F5 VPN"
   scope            = "_sourceCategory=network-vpn-f5 (nyhq-f5lb-vpn01-self.nyhq.nytint.com OR vpn-lb01-self.prd.orf1.nyt.net)"
   parse_expression = <<EOT
         parse regex "/Common/(?<policy>[^:]+):Common:(?<session_id>[a-f0-9]{6,10}):" nodrop
