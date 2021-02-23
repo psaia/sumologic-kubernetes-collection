@@ -170,6 +170,23 @@ resource "sumologic_field_extraction_rule" "infosec-session-f5-vpn" {
         | parse "Hostname: * Type" as src_host nodrop
         | parse "New session from client IP * " as src_ip nodrop
         | parse "Assigned PPP Dynamic IPv4: * " as dest_ip nodrop
+        | "session" as event_type
+        EOT
+  enabled          = true
+}
+
+### Corelight Files ###
+# Parse standard fields for all event types
+resource "sumologic_field_extraction_rule" "corelight-basic" {
+  name             = "Corelight basic data extraction"
+  scope            = "_collector=nytimes-infosec-corelight"
+  parse_expression = <<EOT
+        parse "\"id.orig_h\":\"*\"" as src_ip nodrop
+        | parse "\"id.orig_p\":*," as src_port nodrop
+        | parse "\"id.resp_h\":\"*\"" as dest_ip nodrop
+        | parse "\"id.resp_p\":*," as dest_port nodrop
+        | parse regex field=_sourcename "\/(?<event_type2>x509|suricata_corelight|smtp_links|suricata_stats|conn_long|profinet_dce_rpc|[a-z]+)(?:_red)?_20" nodrop
+        | parse field=_sourcename "*/" as reporting_device
         EOT
   enabled          = true
 }

@@ -1,7 +1,7 @@
 resource "sumologic_s3_source" "infosec-umbrella" {
-  name          = "umbrella Logs"
+  name          = "umbrella logs"
   description   = "Log files from umbrella appliances"
-  category      = "aws/s3"
+  category      = "umbrella"
   content_type  = "AwsS3Bucket"
   scan_interval = 300000
   paused        = false
@@ -9,12 +9,12 @@ resource "sumologic_s3_source" "infosec-umbrella" {
 
   authentication {
     type     = "AWSRoleBasedAuthentication"
-    role_arn = "arn:aws:iam::147536899606:role/umbrella-sumo-ingest-role"
+    role_arn = "arn:aws:iam::550861604386:role/umbrella-sumo-ingest-role"
   }
 
   path {
     type            = "S3BucketPathExpression"
-    bucket_name     = "infosec-dev-umbrella-logs"
+    bucket_name     = "infosec-prd-umbrella-logs"
     path_expression = "*"
   }
 }
