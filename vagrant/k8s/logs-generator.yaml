@@ -1,0 +1,49 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: logs-generator
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: logs-generator
+  namespace: logs-generator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: logs-generator
+  template:
+    metadata:
+      labels:
+        name: logs-generator
+    spec:
+      containers:
+      - image: sumodrosiek/logs-generator
+        imagePullPolicy: Always
+        name: logs-generator
+        command:
+          - bash
+          - -c
+          - >
+            fluent-generator \
+              --random-patterns=10 \
+              --random=10 \
+              --wordlist=/words.txt \
+              --path=/dev/stdout \
+              --time-resolution=1 \
+              --verbose=true \
+              --time=300;
+              while true;
+                do sleep 3600;
+              done
+        #  - fluentd-generator
+        #  - --total-logs=1000  # total logs, Should be multiplication of random-patterns and random
+        #  - --random-patterns=10
+        #  - --random=10
+        #  - --wordlist=/words.txt  # dictionary
+        #  - --path=/dev/stdout  # stdout
+        #  - --packets=100  # packets per seconds. Should be multiplication of random-patterns and random
+        #  - --time-resolution=1  # How many seconds should be taken into consideration for bandwidth calculation

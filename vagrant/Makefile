@@ -249,3 +249,7 @@ logs-keeper:
 	kubectl delete configmap -n "logs-keeper" logs-keeper || true
 	kubectl apply -n "logs-keeper" -f ${k8s_path}/logs-keeper.yaml
 	kubectl create configmap -n "logs-keeper" logs-keeper --from-file="${root_dir}vagrant/logs-keeper/logs-keeper.py"
+
+logs-generator:
+	kubectl delete -f ${k8s_path}/logs-generator.yaml || true
+	kubectl apply -f ${k8s_path}/logs-generator.yaml
