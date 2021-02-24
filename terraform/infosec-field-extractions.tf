@@ -62,6 +62,22 @@ resource "sumologic_field_extraction_rule" "infosec-firewall-fortigate" {
   enabled          = true
 }
 
+resource "sumologic_field_extraction_rule" "infosec-firewall-asa" {
+  name             = "Infosec Firewall Cisco ASA"
+  scope            = <<EOT
+        _sourceCategory=network-firewall "%ASA"
+        EOT
+  parse_expression = <<EOT
+        parse regex "(?<action>Deny|Permit)\s+(?<protocol>\S+) src [^:]+:(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\/(?<src_port>\d+)\s+dst\s+[^:]+:(?<dest_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\/(?<dest_port>\d+)" nodrop
+        | parse regex "(?<action>Teardown)\s+(?<protocol>\S+)\s+connection\s+\d+\s+[^:]+:(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\/(?<src_port>\d+)[^:]+:(?<dest_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\/(?<dest_port>\d+)\s+duration\s+[\d:]+\s+bytes\s+(?<bytes>\d+)" nodrop
+        | parse regex "(?<action>Built)\s+(?:inbound|outbound)\s+(?<protocol>\S+)\s+connection\s+\d+\s+[^:]+:(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\/(?<src_port>\d+)[^:]+:(?<dest_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\/(?<dest_port>\d+)" nodrop
+        | toLowerCase(action) as action
+        | toLowerCase(protocol) as protocol
+        | "firewall" as event_type
+        EOT
+  enabled          = true
+}
+
 ### HTTP ###
 
 # Fortigate HTTP logs
@@ -158,6 +174,18 @@ resource "sumologic_field_extraction_rule" "infosec-auth-aws" {
   enabled          = true
 }
 
+# VMWare ESX
+resource "sumologic_field_extraction_rule" "infosec-auth-esx" {
+  name             = "Infosec Auth ESX"
+  scope            = "_sourceCategory=virtualization-esx vim.event.UserLoginSessionEvent"
+  parse_expression = <<EOT
+        parse "[User *@* logged in" as src_user,src_ip nodrop
+        | parse regex "^[A-Z][a-z]+\s+\d{1,2}\s+\d{2}:\d{2}:\d{2}\s+(?<dest_host>[^\s]+)" nodrop
+        | "auth" as event_type
+        EOT
+  enabled          = true
+}
+
 ### Sessions ###
 
 # F5 VPN
@@ -175,6 +203,38 @@ resource "sumologic_field_extraction_rule" "infosec-session-f5-vpn" {
   enabled          = true
 }
 
+# Fortigate DHCP
+resource "sumologic_field_extraction_rule" "infosec-session-dhcp-fortigate" {
+  name             = "Infosec Session DHCP Fortigate"
+  scope            = <<EOT
+        _sourcecategory=network-firewall "subtype=\"system\"" dhcp_msg
+        EOT
+  parse_expression = <<EOT
+        parse "ip=* " as src_ip nodrop
+        | src_ip as dest_ip
+        | parse "mac=\"*\"" as src_mac nodrop
+        | parse "hostname=\"*\"" as src_host nodrop
+        | parse "interface=\"*\"" as src_interface nodrop
+        | parse regex "^[A-Z][a-z]+\s+\d{1,2}\s+\d{2}:\d{2}:\d{2}\s+(?<reporting_device>[^\s]+)" nodrop
+        | toLowerCase(src_mac) as src_mac
+        | "session" as event_type
+        EOT
+  enabled          = true
+}
+
+# Infoblox DHCP
+resource "sumologic_field_extraction_rule" "infosec-session-dhcp-inboblox" {
+  name             = "Infosec Session DHCP Infoblox"
+  scope            = "_sourceCategory=network-infoblox"
+  parse_expression = <<EOT
+        parse regex "(?<action>\S+)\s+(?:on|for)\s+(?<dest_ip>[\d.]+)\s+(?:to|from)\s+(?<dest_mac>[a-f0-9:]+)\s+\((?<dest_host>[^\)]+)\)" nodrop
+        | parse regex "(?<action>\S+)\s+(?:on|for)\s+(?<dest_ip>[\d.]+)\s+\([^\)]+\)\s+(?:to|from)\s+(?<dest_mac>[a-f0-9:]+)\s+\((?<dest_host>[^\)]+)\)" nodrop
+        | dest_ip as src_ip
+        | "session" as event_type
+        EOT
+  enabled          = true
+}
+
 ### Corelight Files ###
 # Parse standard fields for all event types
 resource "sumologic_field_extraction_rule" "corelight-basic" {
@@ -185,7 +245,7 @@ resource "sumologic_field_extraction_rule" "corelight-basic" {
         | parse "\"id.orig_p\":*," as src_port nodrop
         | parse "\"id.resp_h\":\"*\"" as dest_ip nodrop
         | parse "\"id.resp_p\":*," as dest_port nodrop
-        | parse regex field=_sourcename "\/(?<event_type2>x509|suricata_corelight|smtp_links|suricata_stats|conn_long|profinet_dce_rpc|[a-z]+)(?:_red)?_20" nodrop
+        | parse regex field=_sourcename "\/(?<event_type>x509|suricata_corelight|smtp_links|suricata_stats|conn_long|profinet_dce_rpc|[a-z]+)(?:_red)?_20" nodrop
         | parse field=_sourcename "*/" as reporting_device
         EOT
   enabled          = true
