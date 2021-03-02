@@ -203,7 +203,16 @@ module "nytimes-spg-order-service" {
     "_convertHeadersToFields" = "true"
   }
 }
+# spg apigee Collectors to pipe logs to sumo
+module "nytimes-spg-apigee-config" {
+  source = "../modules/collector"
 
+  name = "nytimes/spg-apigee-config"
+  env  = var.env
+  collector_fields = {
+    "_convertHeadersToFields" = "true"
+  }
+}
 # Care EKS Cluster Collectors
 # No associated repo
 module "nytimes-care-eks-cluster" {
