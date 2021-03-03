@@ -207,8 +207,9 @@ module "nytimes-spg-order-service" {
 module "nytimes-spg-apigee-config" {
   source = "../modules/collector"
 
-  name = "nytimes/spg-apigee-config"
-  env  = var.env
+  name           = "nytimes/spg-apigee-config"
+  env            = var.env
+  write_to_vault = true
   collector_fields = {
     "_convertHeadersToFields" = "true"
   }
