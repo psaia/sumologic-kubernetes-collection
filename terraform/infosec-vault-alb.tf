@@ -16,6 +16,6 @@ resource "sumologic_elb_source" "infosec-vault-aws" {
   path {
     type            = "S3BucketPathExpression"
     bucket_name     = "nyt-vault-alb-logs-319840092804-prd"
-    path_expression = "AWSLogs/319840092804/elasticloadbalancing"
+    path_expression = "*"
   }
 }
