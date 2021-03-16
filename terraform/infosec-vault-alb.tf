@@ -1,7 +1,7 @@
 resource "sumologic_elb_source" "infosec-vault-aws" {
   name                         = "Vault AWS LB logs"
   description                  = "Log files from Vault ALBs"
-  category                     = "nytimes-dv-vault-aws-prd"
+  category                     = "nytimes-dv-vault-aws-prd-alb"
   content_type                 = "AwsElbBucket"
   scan_interval                = 30000
   paused                       = false
