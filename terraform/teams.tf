@@ -14,3 +14,13 @@ module "offers" {
   group_manager = "CN=Thiaw\\, Lamine,OU=Users,OU=NYHQ,OU=NYTMG,DC=ent,DC=nytint,DC=com"
   env           = var.env
 }
+
+module "multimedia" {
+  source = "../modules/role"
+
+  name          = "multimedia"
+  search_filter = module.nytimes-multimedia-awsma-eks.search_filter
+  capabilities  = ["viewScheduledViews", "manageFieldExtractionRules", "manageMonitors", "viewPartitions", "viewFields", "viewFieldExtraction", "createAccessKeys", "changeDataAccessLevel", "viewCollectors", "manageFields"]
+  group_manager = "CN=Sherman\\, Dan,OU=GApps Objects Users,OU=Users,OU=NYHQ,OU=NYTMG,DC=ent,DC=nytint,DC=com"
+  env           = var.env
+}
