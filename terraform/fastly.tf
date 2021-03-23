@@ -646,6 +646,7 @@ resource "sumologic_http_source" "HTTP_fastly-myaccount_dev" {
   message_per_request          = false
   force_timezone               = false
 }
+
 resource "sumologic_http_source" "HTTP_fastly-bestsellers_dev" {
   name                         = "fastly-bestsellers/dev"
   description                  = "Fastly bestsellers dev"
@@ -658,6 +659,7 @@ resource "sumologic_http_source" "HTTP_fastly-bestsellers_dev" {
   message_per_request          = false
   force_timezone               = false
 }
+
 resource "sumologic_http_source" "HTTP_fastly-bestsellers_stg" {
   name                         = "fastly-bestsellers/stg"
   description                  = "Fastly bestsellers stg"
@@ -670,10 +672,50 @@ resource "sumologic_http_source" "HTTP_fastly-bestsellers_stg" {
   message_per_request          = false
   force_timezone               = false
 }
+
 resource "sumologic_http_source" "HTTP_fastly-bestsellers_prd" {
   name                         = "fastly-bestsellers/prd"
   description                  = "Fastly bestsellers prd"
   category                     = "fastly-bestsellers/prd"
+  collector_id                 = sumologic_collector.HTTP.id
+  multiline_processing_enabled = true
+  timezone                     = "UTC"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
+}
+
+resource "sumologic_http_source" "HTTP_fastly-mobile-feedlocator_dev" {
+  name                         = "fastly-mobile-feedlocator/dev"
+  description                  = "Fastly mobile feed locator dev"
+  category                     = "fastly-mobile-feedlocator/dev"
+  collector_id                 = sumologic_collector.HTTP.id
+  multiline_processing_enabled = true
+  timezone                     = "UTC"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
+}
+
+resource "sumologic_http_source" "HTTP_fastly-mobile-feedlocator_stg" {
+  name                         = "fastly-mobile-feedlocator/stg"
+  description                  = "Fastly mobile feed locator stg"
+  category                     = "fastly-mobile-feedlocator/stg"
+  collector_id                 = sumologic_collector.HTTP.id
+  multiline_processing_enabled = true
+  timezone                     = "UTC"
+  use_autoline_matching        = true
+  automatic_date_parsing       = true
+  message_per_request          = false
+  force_timezone               = false
+}
+
+resource "sumologic_http_source" "HTTP_fastly-mobile-feedlocator_prd" {
+  name                         = "fastly-mobile-feedlocator/prd"
+  description                  = "Fastly mobile feed locator prd"
+  category                     = "fastly-mobile-feedlocator/prd"
   collector_id                 = sumologic_collector.HTTP.id
   multiline_processing_enabled = true
   timezone                     = "UTC"
