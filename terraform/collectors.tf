@@ -174,7 +174,7 @@ module "nytimes-nirmata-poc" {
   env  = var.env
 }
 
-# Egress proxies for pci environments
+# To be retired, replaced with dv-egress-proxy.
 # No associated repo
 module "nytimes-dv-pci-proxy" {
   source = "../modules/collector"
@@ -182,6 +182,16 @@ module "nytimes-dv-pci-proxy" {
   name    = "nytimes/dv-pci-proxy"
   env     = var.env
   sources = ["prd"]
+}
+
+# Egress proxies for pci environments
+module "nytimes-dv-egress-proxy" {
+  source = "../modules/collector"
+
+  name           = "nytimes/dv-egress-proxy"
+  env            = var.env
+  write_to_vault = true
+  sources        = ["prd"]
 }
 
 module "nytimes-github" {
