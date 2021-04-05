@@ -1,5 +1,10 @@
 locals {
   name = replace(var.name, "/", "-")
+
+  # parse out (org/repo).subpath => org/repo
+  vault_ns = length(regexall("([\\w-]+/[\\w-]+)", var.name)) > 0 ? element(regex("([\\w-]+/[\\w-]+)", var.name), 0) : ""
+  # parse out org/repo.(subpath) => subpath/
+  vault_ns_subpath = length(regexall("[\\w-]+/[\\w-]+\\.(.+)", var.name)) > 0 ? format("%s/", element(regex("[\\w-]+/[\\w-]+\\.(.+)", var.name), 0)) : ""
 }
 
 resource "sumologic_collector" "collector" {
@@ -26,7 +31,6 @@ resource "vault_generic_endpoint" "dv_namespace" {
   disable_read   = true
   disable_delete = true
   data_json      = format("{\"data\": {%s}}", join(",", [for src in var.sources : format("\"%s\": \"%s\"", src, sumologic_http_source.sources[src].url)]))
-  #
 }
 
 # Write the endpoints to Vault
@@ -34,11 +38,11 @@ resource "vault_generic_endpoint" "repo_namespace" {
   # Only write endpoints if enabled for prod only
   for_each = var.write_to_vault && var.env == "prd" ? var.sources : []
 
-  path           = "${var.name}/versioned/data/${each.value}/sumo_key"
+  path           = "${local.vault_ns}/versioned/data/${each.value}/${local.vault_ns_subpath}sumo_key"
   disable_read   = true
   disable_delete = true
   data_json      = <<EOT
-{ 
+{
   "data" : {
     "source_category": "${sumologic_http_source.sources[each.value].category}",
     "url": "${sumologic_http_source.sources[each.value].url}",
