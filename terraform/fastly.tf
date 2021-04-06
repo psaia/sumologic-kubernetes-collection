@@ -312,32 +312,6 @@ resource "sumologic_http_source" "HTTP_fastly-rss_stg" {
   force_timezone               = false
 }
 
-resource "sumologic_http_source" "HTTP_fastly-static-prd" {
-  name                         = "fastly-static-prd"
-  description                  = "Fastly Static Error Logs"
-  category                     = "fastly-static-prd"
-  collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = true
-  timezone                     = "UTC"
-  use_autoline_matching        = true
-  automatic_date_parsing       = true
-  message_per_request          = false
-  force_timezone               = false
-}
-
-resource "sumologic_http_source" "HTTP_fastly-static-stg" {
-  name                         = "fastly-static-stg"
-  description                  = "Fasty static error logs"
-  category                     = "fastly-static-stg"
-  collector_id                 = sumologic_collector.HTTP.id
-  multiline_processing_enabled = true
-  timezone                     = "UTC"
-  use_autoline_matching        = true
-  automatic_date_parsing       = true
-  message_per_request          = false
-  force_timezone               = false
-}
-
 resource "sumologic_http_source" "HTTP_fastly-static_prd" {
   name                         = "fastly-static/prd"
   description                  = "Fastly static production"
