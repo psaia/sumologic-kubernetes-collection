@@ -11,11 +11,15 @@ provider "sumologic" {
   # access_id   =  this is set through SUMOLOGIC_ACCESSID
   # access_key  =  this is set through SUMOLOGIC_ACCESSKEY
   # environment =  this is set through SUMOLOGIC_ENVIRONMENT
+
+  version = "~> 2.9.1"
 }
 
 provider "vault" {
   # address = this is set through VAULT_ADDR
   # token   = this is sourced from ~/.vault-token
+
+  version = "~> 2.19"
 }
 
 variable "ad_domain" {
