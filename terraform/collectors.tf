@@ -289,3 +289,11 @@ module "nytimes-multimedia-awsma-eks" {
   name = "nytimes-multimedia-awsma-eks"
   env  = var.env
 }
+
+# infosec flowlogs-job
+module "nytimes-infosec-flowlogs-job" {
+  source = "../modules/collector"
+
+  name = "nytimes-infosec-flowlogs-job"
+  env  = var.env
+}
