@@ -297,3 +297,11 @@ module "nytimes-infosec-flowlogs-job" {
   name = "nytimes-infosec-flowlogs-job"
   env  = var.env
 }
+
+# WAF logs - no associated repo
+module "nytimes-waf" {
+  source = "../modules/collector"
+
+  name = "nytimes-waf"
+  env  = var.env
+}
