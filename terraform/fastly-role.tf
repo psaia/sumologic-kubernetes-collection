@@ -31,9 +31,6 @@ resource "sumologic_role" "fastly" {
   OR _sourceCategory=${sumologic_http_source.HTTP_fastly-advertising-waf_prd.category}
   OR _sourceCategory=${sumologic_http_source.HTTP_fastly-advertising_stg.category}
   OR _sourceCategory=${sumologic_http_source.HTTP_fastly-advertising_prd.category}
-  OR _sourceCategory=${sumologic_http_source.HTTP_fastly-mobile-feedlocator_dev.category}
-  OR _sourceCategory=${sumologic_http_source.HTTP_fastly-mobile-feedlocator_stg.category}
-  OR _sourceCategory=${sumologic_http_source.HTTP_fastly-mobile-feedlocator_prd.category}
   EOT
   capabilities     = ["manageFieldExtractionRules", "manageMonitors", "viewPartitions", "viewFields", "viewFieldExtraction", "createAccessKeys", "changeDataAccessLevel", "manageFields"]
 }
