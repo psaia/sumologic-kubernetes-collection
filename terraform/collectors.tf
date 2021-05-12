@@ -305,3 +305,11 @@ module "nytimes-waf" {
   name = "nytimes-waf"
   env  = var.env
 }
+
+# infosec pam monitoring
+module "nytimes-infosec-pam-monitoring-job" {
+  source = "../modules/collector"
+
+  name = "nytimes-infosec-pam-monitoring-job"
+  env  = var.env
+}
