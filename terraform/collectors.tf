@@ -233,11 +233,11 @@ module "nytimes-care-eks-cluster" {
   env  = var.env
 }
 
-# fastly-bestsellers Collectors
-module "nytimes-auth-seshd" {
+# auth-infra k8s cluster collectors
+module "nytimes-auth-infra" {
   source = "../modules/collector"
 
-  name = "nytimes-auth-seshd"
+  name = "nytimes-auth-infra"
   env  = var.env
 }
 
